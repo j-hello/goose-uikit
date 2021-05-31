@@ -27,7 +27,7 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   transform: translate3d(0, 0, 0);
 
   ${({ theme }) => theme.mediaQueries.nav} {
-    width: ${SIDEBAR_WIDTH_REDUCED}px;  
+    width: ${SIDEBAR_WIDTH_FULL}px;  
   }
 `;
 
