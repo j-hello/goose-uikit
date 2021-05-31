@@ -61,11 +61,6 @@ const Menu: React.FC<NavProps> = ({
   account,
   login,
   logout,
-  isDark,
-  toggleTheme,
-  langs,
-  setLang,
-  currentLang,
   cakePriceUsd,
   links,
   priceLink,
@@ -125,12 +120,6 @@ const Menu: React.FC<NavProps> = ({
         <Panel
           isPushed={isPushed}
           isMobile={isMobile}
-          showMenu={showMenu}
-          isDark={isDark}
-          toggleTheme={toggleTheme}
-          langs={langs}
-          setLang={setLang}
-          currentLang={currentLang}
           cakePriceUsd={cakePriceUsd}
           pushNav={setIsPushed}
           links={links}
