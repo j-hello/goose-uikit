@@ -24,7 +24,7 @@ const Logo: React.FC<Props> = ({ href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
-      <LogoWithText />
+      <LogoWithText className="desktop-icon" />
     </>
   );
 

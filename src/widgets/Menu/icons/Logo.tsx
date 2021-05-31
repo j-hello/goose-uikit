@@ -1,7 +1,10 @@
 import React from "react";
 import Svg from "../../../components/Svg/Svg";
+import { SvgProps } from "../../../components/Svg/types";
 
-const Logo: React.FC = ({ ...props }) => {
+interface LogoProps extends SvgProps {}
+
+const Logo: React.FC<LogoProps> = ({ ...props }) => {
   return (
     <Svg viewBox="0 0 150 47" {...props}>
       <image

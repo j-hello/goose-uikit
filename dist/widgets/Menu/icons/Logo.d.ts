@@ -1,3 +1,6 @@
 import React from "react";
-declare const Logo: React.FC;
+import { SvgProps } from "../../../components/Svg/types";
+interface LogoProps extends SvgProps {
+}
+declare const Logo: React.FC<LogoProps>;
 export default Logo;
