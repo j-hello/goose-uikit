@@ -20,7 +20,7 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   justify-content: space-between;
   flex-shrink: 0;
   background-color: ${({ theme }) => theme.nav.background};
-  width: ${SIDEBAR_WIDTH_FULL};
+  width: ${SIDEBAR_WIDTH_FULL}px;
   height: 100vh;
   transition: padding-top 0.2s, width 0.2s;
   z-index: 11;
