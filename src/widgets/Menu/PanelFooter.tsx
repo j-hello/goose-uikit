@@ -6,9 +6,6 @@ import Flex from "../../components/Flex/Flex";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import Link from "../../components/Link/Link";
 import Skeleton from "../../components/Skeleton/Skeleton";
-import Button from "../../components/Button/Button";
-import IconButton from "../../components/Button/IconButton";
-import MenuButton from "./MenuButton";
 import * as IconModule from "./icons";
 import { socials, MENU_ENTRY_HEIGHT } from "./config";
 import { PanelProps, PushedProps } from "./types";
@@ -16,7 +13,6 @@ import { PanelProps, PushedProps } from "./types";
 interface Props extends PanelProps, PushedProps {}
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
-const { MoonIcon, SunIcon, LanguageIcon } = Icons;
 
 const Container = styled.div`
   flex: none;
@@ -55,20 +51,9 @@ const SocialEntry = styled.div`
 `;
 
 const PanelFooter: React.FC<Props> = ({
-  isPushed,
-  pushNav,
   cakePriceUsd,
   priceLink,
 }) => {
-  if (!isPushed) {
-    return (
-      <Container>
-        <IconButton variant="text" onClick={() => pushNav(true)}>
-          <CogIcon />
-        </IconButton>
-      </Container>
-    );
-  }
 
   return (
     <Container>

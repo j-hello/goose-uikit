@@ -16,18 +16,12 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const StyledNav = styled.nav<{ showMenu: boolean }>`
-  position: fixed;
-  top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
-  left: 0;
-  transition: top 0.2s;
+const StyledNav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 8px;
-  padding-right: 16px;
+  padding: 30px;
   width: 100%;
-  height: ${MENU_HEIGHT}px;
   background-color: ${({ theme }) => theme.nav.background};
   z-index: 20;
   transform: translate3d(0, 0, 0);
@@ -38,13 +32,13 @@ const BodyWrapper = styled.div`
   display: flex;
 `;
 
-const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
+const Inner = styled.div`
   flex-grow: 1;
-  margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
+  margin-top: ${MENU_HEIGHT}px;
   transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
   ${({ theme }) => theme.mediaQueries.nav} {
-    margin-left: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
+    margin-left: ${SIDEBAR_WIDTH_FULL}px;
   }
 `;
 
@@ -107,7 +101,7 @@ const Menu: React.FC<NavProps> = ({
 
   return (
     <Wrapper>
-      <StyledNav showMenu={showMenu}>
+      <StyledNav>
         <Logo
           href={homeLink?.href ?? "/"}
         />
@@ -125,7 +119,7 @@ const Menu: React.FC<NavProps> = ({
           links={links}
           priceLink={priceLink}
         />
-        <Inner isPushed={isPushed} showMenu={showMenu}>
+        <Inner>
           {children}
         </Inner>
         <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />
