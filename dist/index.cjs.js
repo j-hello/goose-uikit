@@ -240,12 +240,12 @@ var Icon$6 = function (props) {
 
 var Icon$7 = function (props) {
     return (React__default['default'].createElement(Svg, { viewBox: "0 0 15 8", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-        React__default['default'].createElement("path", { d: "M1.07144 1L8.03573 7L15 1", stroke: "text", strokeWidth: "1.5" })));
+        React__default['default'].createElement("path", { d: "M1.07144 1L8.03573 7L15 1", stroke: "currentColor", strokeWidth: "1.5" })));
 };
 
 var Icon$8 = function (props) {
     return (React__default['default'].createElement(Svg, { viewBox: "0 0 15 8", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-        React__default['default'].createElement("path", { d: "M15 7L8.03572 0.999999L1.07143 7", stroke: "text", strokeWidth: "1.5" })));
+        React__default['default'].createElement("path", { d: "M15 7L8.03572 0.999999L1.07143 7", stroke: "currentColor", strokeWidth: "1.5" })));
 };
 
 var Icon$9 = function (props) {
@@ -417,8 +417,8 @@ var Icon$v = function (props) {
 };
 
 var Icon$w = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 90 90" }, props),
-        React__default['default'].createElement("image", { width: 90, height: 90, href: "/images/incubator/9.png" })));
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 100 123" }, props),
+        React__default['default'].createElement("image", { width: 100, height: 123, href: "/images/egg/egg-icon.png" })));
 };
 
 var Icon$x = function (props) {
@@ -2352,32 +2352,28 @@ var PanelBody = function (_a) {
 var templateObject_1$A;
 
 var Icons = IconModule;
-var Container$4 = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  flex: none;\n  padding: 8px 4px;\n  background-color: ", ";\n  border-top: solid 2px rgba(133, 133, 133, 0.1);\n"], ["\n  flex: none;\n  padding: 8px 4px;\n  background-color: ", ";\n  border-top: solid 2px rgba(133, 133, 133, 0.1);\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.nav.background;
-});
+var Container$4 = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  flex: none;\n  padding: 8px 4px;\n"], ["\n  flex: none;\n  padding: 8px 4px;\n"])));
 var PriceLink = styled__default['default'].a(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
-styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"])), MENU_ENTRY_HEIGHT);
-var SocialEntry = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"])), MENU_ENTRY_HEIGHT);
+var SocialEntry = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"])), MENU_ENTRY_HEIGHT);
 var PanelFooter = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd, priceLink = _a.priceLink;
     return (React__default['default'].createElement(Container$4, null,
         React__default['default'].createElement(SocialEntry, null,
             cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: priceLink, target: "_blank" },
-                React__default['default'].createElement(Icon$v, { width: "24px", mr: "8px" }),
-                React__default['default'].createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 })),
+                React__default['default'].createElement(Icon$w, { width: "24px", mr: "8px" }),
+                React__default['default'].createElement(Text, { color: "text", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 })),
             React__default['default'].createElement(Flex, null, socials.map(function (social, index) {
                 var Icon = Icons[social.icon];
-                var iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
+                var iconProps = { width: "24px", color: "text", style: { cursor: "pointer" } };
                 var mr = index < socials.length - 1 ? "8px" : 0;
                 if (social.items) {
-                    return (React__default['default'].createElement(Dropdown, { key: social.label, position: "top", target: React__default['default'].createElement(Icon, __assign({}, iconProps, { mr: mr })) }, social.items.map(function (item) { return (React__default['default'].createElement(Link, { external: true, key: item.label, href: item.href, "aria-label": item.label, color: "textSubtle" }, item.label)); })));
+                    return (React__default['default'].createElement(Dropdown, { key: social.label, position: "top", target: React__default['default'].createElement(Icon, __assign({}, iconProps, { mr: mr })) }, social.items.map(function (item) { return (React__default['default'].createElement(Link, { external: true, key: item.label, href: item.href, "aria-label": item.label, color: "text" }, item.label)); })));
                 }
                 return (React__default['default'].createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
                     React__default['default'].createElement(Icon, __assign({}, iconProps))));
             })))));
 };
-var templateObject_1$B, templateObject_2$c, templateObject_3$7, templateObject_4$2;
+var templateObject_1$B, templateObject_2$c, templateObject_3$7;
 
 var StyledPanel = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  position: sticky;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  height: 100vh;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    width: ", "px;\n  }\n"], ["\n  position: sticky;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  height: 100vh;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    width: ", "px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -2633,7 +2629,7 @@ var StyledNav = styled__default['default'].nav(templateObject_2$f || (templateOb
     return theme.nav.background;
 });
 var BodyWrapper = styled__default['default'].div(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
-var Inner = styled__default['default'].div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  flex-grow: 1;\n  transform: translate3d(0, 0, 0);\n"], ["\n  flex-grow: 1;\n  transform: translate3d(0, 0, 0);\n"])));
+var Inner = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  flex-grow: 1;\n  transform: translate3d(0, 0, 0);\n"], ["\n  flex-grow: 1;\n  transform: translate3d(0, 0, 0);\n"])));
 styled__default['default'](Overlay)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"], ["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
@@ -2686,7 +2682,7 @@ var Menu = function (_a) {
             React__default['default'].createElement(Panel, { isPushed: isPushed, isMobile: isMobile, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
             React__default['default'].createElement(Inner, null, children))));
 };
-var templateObject_1$G, templateObject_2$f, templateObject_3$8, templateObject_4$3, templateObject_5$1;
+var templateObject_1$G, templateObject_2$f, templateObject_3$8, templateObject_4$2, templateObject_5$1;
 
 var ToastAction = function (_a) {
     var action = _a.action;

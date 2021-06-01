@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { PancakeRoundIcon, CogIcon, SvgProps } from "../../components/Svg";
+import { GooseRoundIcon, CogIcon, SvgProps } from "../../components/Svg";
 import Text from "../../components/Text/Text";
 import Flex from "../../components/Flex/Flex";
 import Dropdown from "../../components/Dropdown/Dropdown";
@@ -17,21 +17,11 @@ const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 const Container = styled.div`
   flex: none;
   padding: 8px 4px;
-  background-color: ${({ theme }) => theme.nav.background};
-  border-top: solid 2px rgba(133, 133, 133, 0.1);
 `;
 
 const PriceLink = styled.a`
   display: flex;
   align-items: center;
-`;
-
-const SettingsEntry = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: ${MENU_ENTRY_HEIGHT}px;
-  padding: 0 8px;
 `;
 
 const SocialEntry = styled.div`
@@ -48,8 +38,8 @@ const PanelFooter: React.FC<Props> = ({ cakePriceUsd, priceLink }) => {
       <SocialEntry>
         {cakePriceUsd ? (
           <PriceLink href={priceLink} target="_blank">
-            <PancakeRoundIcon width="24px" mr="8px" />
-            <Text color="textSubtle" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
+            <GooseRoundIcon width="24px" mr="8px" />
+            <Text color="text" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
           </PriceLink>
         ) : (
           <Skeleton width={80} height={24} />
@@ -57,13 +47,13 @@ const PanelFooter: React.FC<Props> = ({ cakePriceUsd, priceLink }) => {
         <Flex>
           {socials.map((social, index) => {
             const Icon = Icons[social.icon];
-            const iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
+            const iconProps = { width: "24px", color: "text", style: { cursor: "pointer" } };
             const mr = index < socials.length - 1 ? "8px" : 0;
             if (social.items) {
               return (
                 <Dropdown key={social.label} position="top" target={<Icon {...iconProps} mr={mr} />}>
                   {social.items.map((item) => (
-                    <Link external key={item.label} href={item.href} aria-label={item.label} color="textSubtle">
+                    <Link external key={item.label} href={item.href} aria-label={item.label} color="text">
                       {item.label}
                     </Link>
                   ))}
