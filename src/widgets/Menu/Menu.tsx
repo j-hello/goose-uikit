@@ -8,7 +8,7 @@ import Logo from "./Logo";
 import Panel from "./Panel";
 import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
-import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+import { MENU_HEIGHT, SIDEBAR_WIDTH_FULL } from "./config";
 import Avatar from "./Avatar";
 
 const Wrapper = styled.div`
@@ -122,7 +122,6 @@ const Menu: React.FC<NavProps> = ({
         <Inner>
           {children}
         </Inner>
-        <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />
       </BodyWrapper>
     </Wrapper>
   );
