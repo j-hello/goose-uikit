@@ -26,8 +26,8 @@ const MenuEntry = styled.div<Props>`
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin: ${({ secondary }) => (secondary ? "0 0 25.5px 68px" : "0 0 25.5px 51px")};
-  font-size: 24px;
+  margin: ${({ secondary }) => (secondary ? "0 0 21.25px 68px" : "0 0 21.25px 51px")};
+  font-size: 22px;
   color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.text)};
   letter-spacing: 0.01em;
 

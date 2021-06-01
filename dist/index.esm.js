@@ -226,13 +226,13 @@ var Icon$6 = function (props) {
 };
 
 var Icon$7 = function (props) {
-    return (React.createElement(Svg, __assign({ viewBox: "0 0 15 8", fill: "none" }, props),
-        React.createElement("path", { d: "M1.07144 1L8.03573 7L15 1", stroke: "#000", strokeWidth: "1.5" })));
+    return (React.createElement(Svg, { viewBox: "0 0 15 8", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
+        React.createElement("path", { d: "M1.07144 1L8.03573 7L15 1", stroke: "text", strokeWidth: "1.5" })));
 };
 
 var Icon$8 = function (props) {
-    return (React.createElement(Svg, __assign({ viewBox: "0 0 15 8", fill: "none" }, props),
-        React.createElement("path", { d: "M15 7L8.03572 0.999999L1.07143 7", stroke: "#000", strokeWidth: "1.5" })));
+    return (React.createElement(Svg, { viewBox: "0 0 15 8", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
+        React.createElement("path", { d: "M15 7L8.03572 0.999999L1.07143 7", stroke: "text", strokeWidth: "1.5" })));
 };
 
 var Icon$9 = function (props) {
@@ -2262,7 +2262,7 @@ var socials = [
         href: "https://www.reddit.com/r/GooseFinanceofficial",
     },
 ];
-var MENU_ENTRY_HEIGHT = 48;
+var MENU_ENTRY_HEIGHT = 50;
 var SIDEBAR_WIDTH_FULL = 300;
 
 keyframes(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"], ["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"])));
@@ -2270,9 +2270,9 @@ var LinkLabel = styled.div(templateObject_2$a || (templateObject_2$a = __makeTem
     var theme = _a.theme;
     return theme.colors.text;
 });
-var MenuEntry = styled.div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: 24px;\n  color: ", ";\n  letter-spacing: 0.01em;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: 24px;\n  color: ", ";\n  letter-spacing: 0.01em;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
+var MenuEntry = styled.div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: 22px;\n  color: ", ";\n  letter-spacing: 0.01em;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: 22px;\n  color: ", ";\n  letter-spacing: 0.01em;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
     var secondary = _a.secondary;
-    return (secondary ? "0 0 25.5px 68px" : "0 0 25.5px 51px");
+    return (secondary ? "0 0 21.25px 68px" : "0 0 21.25px 51px");
 }, function (_a) {
     var isActive = _a.isActive, theme = _a.theme;
     return (isActive ? theme.colors.primary : theme.colors.text);
