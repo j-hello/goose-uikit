@@ -2279,9 +2279,9 @@ var MENU_ENTRY_HEIGHT = 48;
 var SIDEBAR_WIDTH_FULL = 300;
 
 styled.keyframes(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"], ["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"])));
-var LinkLabel = styled__default['default'].div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  color: ", ";\n  transition: color 0.4s;\n  flex-grow: 1;\n"], ["\n  color: ", ";\n  transition: color 0.4s;\n  flex-grow: 1;\n"])), function (_a) {
-    var isPushed = _a.isPushed, theme = _a.theme;
-    return (isPushed ? theme.colors.textSubtle : "transparent");
+var LinkLabel = styled__default['default'].div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  color: ", "};\n  flex-grow: 1;\n"], ["\n  color: ", "};\n  flex-grow: 1;\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.text;
 });
 var MenuEntry = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: 16px;\n  color: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: 16px;\n  color: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), MENU_ENTRY_HEIGHT, function (_a) {
     var secondary = _a.secondary;
@@ -2316,7 +2316,7 @@ var Accordion = function (_a) {
     };
     return (React__default['default'].createElement(Container$2, null,
         React__default['default'].createElement(MenuEntry, { onClick: handleClick, className: className },
-            React__default['default'].createElement(LinkLabel, { isPushed: isPushed }, label),
+            React__default['default'].createElement(LinkLabel, null, label),
             isOpen ? React__default['default'].createElement(Icon$8, null) : React__default['default'].createElement(Icon$7, null)),
         React__default['default'].createElement(AccordionContent, { isOpen: isOpen, isPushed: isPushed, maxHeight: React__default['default'].Children.count(children) * MENU_ENTRY_HEIGHT }, children)));
 };
@@ -2346,7 +2346,7 @@ var PanelBody = function (_a) {
         }
         return (React__default['default'].createElement(MenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
             React__default['default'].createElement(MenuLink, { href: entry.href, onClick: handleClick },
-                React__default['default'].createElement(LinkLabel, { isPushed: isPushed }, entry.label))));
+                React__default['default'].createElement(LinkLabel, null, entry.label))));
     })));
 };
 var templateObject_1$A;

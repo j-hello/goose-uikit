@@ -39,7 +39,7 @@ const Accordion: React.FC<Props> = ({ label, isPushed, pushNav, initialOpenState
   return (
     <Container>
       <MenuEntry onClick={handleClick} className={className}>
-        <LinkLabel isPushed={isPushed}>{label}</LinkLabel>
+        <LinkLabel>{label}</LinkLabel>
         {isOpen ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
       </MenuEntry>
       <AccordionContent
