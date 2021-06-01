@@ -20,7 +20,7 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 51px;
+  padding: 51px 51px 0;
   width: 100%;
   background-color: ${({ theme }) => theme.nav.background};
   z-index: 20;

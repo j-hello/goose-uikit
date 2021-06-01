@@ -21,6 +21,7 @@ const StyledPanel = styled.div`
   height: 100vh;
   z-index: 11;
   transform: translate3d(0, 0, 0);
+  padding-top: 51px;
 
   ${({ theme }) => theme.mediaQueries.nav} {
     width: ${SIDEBAR_WIDTH_FULL}px;

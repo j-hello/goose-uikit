@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import Accordion from "./Accordion";
-import { MenuEntry, LinkLabel } from "./MenuEntry";
+import { MenuEntry, LinkLabel, SubMenuEntry } from "./MenuEntry";
 import MenuLink from "./MenuLink";
 import { PanelProps, PushedProps } from "./types";
 
@@ -15,7 +15,6 @@ const Container = styled.div`
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
-  height: 100%;
 `;
 
 const SubContainer = styled(Container)`
@@ -36,7 +35,6 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
     <Container>
       {mainLinks.map((entry) => {
         const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
-        const isSub = entry.sub;
 
         if (entry.items) {
           return (
@@ -71,11 +69,11 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
         const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
 
         return (
-          <MenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
+          <SubMenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
             <MenuLink href={entry.href} onClick={handleClick}>
               <LinkLabel>{entry.label}</LinkLabel>
             </MenuLink>
-          </MenuEntry>
+          </SubMenuEntry>
         );
       })}
     </SubContainer>

@@ -15,7 +15,7 @@ const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 
 const Container = styled.div`
   flex: none;
-  padding: 8px 4px;
+  padding: 17px 51px 0;
 `;
 
 const PriceLink = styled.a`
@@ -28,7 +28,6 @@ const SocialEntry = styled.div`
   align-items: center;
   justify-content: space-between;
   height: ${MENU_ENTRY_HEIGHT}px;
-  padding: 0 16px;
 `;
 
 const PanelFooter: React.FC<Props> = ({ cakePriceUsd, priceLink }) => {
