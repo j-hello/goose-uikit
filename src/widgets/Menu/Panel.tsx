@@ -15,7 +15,6 @@ const StyledPanel = styled.div`
   left: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   flex-shrink: 0;
   background-color: ${({ theme }) => theme.nav.background};
   width: ${SIDEBAR_WIDTH_FULL}px;
