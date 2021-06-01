@@ -2039,7 +2039,7 @@ var PanelBody = function (_a) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             if (entry.items) {
                 return (React.createElement(Dropdown, { key: entry.label, position: "top", target: React.createElement(MenuEntry, { key: entry.label },
-                        React.createElement(MenuLink, null, entry.label)) }, entry.items.map(function (item) { return (React.createElement(MenuLink, { key: item.label, href: item.href, "aria-label": item.label, color: "text" }, item.label)); })));
+                        React.createElement(LinkLabel, null, entry.label)) }, entry.items.map(function (item) { return (React.createElement(MenuLink, { key: item.label, href: item.href, "aria-label": item.label, color: "text" }, item.label)); })));
             }
             return (React.createElement(SubMenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
                 React.createElement(MenuLink, { href: entry.href, onClick: handleClick },

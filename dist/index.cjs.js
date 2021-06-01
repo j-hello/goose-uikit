@@ -2052,7 +2052,7 @@ var PanelBody = function (_a) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             if (entry.items) {
                 return (React__default['default'].createElement(Dropdown, { key: entry.label, position: "top", target: React__default['default'].createElement(MenuEntry, { key: entry.label },
-                        React__default['default'].createElement(MenuLink, null, entry.label)) }, entry.items.map(function (item) { return (React__default['default'].createElement(MenuLink, { key: item.label, href: item.href, "aria-label": item.label, color: "text" }, item.label)); })));
+                        React__default['default'].createElement(LinkLabel, null, entry.label)) }, entry.items.map(function (item) { return (React__default['default'].createElement(MenuLink, { key: item.label, href: item.href, "aria-label": item.label, color: "text" }, item.label)); })));
             }
             return (React__default['default'].createElement(SubMenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
                 React__default['default'].createElement(MenuLink, { href: entry.href, onClick: handleClick },

@@ -72,7 +72,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
 
         if (entry.items) {
           return (
-            <Dropdown key={entry.label} position="top" target={<MenuEntry key={entry.label}><MenuLink>{entry.label}</MenuLink></MenuEntry>}>
+            <Dropdown key={entry.label} position="top" target={<MenuEntry key={entry.label}><LinkLabel>{entry.label}</LinkLabel></MenuEntry>}>
             {entry.items.map((item) => (
               <MenuLink key={item.label} href={item.href} aria-label={item.label} color="text">
                 {item.label}
