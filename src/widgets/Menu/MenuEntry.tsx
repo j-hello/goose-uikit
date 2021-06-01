@@ -1,5 +1,4 @@
-import styled, { keyframes, DefaultTheme } from "styled-components";
-import { MENU_ENTRY_HEIGHT } from "./config";
+import styled, { DefaultTheme } from "styled-components";
 
 export interface Props {
   secondary?: boolean;
@@ -7,18 +6,8 @@ export interface Props {
   theme: DefaultTheme;
 }
 
-const rainbowAnimation = keyframes`
-  0%,
-  100% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 100% 0;
-  }
-`;
 
 const LinkLabel = styled.div`
-  color: ${({ theme }) => theme.colors.text}};
   flex-grow: 1;
 `;
 
@@ -35,16 +24,26 @@ const MenuEntry = styled.div<Props>`
     align-items: center;
     width: 100%;
     height: 100%;
+  }
+  a div {
     color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.text)};
   }
 
   // Safari fix
   flex-shrink: 0;
 `;
+
 MenuEntry.defaultProps = {
   secondary: false,
   isActive: false,
   role: "button",
 };
 
-export { MenuEntry, LinkLabel };
+const SubMenuEntry = styled(MenuEntry)`
+  font-size: 18px;
+  a div {
+    color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.textSubtle)};
+  }
+`;
+
+export { MenuEntry, LinkLabel, SubMenuEntry };

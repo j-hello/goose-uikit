@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
-import { SvgProps } from "../../components/Svg";
-import * as IconModule from "./icons";
 import Accordion from "./Accordion";
 import { MenuEntry, LinkLabel } from "./MenuEntry";
 import MenuLink from "./MenuLink";
@@ -18,6 +16,10 @@ const Container = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
+`;
+
+const SubContainer = styled(Container)`
+  padding-top: 34px;
 `;
 
 const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
@@ -64,7 +66,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
         );
       })}
     </Container>
-    <Container>
+    <SubContainer>
       {subLinks.map((entry) => {
         const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
 
@@ -76,7 +78,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
           </MenuEntry>
         );
       })}
-    </Container>
+    </SubContainer>
     </>
   );
 };
