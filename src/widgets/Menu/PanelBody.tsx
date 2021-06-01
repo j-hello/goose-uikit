@@ -3,7 +3,9 @@ import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import Accordion from "./Accordion";
 import { MenuEntry, LinkLabel, SubMenuEntry } from "./MenuEntry";
+import Dropdown from "../../components/Dropdown/Dropdown";
 import MenuLink from "./MenuLink";
+import Link from "../../components/Link/Link";
 import { PanelProps, PushedProps } from "./types";
 
 interface Props extends PanelProps, PushedProps {
@@ -70,21 +72,13 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
 
         if (entry.items) {
           return (
-            <Accordion
-              key={entry.label}
-              isPushed={isPushed}
-              pushNav={pushNav}
-              label={entry.label}
-              initialOpenState={entry.initialOpenState}
-              className={calloutClass}
-            >
-              {isPushed &&
-                entry.items.map((item) => (
-                  <SubMenuEntry key={item.href} secondary isActive={item.href === location.pathname} onClick={handleClick}>
-                    <MenuLink href={item.href}>{item.label}</MenuLink>
-                  </SubMenuEntry>
-                ))}
-            </Accordion>
+            <Dropdown key={entry.label} position="top" target={<MenuEntry key={entry.label}><MenuLink>{entry.label}</MenuLink></MenuEntry>}>
+            {entry.items.map((item) => (
+              <MenuLink key={item.label} href={item.href} aria-label={item.label} color="text">
+                {item.label}
+              </MenuLink>
+            ))}
+          </Dropdown>
           );
         }
 
