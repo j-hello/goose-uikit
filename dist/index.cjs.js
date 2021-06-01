@@ -2078,7 +2078,7 @@ var IconModule = /*#__PURE__*/Object.freeze({
     EggHouseIcon: Icon$15
 });
 
-var StyledLink$1 = styled__default['default'](reactRouterDom.Link)(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .desktop-icon {\n    width: 156px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .desktop-icon {\n    width: 156px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n"])), function (_a) {
+var StyledLink$1 = styled__default['default'](reactRouterDom.Link)(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .desktop-icon {\n    width: 225px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .desktop-icon {\n    width: 225px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
@@ -2275,7 +2275,6 @@ var socials = [
         href: "https://www.reddit.com/r/GooseFinanceofficial",
     },
 ];
-var MENU_HEIGHT = 64;
 var MENU_ENTRY_HEIGHT = 48;
 var SIDEBAR_WIDTH_FULL = 300;
 
@@ -2284,9 +2283,9 @@ var LinkLabel = styled__default['default'].div(templateObject_2$a || (templateOb
     var isPushed = _a.isPushed, theme = _a.theme;
     return (isPushed ? theme.colors.textSubtle : "transparent");
 });
-var MenuEntry = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding-left: ", ";\n  font-size: 16px;\n  color: ", ";\n\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding-left: ", ";\n  font-size: 16px;\n  color: ", ";\n\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), MENU_ENTRY_HEIGHT, function (_a) {
+var MenuEntry = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: 16px;\n  color: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: 16px;\n  color: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), MENU_ENTRY_HEIGHT, function (_a) {
     var secondary = _a.secondary;
-    return (secondary ? "30px" : "45px");
+    return (secondary ? "0 34px" : "0 34px");
 }, function (_a) {
     var isActive = _a.isActive, theme = _a.theme;
     return (isActive ? theme.colors.primary : theme.colors.text);
@@ -2380,7 +2379,7 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$B, templateObject_2$c, templateObject_3$7, templateObject_4$2;
 
-var StyledPanel = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  position: sticky;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  height: 100vh;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    width: ", "px;  \n  }\n"], ["\n  position: sticky;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  height: 100vh;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    width: ", "px;  \n  }\n"])), function (_a) {
+var StyledPanel = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  position: sticky;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  height: 100vh;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    width: ", "px;\n  }\n"], ["\n  position: sticky;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  height: 100vh;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    width: ", "px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
 }, SIDEBAR_WIDTH_FULL, function (_a) {
@@ -2629,15 +2628,12 @@ var Avatar = function (_a) {
 var templateObject_1$F, templateObject_2$e;
 
 var Wrapper$1 = styled__default['default'].div(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var StyledNav = styled__default['default'].nav(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 30px;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 30px;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
+var StyledNav = styled__default['default'].nav(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 25.5px 34px;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 25.5px 34px;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
 });
 var BodyWrapper = styled__default['default'].div(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
-var Inner = styled__default['default'].div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  flex-grow: 1;\n  margin-top: ", "px;\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n  ", " {\n    margin-left: ", "px;\n  }\n"], ["\n  flex-grow: 1;\n  margin-top: ", "px;\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n  ", " {\n    margin-left: ", "px;\n  }\n"])), MENU_HEIGHT, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.nav;
-}, SIDEBAR_WIDTH_FULL);
+var Inner = styled__default['default'].div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  flex-grow: 1;\n  transform: translate3d(0, 0, 0);\n"], ["\n  flex-grow: 1;\n  transform: translate3d(0, 0, 0);\n"])));
 styled__default['default'](Overlay)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"], ["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
@@ -2922,11 +2918,11 @@ var dark$4 = {
 };
 
 var light$5 = {
-    background: lightColors.card,
+    background: lightColors.background,
     hover: "#EEEAF4",
 };
 var dark$5 = {
-    background: darkColors.card,
+    background: darkColors.background,
     hover: "#473d5d",
 };
 

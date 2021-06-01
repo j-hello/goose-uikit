@@ -12,7 +12,7 @@ const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   .desktop-icon {
-    width: 156px;
+    width: 225px;
     display: none;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: block;
