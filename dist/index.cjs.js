@@ -2351,6 +2351,11 @@ var PanelBody = function (_a) {
         })),
         React__default['default'].createElement(SubContainer, null, subLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
+            if (entry.items) {
+                return (React__default['default'].createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
+                    entry.items.map(function (item) { return (React__default['default'].createElement(SubMenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname, onClick: handleClick },
+                        React__default['default'].createElement(MenuLink, { href: item.href }, item.label))); })));
+            }
             return (React__default['default'].createElement(SubMenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
                 React__default['default'].createElement(MenuLink, { href: entry.href, onClick: handleClick },
                     React__default['default'].createElement(LinkLabel, null, entry.label))));

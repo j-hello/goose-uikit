@@ -68,6 +68,26 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
       {subLinks.map((entry) => {
         const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
 
+        if (entry.items) {
+          return (
+            <Accordion
+              key={entry.label}
+              isPushed={isPushed}
+              pushNav={pushNav}
+              label={entry.label}
+              initialOpenState={entry.initialOpenState}
+              className={calloutClass}
+            >
+              {isPushed &&
+                entry.items.map((item) => (
+                  <SubMenuEntry key={item.href} secondary isActive={item.href === location.pathname} onClick={handleClick}>
+                    <MenuLink href={item.href}>{item.label}</MenuLink>
+                  </SubMenuEntry>
+                ))}
+            </Accordion>
+          );
+        }
+
         return (
           <SubMenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
             <MenuLink href={entry.href} onClick={handleClick}>

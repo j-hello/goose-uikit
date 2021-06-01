@@ -2338,6 +2338,11 @@ var PanelBody = function (_a) {
         })),
         React.createElement(SubContainer, null, subLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
+            if (entry.items) {
+                return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
+                    entry.items.map(function (item) { return (React.createElement(SubMenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname, onClick: handleClick },
+                        React.createElement(MenuLink, { href: item.href }, item.label))); })));
+            }
             return (React.createElement(SubMenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
                 React.createElement(MenuLink, { href: entry.href, onClick: handleClick },
                     React.createElement(LinkLabel, null, entry.label))));
