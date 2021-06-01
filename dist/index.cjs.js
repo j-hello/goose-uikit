@@ -239,13 +239,13 @@ var Icon$6 = function (props) {
 };
 
 var Icon$7 = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 15 8" }, props),
-        React__default['default'].createElement("path", { d: "M1.07144 1L8.03573 7L15 1" })));
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 15 8", fill: "none" }, props),
+        React__default['default'].createElement("path", { d: "M1.07144 1L8.03573 7L15 1", stroke: "#000", strokeWidth: "1.5" })));
 };
 
 var Icon$8 = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 15 8" }, props),
-        React__default['default'].createElement("path", { d: "M15 7L8.03572 0.999999L1.07143 7" })));
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 15 8", fill: "none" }, props),
+        React__default['default'].createElement("path", { d: "M15 7L8.03572 0.999999L1.07143 7", stroke: "#000", strokeWidth: "1.5" })));
 };
 
 var Icon$9 = function (props) {
@@ -2087,7 +2087,7 @@ var Logo$1 = function (_a) {
     var isAbsoluteUrl = href.startsWith("http");
     var innerLogo = (React__default['default'].createElement(React__default['default'].Fragment, null,
         React__default['default'].createElement(Logo, { className: "desktop-icon" })));
-    return (React__default['default'].createElement(Flex, null, isAbsoluteUrl ? (React__default['default'].createElement(StyledLink$1, { as: "a", href: href, "aria-label": "Pancake home page" }, innerLogo)) : (React__default['default'].createElement(StyledLink$1, { to: href, "aria-label": "Pancake home page" }, innerLogo))));
+    return (React__default['default'].createElement(Flex, null, isAbsoluteUrl ? (React__default['default'].createElement(StyledLink$1, { as: "a", href: href, "aria-label": "Goose home page" }, innerLogo)) : (React__default['default'].createElement(StyledLink$1, { to: href, "aria-label": "Goose home page" }, innerLogo))));
 };
 var templateObject_1$x;
 
@@ -2283,9 +2283,9 @@ var LinkLabel = styled__default['default'].div(templateObject_2$a || (templateOb
     var theme = _a.theme;
     return theme.colors.text;
 });
-var MenuEntry = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: 16px;\n  color: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: 16px;\n  color: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), MENU_ENTRY_HEIGHT, function (_a) {
+var MenuEntry = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: 24px;\n  color: ", ";\n  letter-spacing: 0.01em;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: 24px;\n  color: ", ";\n  letter-spacing: 0.01em;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
     var secondary = _a.secondary;
-    return (secondary ? "0 34px" : "0 34px");
+    return (secondary ? "0 0 25.5px 68px" : "0 0 25.5px 51px");
 }, function (_a) {
     var isActive = _a.isActive, theme = _a.theme;
     return (isActive ? theme.colors.primary : theme.colors.text);
@@ -2628,7 +2628,7 @@ var Avatar = function (_a) {
 var templateObject_1$F, templateObject_2$e;
 
 var Wrapper$1 = styled__default['default'].div(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var StyledNav = styled__default['default'].nav(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 25.5px 34px;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 25.5px 34px;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
+var StyledNav = styled__default['default'].nav(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 51px;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 51px;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
 });

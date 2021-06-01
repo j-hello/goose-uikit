@@ -26,10 +26,10 @@ const MenuEntry = styled.div<Props>`
   cursor: pointer;
   display: flex;
   align-items: center;
-  height: ${MENU_ENTRY_HEIGHT}px;
-  padding: ${({ secondary }) => (secondary ? "0 34px" : "0 34px")};
-  font-size: 16px;
+  margin: ${({ secondary }) => (secondary ? "0 0 25.5px 68px" : "0 0 25.5px 51px")};
+  font-size: 24px;
   color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.text)};
+  letter-spacing: 0.01em;
 
   a {
     display: flex;
