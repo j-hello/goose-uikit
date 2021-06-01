@@ -2340,9 +2340,10 @@ var PanelBody = function (_a) {
     var location = reactRouterDom.useLocation();
     // Close the menu when a user clicks a link on mobile
     var handleClick = isMobile ? function () { return pushNav(false); } : undefined;
+    var mainLinks = links.filter(function (entry) { return !entry.sub; });
     var subLinks = links.filter(function (entry) { return entry.sub; });
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
-        React__default['default'].createElement(Container$3, null, links.map(function (entry) {
+        React__default['default'].createElement(Container$3, null, mainLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             entry.sub;
             if (entry.items) {

@@ -26,12 +26,13 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
   // Close the menu when a user clicks a link on mobile
   const handleClick = isMobile ? () => pushNav(false) : undefined;
 
+  const mainLinks = links.filter(entry => !entry.sub);
   const subLinks = links.filter(entry => entry.sub);
 
   return (
     <>
     <Container>
-      {links.map((entry) => {
+      {mainLinks.map((entry) => {
         const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
         const isSub = entry.sub;
 

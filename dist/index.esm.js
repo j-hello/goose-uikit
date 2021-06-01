@@ -2327,9 +2327,10 @@ var PanelBody = function (_a) {
     var location = useLocation();
     // Close the menu when a user clicks a link on mobile
     var handleClick = isMobile ? function () { return pushNav(false); } : undefined;
+    var mainLinks = links.filter(function (entry) { return !entry.sub; });
     var subLinks = links.filter(function (entry) { return entry.sub; });
     return (React.createElement(React.Fragment, null,
-        React.createElement(Container$3, null, links.map(function (entry) {
+        React.createElement(Container$3, null, mainLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             entry.sub;
             if (entry.items) {
