@@ -24,14 +24,7 @@ const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHei
   overflow: hidden;
 `;
 
-const Accordion: React.FC<Props> = ({
-  label,
-  isPushed,
-  pushNav,
-  initialOpenState = false,
-  children,
-  className,
-}) => {
+const Accordion: React.FC<Props> = ({ label, isPushed, pushNav, initialOpenState = false, children, className }) => {
   const [isOpen, setIsOpen] = useState(initialOpenState);
 
   const handleClick = () => {

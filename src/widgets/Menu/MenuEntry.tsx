@@ -28,10 +28,9 @@ const MenuEntry = styled.div<Props>`
   display: flex;
   align-items: center;
   height: ${MENU_ENTRY_HEIGHT}px;
-  padding-left: ${({ secondary }) => (secondary ? "30px" : "45px")};
+  padding: ${({ secondary }) => (secondary ? "0 34px" : "0 34px")};
   font-size: 16px;
   color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.text)};
-
 
   a {
     display: flex;

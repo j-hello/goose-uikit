@@ -42,11 +42,7 @@ const SocialEntry = styled.div`
   padding: 0 16px;
 `;
 
-const PanelFooter: React.FC<Props> = ({
-  cakePriceUsd,
-  priceLink,
-}) => {
-
+const PanelFooter: React.FC<Props> = ({ cakePriceUsd, priceLink }) => {
   return (
     <Container>
       <SocialEntry>

@@ -20,7 +20,7 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
+  padding: 25.5px 34px;
   width: 100%;
   background-color: ${({ theme }) => theme.nav.background};
   z-index: 20;
@@ -34,12 +34,7 @@ const BodyWrapper = styled.div`
 
 const Inner = styled.div`
   flex-grow: 1;
-  margin-top: ${MENU_HEIGHT}px;
-  transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
-  ${({ theme }) => theme.mediaQueries.nav} {
-    margin-left: ${SIDEBAR_WIDTH_FULL}px;
-  }
 `;
 
 const MobileOnlyOverlay = styled(Overlay)`
@@ -51,16 +46,7 @@ const MobileOnlyOverlay = styled(Overlay)`
   }
 `;
 
-const Menu: React.FC<NavProps> = ({
-  account,
-  login,
-  logout,
-  cakePriceUsd,
-  links,
-  priceLink,
-  profile,
-  children,
-}) => {
+const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links, priceLink, profile, children }) => {
   const { isXl } = useMatchBreakpoints();
   const isMobile = isXl === false;
   const [isPushed, setIsPushed] = useState(!isMobile);
@@ -102,9 +88,7 @@ const Menu: React.FC<NavProps> = ({
   return (
     <Wrapper>
       <StyledNav>
-        <Logo
-          href={homeLink?.href ?? "/"}
-        />
+        <Logo href={homeLink?.href ?? "/"} />
         <Flex>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
@@ -119,9 +103,7 @@ const Menu: React.FC<NavProps> = ({
           links={links}
           priceLink={priceLink}
         />
-        <Inner>
-          {children}
-        </Inner>
+        <Inner>{children}</Inner>
       </BodyWrapper>
     </Wrapper>
   );

@@ -24,7 +24,7 @@ const StyledPanel = styled.div`
   transform: translate3d(0, 0, 0);
 
   ${({ theme }) => theme.mediaQueries.nav} {
-    width: ${SIDEBAR_WIDTH_FULL}px;  
+    width: ${SIDEBAR_WIDTH_FULL}px;
   }
 `;
 
