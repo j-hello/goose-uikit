@@ -239,13 +239,13 @@ var Icon$6 = function (props) {
 };
 
 var Icon$7 = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React__default['default'].createElement("path", { d: "M8.71005 11.71L11.3001 14.3C11.6901 14.69 12.3201 14.69 12.7101 14.3L15.3001 11.71C15.9301 11.08 15.4801 10 14.5901 10H9.41005C8.52005 10 8.08005 11.08 8.71005 11.71Z" })));
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 15 8" }, props),
+        React__default['default'].createElement("path", { d: "M1.07144 1L8.03573 7L15 1" })));
 };
 
 var Icon$8 = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React__default['default'].createElement("path", { d: "M8.71005 12.29L11.3001 9.69997C11.6901 9.30997 12.3201 9.30997 12.7101 9.69997L15.3001 12.29C15.9301 12.92 15.4801 14 14.5901 14H9.41005C8.52005 14 8.08005 12.92 8.71005 12.29Z" })));
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 15 8" }, props),
+        React__default['default'].createElement("path", { d: "M15 7L8.03572 0.999999L1.07143 7" })));
 };
 
 var Icon$9 = function (props) {
