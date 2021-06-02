@@ -28,68 +28,81 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
   // Close the menu when a user clicks a link on mobile
   const handleClick = isMobile ? () => pushNav(false) : undefined;
 
-  const mainLinks = links.filter(entry => !entry.sub);
-  const subLinks = links.filter(entry => entry.sub);
+  const mainLinks = links.filter((entry) => !entry.sub);
+  const subLinks = links.filter((entry) => entry.sub);
 
   return (
     <>
-    <Container>
-      {mainLinks.map((entry) => {
-        const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
+      <Container>
+        {mainLinks.map((entry) => {
+          const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
 
-        if (entry.items) {
+          if (entry.items) {
+            return (
+              <Accordion
+                key={entry.label}
+                isPushed={isPushed}
+                pushNav={pushNav}
+                label={entry.label}
+                initialOpenState={entry.initialOpenState}
+                className={calloutClass}
+              >
+                {isPushed &&
+                  entry.items.map((item) => (
+                    <MenuEntry
+                      key={item.href}
+                      secondary
+                      isActive={item.href === location.pathname}
+                      onClick={handleClick}
+                    >
+                      <MenuLink href={item.href}>{item.label}</MenuLink>
+                    </MenuEntry>
+                  ))}
+              </Accordion>
+            );
+          }
           return (
-            <Accordion
-              key={entry.label}
-              isPushed={isPushed}
-              pushNav={pushNav}
-              label={entry.label}
-              initialOpenState={entry.initialOpenState}
-              className={calloutClass}
-            >
-              {isPushed &&
-                entry.items.map((item) => (
-                  <MenuEntry key={item.href} secondary isActive={item.href === location.pathname} onClick={handleClick}>
-                    <MenuLink href={item.href}>{item.label}</MenuLink>
-                  </MenuEntry>
-                ))}
-            </Accordion>
-          );
-        }
-        return (
-          <MenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
-            <MenuLink href={entry.href} onClick={handleClick}>
-              <LinkLabel>{entry.label}</LinkLabel>
-            </MenuLink>
-          </MenuEntry>
-        );
-      })}
-    </Container>
-    <SubContainer>
-      {subLinks.map((entry) => {
-        const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
-
-        if (entry.items) {
-          return (
-            <Dropdown key={entry.label} position="top" target={<SubMenuEntry key={entry.label}><LinkLabel>{entry.label}</LinkLabel></SubMenuEntry>}>
-            {entry.items.map((item) => (
-              <MenuLink key={item.label} href={item.href} aria-label={item.label} color="text">
-                {item.label}
+            <MenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
+              <MenuLink href={entry.href} onClick={handleClick}>
+                <LinkLabel>{entry.label}</LinkLabel>
               </MenuLink>
-            ))}
-          </Dropdown>
+            </MenuEntry>
           );
-        }
+        })}
+      </Container>
+      <SubContainer>
+        {subLinks.map((entry) => {
+          const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
 
-        return (
-          <SubMenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
-            <MenuLink href={entry.href} onClick={handleClick}>
-              <LinkLabel>{entry.label}</LinkLabel>
-            </MenuLink>
-          </SubMenuEntry>
-        );
-      })}
-    </SubContainer>
+          if (entry.items) {
+            return (
+              <Dropdown
+                key={entry.label}
+                position="top"
+                target={
+                  <SubMenuEntry key={entry.label}>
+                    <LinkLabel>{entry.label}</LinkLabel>
+                  </SubMenuEntry>
+                }
+              >
+                {entry.items.map((item) => (
+                  <MenuLink key={item.label} href={item.href} aria-label={item.label} color="text">
+                    {item.label}
+                  </MenuLink>
+                ))}
+              </Dropdown>
+            );
+          }
+
+          return (
+            <SubMenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
+              <MenuLink href={entry.href} onClick={handleClick}>
+                <LinkLabel>{entry.label}</LinkLabel>
+              </MenuLink>
+            </SubMenuEntry>
+          );
+        })}
+      </SubContainer>
     </>
   );
 };

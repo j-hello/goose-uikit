@@ -6,7 +6,6 @@ export interface Props {
   theme: DefaultTheme;
 }
 
-
 const LinkLabel = styled.div`
   flex-grow: 1;
 `;
