@@ -5,7 +5,6 @@ import Accordion from "./Accordion";
 import { MenuEntry, LinkLabel, SubMenuEntry } from "./MenuEntry";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import MenuLink from "./MenuLink";
-import Link from "../../components/Link/Link";
 import { PanelProps, PushedProps } from "./types";
 
 interface Props extends PanelProps, PushedProps {
@@ -72,7 +71,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
 
         if (entry.items) {
           return (
-            <Dropdown key={entry.label} position="top" target={<MenuEntry key={entry.label}><LinkLabel>{entry.label}</LinkLabel></MenuEntry>}>
+            <Dropdown key={entry.label} position="top" target={<SubMenuEntry key={entry.label}><LinkLabel>{entry.label}</LinkLabel></SubMenuEntry>}>
             {entry.items.map((item) => (
               <MenuLink key={item.label} href={item.href} aria-label={item.label} color="text">
                 {item.label}

@@ -1972,7 +1972,7 @@ var MENU_ENTRY_HEIGHT = 50;
 var SIDEBAR_WIDTH_FULL = 300;
 
 var LinkLabel = styled__default['default'].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  flex-grow: 1;\n"], ["\n  flex-grow: 1;\n"])));
-var MenuEntry = styled__default['default'].div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n  letter-spacing: 0.01em;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  a div {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n  letter-spacing: 0.01em;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  a div {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
+var MenuEntry = styled__default['default'].div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n  letter-spacing: 0.01em;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n  letter-spacing: 0.01em;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
     var secondary = _a.secondary;
     return (secondary ? "0 0 17px 68px" : "0 0 21.25px 51px");
 }, function (_a) {
@@ -1987,7 +1987,7 @@ MenuEntry.defaultProps = {
     isActive: false,
     role: "button",
 };
-var SubMenuEntry = styled__default['default'](MenuEntry)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  font-size: 18px;\n  a div {\n    color: ", ";\n  }\n"], ["\n  font-size: 18px;\n  a div {\n    color: ", ";\n  }\n"])), function (_a) {
+var SubMenuEntry = styled__default['default'](MenuEntry)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  font-size: 18px;\n  div,\n  a div {\n    color: ", ";\n  }\n"], ["\n  font-size: 18px;\n  div,\n  a div {\n    color: ", ";\n  }\n"])), function (_a) {
     var isActive = _a.isActive, theme = _a.theme;
     return (isActive ? theme.colors.primary : theme.colors.textSubtle);
 });
@@ -2051,7 +2051,7 @@ var PanelBody = function (_a) {
         React__default['default'].createElement(SubContainer, null, subLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             if (entry.items) {
-                return (React__default['default'].createElement(Dropdown, { key: entry.label, position: "top", target: React__default['default'].createElement(MenuEntry, { key: entry.label },
+                return (React__default['default'].createElement(Dropdown, { key: entry.label, position: "top", target: React__default['default'].createElement(SubMenuEntry, { key: entry.label },
                         React__default['default'].createElement(LinkLabel, null, entry.label)) }, entry.items.map(function (item) { return (React__default['default'].createElement(MenuLink, { key: item.label, href: item.href, "aria-label": item.label, color: "text" }, item.label)); })));
             }
             return (React__default['default'].createElement(SubMenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
