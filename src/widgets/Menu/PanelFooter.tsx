@@ -1,31 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import { GooseRoundIcon, SvgProps } from "../../components/Svg";
+import { GooseRoundIcon } from "../../components/Svg";
 import Text from "../../components/Text/Text";
-import Flex from "../../components/Flex/Flex";
-import Dropdown from "../../components/Dropdown/Dropdown";
-import Link from "../../components/Link/Link";
-import * as IconModule from "./icons";
-import { socials, MENU_ENTRY_HEIGHT } from "./config";
+import Button from "../../components/Button/Button";
+import { MENU_ENTRY_HEIGHT } from "./config";
 import { PanelProps, PushedProps } from "./types";
 
 interface Props extends PanelProps, PushedProps {}
 
-const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
-
 const Container = styled.div`
   flex: none;
-  padding: 17px 51px 0;
+  padding: 34px 51px 0;
 `;
 
-const PriceLink = styled.a`
+const PriceEntry = styled.div`
   display: flex;
-  align-items: center;
-`;
-
-const SocialEntry = styled.div`
-  display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   height: ${MENU_ENTRY_HEIGHT}px;
 `;
@@ -34,12 +24,11 @@ const PanelFooter: React.FC<Props> = ({ cakePriceUsd, priceLink }) => {
   cakePriceUsd = cakePriceUsd ? cakePriceUsd : 0;
   return (
     <Container>
-      <SocialEntry>
-        <PriceLink href={priceLink}>
-          <GooseRoundIcon width="24px" mr="8px" />
-          <Text color="text" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
-        </PriceLink>
-      </SocialEntry>
+      <PriceEntry>
+        <GooseRoundIcon width="40px" mr="17px" />
+        <Text color="text" fontSize="20px">{`$${cakePriceUsd.toFixed(3)}`}</Text>
+        <Button size="sm" href={priceLink}>Buy</Button>
+      </PriceEntry>
     </Container>
   );
 };

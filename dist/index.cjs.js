@@ -659,29 +659,10 @@ var ButtonMenuItem = function (_a) {
 };
 var templateObject_1$8;
 
-/**
- * Priority: Warning --> Success --> Active
- */
-var getBoxShadow = function (_a) {
-    var isActive = _a.isActive, isSuccess = _a.isSuccess, isWarning = _a.isWarning, theme = _a.theme;
-    if (isWarning) {
-        return theme.card.boxShadowWarning;
-    }
-    if (isSuccess) {
-        return theme.card.boxShadowSuccess;
-    }
-    if (isActive) {
-        return theme.card.boxShadowActive;
-    }
-    return theme.card.boxShadow;
-};
-var StyledCard = styled__default['default'].div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  background-color: ", ";\n  border: ", ";\n  border-radius: 32px;\n  box-shadow: ", ";\n  color: ", ";\n  overflow: hidden;\n  position: relative;\n\n  ", "\n"], ["\n  background-color: ", ";\n  border: ", ";\n  border-radius: 32px;\n  box-shadow: ", ";\n  color: ", ";\n  overflow: hidden;\n  position: relative;\n\n  ", "\n"])), function (_a) {
+var StyledCard = styled__default['default'].div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  background-color: ", ";\n  color: ", ";\n  overflow: hidden;\n  position: relative;\n\n  ", "\n"], ["\n  background-color: ", ";\n  color: ", ";\n  overflow: hidden;\n  position: relative;\n\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.card.background;
 }, function (_a) {
-    var theme = _a.theme;
-    return theme.card.boxShadow;
-}, getBoxShadow, function (_a) {
     var theme = _a.theme, isDisabled = _a.isDisabled;
     return theme.colors[isDisabled ? "textDisabled" : "text"];
 }, styledSystem.space);
@@ -702,7 +683,7 @@ var Card = function (_a) {
 
 var CardBody = styled__default['default'].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), styledSystem.space);
 CardBody.defaultProps = {
-    p: "24px",
+    p: "17px",
 };
 var templateObject_1$a;
 
@@ -711,16 +692,13 @@ var CardHeader = styled__default['default'].div(templateObject_1$b || (templateO
     return theme.card.cardHeaderBackground;
 }, styledSystem.space);
 CardHeader.defaultProps = {
-    p: "24px",
+    p: "17px",
 };
 var templateObject_1$b;
 
-var CardFooter = styled__default['default'].div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  border-top: 1px solid ", ";\n  ", "\n"], ["\n  border-top: 1px solid ", ";\n  ", "\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.borderColor;
-}, styledSystem.space);
+var CardFooter = styled__default['default'].div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), styledSystem.space);
 CardFooter.defaultProps = {
-    p: "24px",
+    p: "17px",
 };
 var templateObject_1$c;
 
@@ -843,7 +821,7 @@ var style = (_a = {},
         fontSize: "64px",
     },
     _a);
-var Heading = styled__default['default'](Text).attrs({ bold: true })(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight:600;\n  line-height: 1.1;\n"], ["\n  ", "\n  font-weight:600;\n  line-height: 1.1;\n"])), function (_a) {
+var Heading = styled__default['default'](Text).attrs({ bold: true })(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight: 500;\n  line-height: 1.1;\n"], ["\n  ", "\n  font-weight: 500;\n  line-height: 1.1;\n"])), function (_a) {
     var size = _a.size;
     return style[size || sizes$1.MD];
 });
@@ -930,7 +908,7 @@ var scales$1 = {
 /**
  * Priority: Warning --> Success
  */
-var getBoxShadow$1 = function (_a) {
+var getBoxShadow = function (_a) {
     var _b = _a.isSuccess, isSuccess = _b === void 0 ? false : _b, _c = _a.isWarning, isWarning = _c === void 0 ? false : _c, theme = _a.theme;
     if (isWarning) {
         return theme.shadows.warning;
@@ -955,7 +933,7 @@ var getHeight = function (_a) {
 var Input = styled__default['default'].input(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"], ["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.input;
-}, getBoxShadow$1, function (_a) {
+}, getBoxShadow, function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, getHeight, function (_a) {
@@ -978,7 +956,7 @@ Input.defaultProps = {
 };
 var templateObject_1$j;
 
-var GridLayout = styled__default['default'].div(templateObject_1$k || (templateObject_1$k = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"], ["\n  display: grid;\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"])), function (_a) {
+var GridLayout = styled__default['default'].div(templateObject_1$k || (templateObject_1$k = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 17px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 21.25px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 25.5px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"], ["\n  display: grid;\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 17px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 21.25px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 25.5px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 }, function (_a) {
@@ -2061,19 +2039,18 @@ var PanelBody = function (_a) {
 };
 var templateObject_1$A, templateObject_2$c;
 
-var Container$4 = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  flex: none;\n  padding: 17px 51px 0;\n"], ["\n  flex: none;\n  padding: 17px 51px 0;\n"])));
-var PriceLink = styled__default['default'].a(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
-var SocialEntry = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n"])), MENU_ENTRY_HEIGHT);
+var Container$4 = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  flex: none;\n  padding: 34px 51px 0;\n"], ["\n  flex: none;\n  padding: 34px 51px 0;\n"])));
+var PriceEntry = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  align-items: flex-end;\n  justify-content: space-between;\n  height: ", "px;\n"], ["\n  display: flex;\n  align-items: flex-end;\n  justify-content: space-between;\n  height: ", "px;\n"])), MENU_ENTRY_HEIGHT);
 var PanelFooter = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd, priceLink = _a.priceLink;
     cakePriceUsd = cakePriceUsd ? cakePriceUsd : 0;
     return (React__default['default'].createElement(Container$4, null,
-        React__default['default'].createElement(SocialEntry, null,
-            React__default['default'].createElement(PriceLink, { href: priceLink },
-                React__default['default'].createElement(Icon$w, { width: "24px", mr: "8px" }),
-                React__default['default'].createElement(Text, { color: "text", bold: true }, "$" + cakePriceUsd.toFixed(3))))));
+        React__default['default'].createElement(PriceEntry, null,
+            React__default['default'].createElement(Icon$w, { width: "40px", mr: "17px" }),
+            React__default['default'].createElement(Text, { color: "text", fontSize: "20px" }, "$" + cakePriceUsd.toFixed(3)),
+            React__default['default'].createElement(Button, { size: "sm", href: priceLink }, "Buy"))));
 };
-var templateObject_1$B, templateObject_2$d, templateObject_3$7;
+var templateObject_1$B, templateObject_2$d;
 
 var StyledPanel = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  position: sticky;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  height: 100vh;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding-top: 51px;\n\n  ", " {\n    width: ", "px;\n  }\n"], ["\n  position: sticky;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  height: 100vh;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding-top: 51px;\n\n  ", " {\n    width: ", "px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -2328,7 +2305,7 @@ var StyledNav = styled__default['default'].nav(templateObject_2$g || (templateOb
     var theme = _a.theme;
     return theme.nav.background;
 });
-var BodyWrapper = styled__default['default'].div(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
+var BodyWrapper = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
 var Inner = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  flex-grow: 1;\n  transform: translate3d(0, 0, 0);\n"], ["\n  flex-grow: 1;\n  transform: translate3d(0, 0, 0);\n"])));
 styled__default['default'](Overlay)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"], ["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -2382,7 +2359,7 @@ var Menu = function (_a) {
             React__default['default'].createElement(Panel, { isPushed: isPushed, isMobile: isMobile, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
             React__default['default'].createElement(Inner, null, children))));
 };
-var templateObject_1$G, templateObject_2$g, templateObject_3$8, templateObject_4$2, templateObject_5$1;
+var templateObject_1$G, templateObject_2$g, templateObject_3$7, templateObject_4$2, templateObject_5$1;
 
 var ToastAction = function (_a) {
     var action = _a.action;
