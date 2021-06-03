@@ -1952,7 +1952,7 @@ MenuEntry.defaultProps = {
     isActive: false,
     role: "button",
 };
-var SubMenuEntry = styled(MenuEntry)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  font-size: 18px;\n  div,\n  a div {\n    color: ", ";\n  }\n"], ["\n  font-size: 18px;\n  div,\n  a div {\n    color: ", ";\n  }\n"])), function (_a) {
+var SubMenuEntry = styled(MenuEntry)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  font-size: 16px;\n  div,\n  a div {\n    color: ", ";\n  }\n"], ["\n  font-size: 16px;\n  div,\n  a div {\n    color: ", ";\n  }\n"])), function (_a) {
     var isActive = _a.isActive, theme = _a.theme;
     return (isActive ? theme.colors.primary : theme.colors.textSubtle);
 });
@@ -2436,10 +2436,10 @@ var templateObject_1$J;
 
 var baseColors = {
     failure: "#ED4B9E",
-    primary: "#6d00bc",
-    primaryBright: "#6d00bc",
-    primaryDark: "#6d00bc",
-    secondary: "#6d00bc",
+    primary: "#7342a7",
+    primaryBright: "#7342a7",
+    primaryDark: "#7342a7",
+    secondary: "#7342a7",
     success: "#31D0AA",
     warning: "#FFB237",
 };
@@ -2469,7 +2469,7 @@ var light$1 = (_a$2 = {},
         backgroundHover: lightColors.primaryBright,
         border: 0,
         borderColorHover: "none",
-        boxShadow: "0 0 5px 0 rgb(109 0 188 / 40%), 0 0 25px 0 rgb(109 0 188 / 30%), 0 0 50px 0 rgb(109 0 188 / 20%)",
+        boxShadow: "0 0 5px 0 rgb(115 66 167 / 40%), 0 0 25px 0 rgb(115 66 167 / 30%), 0 0 50px 0 rgb(115 66 167 / 20%)",
         boxShadowActive: "none",
         color: "#FFFFFF",
     },
