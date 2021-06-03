@@ -398,8 +398,7 @@ var Icon$v = function (props) {
 };
 
 var Icon$w = function (props) {
-    return (React.createElement(Svg, __assign({ viewBox: "0 0 100 123" }, props),
-        React.createElement("image", { width: 100, height: 123, href: "/images/egg/egg-icon.png" })));
+    return (React.createElement("img", { src: "/images/egg-icon.png", height: "329", width: "329", alt: "Egg token" }));
 };
 
 var Icon$x = function (props) {
@@ -1101,8 +1100,7 @@ var Progress = function (_a) {
 
 var rotate$1 = keyframes(templateObject_1$r || (templateObject_1$r = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
 var SpinnerIcon = function (props) {
-    return (React.createElement(Svg, __assign({ viewBox: "0 0 96 118" }, props),
-        React.createElement("image", { width: "96", height: "118", href: "/images/egg/egg-icon.png" })));
+    return (React.createElement("img", { src: "/images/egg-icon.png", height: "329", width: "329", alt: "Egg token" }));
 };
 var Container$1 = styled.div(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
 var RotatingPancakeIcon = styled(SpinnerIcon)(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: ", " 2s linear infinite;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: ", " 2s linear infinite;\n  transform: translate3d(0, 0, 0);\n"])), rotate$1);
@@ -1801,9 +1799,8 @@ var useModal = function (modal, closeOnOverlayClick) {
 };
 
 var Logo = function (_a) {
-    var props = __rest(_a, []);
-    return (React.createElement(Svg, __assign({ viewBox: "0 0 150 47" }, props),
-        React.createElement("image", { width: "150", height: "47", href: "/images/egg/goose-logo.png" })));
+    __rest(_a, []);
+    return (React.createElement("img", { src: "/images/goose-logo.png", height: "500", width: "166", alt: "Goose Defi logo" }));
 };
 
 var StyledLink$1 = styled(Link$1)(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .desktop-icon {\n    width: 225px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .desktop-icon {\n    width: 225px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n"])), function (_a) {
