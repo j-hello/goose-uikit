@@ -9,17 +9,17 @@ interface Props extends PanelProps, PushedProps {}
 
 const Container = styled.div`
   flex: none;
-  padding: 34px 51px 0;
+  padding: 34px 0 0 51px;
 `;
 
 const PriceEntry = styled.div`
   display: flex;
   align-items: center;
   .egg-icon {
-    margin-right;
+    margin-right: 17px;
     width: 50px;
   }
-  button {
+  a {
     margin-left: auto;
   }
 `;
@@ -31,7 +31,7 @@ const PanelFooter: React.FC<Props> = ({ cakePriceUsd, priceLink }) => {
     <Container>
       <PriceEntry>
         <Logo className="egg-icon" mr="17px" />
-        <Text color="text" fontSize="22px">{`$${cakePriceUsd.toFixed(3)}`}</Text>
+        <Text color="text" fontSize="22px" letterSpacing="0.01em">{`$${cakePriceUsd.toFixed(3)}`}</Text>
         <Button as="a" variant="secondary" href={priceLink}>BUY</Button>
       </PriceEntry>
     </Container>

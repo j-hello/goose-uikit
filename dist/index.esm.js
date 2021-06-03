@@ -2009,7 +2009,8 @@ var PanelBody = function (_a) {
             if (entry.items) {
                 return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
                     entry.items.map(function (item) { return (React.createElement(SubMenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname, onClick: handleClick },
-                        React.createElement(MenuLink, { href: item.href }, item.label))); })));
+                        React.createElement(MenuLink, { href: item.href },
+                            React.createElement(LinkLabel, null, item.label)))); })));
             }
             return (React.createElement(SubMenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
                 React.createElement(MenuLink, { href: entry.href, onClick: handleClick },
@@ -2018,15 +2019,15 @@ var PanelBody = function (_a) {
 };
 var templateObject_1$A, templateObject_2$c;
 
-var Container$4 = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  flex: none;\n  padding: 34px 51px 0;\n"], ["\n  flex: none;\n  padding: 34px 51px 0;\n"])));
-var PriceEntry = styled.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right;\n    width: 50px;\n  }\n  button {\n    margin-left: auto;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right;\n    width: 50px;\n  }\n  button {\n    margin-left: auto;\n  }\n"])));
+var Container$4 = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  flex: none;\n  padding: 34px 0 0 51px;\n"], ["\n  flex: none;\n  padding: 34px 0 0 51px;\n"])));
+var PriceEntry = styled.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right: 17px;\n    width: 50px;\n  }\n  a {\n    margin-left: auto;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right: 17px;\n    width: 50px;\n  }\n  a {\n    margin-left: auto;\n  }\n"])));
 var PanelFooter = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd, priceLink = _a.priceLink;
     cakePriceUsd = cakePriceUsd ? cakePriceUsd : 0;
     return (React.createElement(Container$4, null,
         React.createElement(PriceEntry, null,
             React.createElement(Icon$w, { className: "egg-icon", mr: "17px" }),
-            React.createElement(Text, { color: "text", fontSize: "22px" }, "$" + cakePriceUsd.toFixed(3)),
+            React.createElement(Text, { color: "text", fontSize: "22px", letterSpacing: "0.01em" }, "$" + cakePriceUsd.toFixed(3)),
             React.createElement(Button, { as: "a", variant: "secondary", href: priceLink }, "BUY"))));
 };
 var templateObject_1$B, templateObject_2$d;

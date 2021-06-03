@@ -91,7 +91,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                       isActive={item.href === location.pathname}
                       onClick={handleClick}
                     >
-                      <MenuLink href={item.href}>{item.label}</MenuLink>
+                      <MenuLink href={item.href}><LinkLabel>{item.label}</LinkLabel></MenuLink>
                     </SubMenuEntry>
                   ))}
               </Accordion>
