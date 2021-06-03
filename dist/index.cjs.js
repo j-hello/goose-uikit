@@ -172,12 +172,9 @@ var getButtonVariantProp = function (prop) { return function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? variants.PRIMARY : _b;
     return theme.button[variant][prop];
 }; };
-var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 10px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: 42px;\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 10px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: 42px;\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
+var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 500;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  letter-spacing: 0.025em;\n  justify-content: center;\n  outline: 0;\n  padding: 0.7em 1.25em;\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 500;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  letter-spacing: 0.025em;\n  justify-content: center;\n  outline: 0;\n  padding: 0.7em 1.25em;\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "100%" : "max-content");
-}, function (_a) {
-    var size = _a.size;
-    return (size === "sm" ? "0 16px" : "0 24px");
 }, function (_a) {
     var isLoading = _a.isLoading;
     return (isLoading ? 0.5 : 1);
@@ -2035,15 +2032,15 @@ var PanelBody = function (_a) {
 var templateObject_1$A, templateObject_2$c;
 
 var Container$4 = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  flex: none;\n  padding: 34px 51px 0;\n"], ["\n  flex: none;\n  padding: 34px 51px 0;\n"])));
-var PriceEntry = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  align-items: flex-end;\n  justify-content: space-between;\n  height: ", "px;\n  .egg-icon {\n    width: 50px;\n  }\n"], ["\n  display: flex;\n  align-items: flex-end;\n  justify-content: space-between;\n  height: ", "px;\n  .egg-icon {\n    width: 50px;\n  }\n"])), MENU_ENTRY_HEIGHT);
+var PriceEntry = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right;\n    width: 50px;\n  }\n  button {\n    margin-left: auto;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right;\n    width: 50px;\n  }\n  button {\n    margin-left: auto;\n  }\n"])));
 var PanelFooter = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd, priceLink = _a.priceLink;
     cakePriceUsd = cakePriceUsd ? cakePriceUsd : 0;
     return (React__default['default'].createElement(Container$4, null,
         React__default['default'].createElement(PriceEntry, null,
             React__default['default'].createElement(Icon$w, { className: "egg-icon", mr: "17px" }),
-            React__default['default'].createElement(Text, { color: "text", fontSize: "20px" }, "$" + cakePriceUsd.toFixed(3)),
-            React__default['default'].createElement(Button, { as: "a", size: "sm", href: priceLink }, "Buy"))));
+            React__default['default'].createElement(Text, { color: "text", fontSize: "22px" }, "$" + cakePriceUsd.toFixed(3)),
+            React__default['default'].createElement(Button, { as: "a", variant: "secondary", href: priceLink }, "BUY"))));
 };
 var templateObject_1$B, templateObject_2$d;
 

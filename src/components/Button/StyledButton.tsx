@@ -49,22 +49,21 @@ const StyledButton = styled.button<ButtonProps>`
   align-items: center;
   background-color: ${getButtonVariantProp("background")};
   border: ${getButtonVariantProp("border")};
-  border-radius: 10px;
+  border-radius: 2em;
   box-shadow: ${getButtonVariantProp("boxShadow")};
   color: ${getButtonVariantProp("color")};
   cursor: pointer;
   display: inline-flex;
   font-family: inherit;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   /* max-content instead of auto for Safari fix */
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "max-content")};
-  height: 42px;
   line-height: 1;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.025em;
   justify-content: center;
   outline: 0;
-  padding: ${({ size }) => (size === "sm" ? "0 16px" : "0 24px")};
+  padding: 0.7em 1.25em;
   transition: background-color 0.2s;
   opacity: ${({ isLoading }) => (isLoading ? 0.5 : 1)};
 

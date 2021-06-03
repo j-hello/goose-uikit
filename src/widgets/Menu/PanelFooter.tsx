@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { GooseRoundIcon as Logo } from "../../components/Svg";
 import Text from "../../components/Text/Text";
 import Button from "../../components/Button/Button";
-import { MENU_ENTRY_HEIGHT } from "./config";
 import { PanelProps, PushedProps } from "./types";
 
 interface Props extends PanelProps, PushedProps {}
@@ -15,11 +14,13 @@ const Container = styled.div`
 
 const PriceEntry = styled.div`
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  height: ${MENU_ENTRY_HEIGHT}px;
+  align-items: center;
   .egg-icon {
+    margin-right;
     width: 50px;
+  }
+  button {
+    margin-left: auto;
   }
 `;
 
@@ -30,8 +31,8 @@ const PanelFooter: React.FC<Props> = ({ cakePriceUsd, priceLink }) => {
     <Container>
       <PriceEntry>
         <Logo className="egg-icon" mr="17px" />
-        <Text color="text" fontSize="20px">{`$${cakePriceUsd.toFixed(3)}`}</Text>
-        <Button as="a" size="sm" href={priceLink}>Buy</Button>
+        <Text color="text" fontSize="22px">{`$${cakePriceUsd.toFixed(3)}`}</Text>
+        <Button as="a" variant="secondary" href={priceLink}>BUY</Button>
       </PriceEntry>
     </Container>
   );
