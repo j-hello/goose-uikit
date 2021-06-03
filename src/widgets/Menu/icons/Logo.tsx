@@ -5,7 +5,7 @@ interface LogoProps extends SvgProps {}
 
 const Logo: React.FC<LogoProps> = ({ ...props }) => {
   return (
-    <img src="/images/goose-logo.png" height="500" width="166" alt="Goose Defi logo" />
+    <img src="/images/goose-logo.png" height="166" width="500" alt="Goose Defi logo" {...props }  />
   );
 };
 
