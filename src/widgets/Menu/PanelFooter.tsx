@@ -31,7 +31,7 @@ const PanelFooter: React.FC<Props> = ({ cakePriceUsd, priceLink }) => {
       <PriceEntry>
         <Logo className="egg-icon" mr="17px" />
         <Text color="text" fontSize="20px">{`$${cakePriceUsd.toFixed(3)}`}</Text>
-        <Button size="sm" href={priceLink}>Buy</Button>
+        <Button as="a" size="sm" href={priceLink}>Buy</Button>
       </PriceEntry>
     </Container>
   );

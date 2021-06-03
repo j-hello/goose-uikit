@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import Accordion from "./Accordion";
 import { MenuEntry, LinkLabel, SubMenuEntry } from "./MenuEntry";
-import Dropdown from "../../components/Dropdown/Dropdown";
 import MenuLink from "./MenuLink";
 import { PanelProps, PushedProps } from "./types";
 
@@ -76,21 +75,26 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
 
           if (entry.items) {
             return (
-              <Dropdown
+              <Accordion
                 key={entry.label}
-                position="top"
-                target={
-                  <SubMenuEntry key={entry.label}>
-                    <LinkLabel>{entry.label}</LinkLabel>
-                  </SubMenuEntry>
-                }
+                isPushed={isPushed}
+                pushNav={pushNav}
+                label={entry.label}
+                initialOpenState={entry.initialOpenState}
+                className={calloutClass}
               >
-                {entry.items.map((item) => (
-                  <MenuLink key={item.label} href={item.href} aria-label={item.label} color="text">
-                    {item.label}
-                  </MenuLink>
-                ))}
-              </Dropdown>
+                {isPushed &&
+                  entry.items.map((item) => (
+                    <SubMenuEntry
+                      key={item.href}
+                      secondary
+                      isActive={item.href === location.pathname}
+                      onClick={handleClick}
+                    >
+                      <MenuLink href={item.href}>{item.label}</MenuLink>
+                    </SubMenuEntry>
+                  ))}
+              </Accordion>
             );
           }
 

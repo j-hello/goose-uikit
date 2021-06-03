@@ -752,10 +752,7 @@ var getBottom = function (_a) {
     }
     return "auto";
 };
-var DropdownContent = styled.div(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"], ["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"])), getLeft, getBottom, function (_a) {
-    var theme = _a.theme;
-    return theme.nav.background;
-}, function (_a) {
+var DropdownContent = styled.div(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: \"#FFF;\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"], ["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: \"#FFF;\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"])), getLeft, getBottom, function (_a) {
     var theme = _a.theme;
     return theme.shadows.level1;
 }, function (_a) {
@@ -2013,8 +2010,9 @@ var PanelBody = function (_a) {
         React.createElement(SubContainer, null, subLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             if (entry.items) {
-                return (React.createElement(Dropdown, { key: entry.label, position: "top", target: React.createElement(SubMenuEntry, { key: entry.label },
-                        React.createElement(LinkLabel, null, entry.label)) }, entry.items.map(function (item) { return (React.createElement(MenuLink, { key: item.label, href: item.href, "aria-label": item.label, color: "text" }, item.label)); })));
+                return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
+                    entry.items.map(function (item) { return (React.createElement(SubMenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname, onClick: handleClick },
+                        React.createElement(MenuLink, { href: item.href }, item.label))); })));
             }
             return (React.createElement(SubMenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
                 React.createElement(MenuLink, { href: entry.href, onClick: handleClick },
@@ -2032,7 +2030,7 @@ var PanelFooter = function (_a) {
         React.createElement(PriceEntry, null,
             React.createElement(Icon$w, { className: "egg-icon", mr: "17px" }),
             React.createElement(Text, { color: "text", fontSize: "20px" }, "$" + cakePriceUsd.toFixed(3)),
-            React.createElement(Button, { size: "sm", href: priceLink }, "Buy"))));
+            React.createElement(Button, { as: "a", size: "sm", href: priceLink }, "Buy"))));
 };
 var templateObject_1$B, templateObject_2$d;
 
