@@ -2037,13 +2037,13 @@ var PanelBody = function (_a) {
 var templateObject_1$A, templateObject_2$c;
 
 var Container$4 = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  flex: none;\n  padding: 34px 51px 0;\n"], ["\n  flex: none;\n  padding: 34px 51px 0;\n"])));
-var PriceEntry = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  align-items: flex-end;\n  justify-content: space-between;\n  height: ", "px;\n"], ["\n  display: flex;\n  align-items: flex-end;\n  justify-content: space-between;\n  height: ", "px;\n"])), MENU_ENTRY_HEIGHT);
+var PriceEntry = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  align-items: flex-end;\n  justify-content: space-between;\n  height: ", "px;\n  .egg-icon {\n    width: 50px;\n  }\n"], ["\n  display: flex;\n  align-items: flex-end;\n  justify-content: space-between;\n  height: ", "px;\n  .egg-icon {\n    width: 50px;\n  }\n"])), MENU_ENTRY_HEIGHT);
 var PanelFooter = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd, priceLink = _a.priceLink;
     cakePriceUsd = cakePriceUsd ? cakePriceUsd : 0;
     return (React__default['default'].createElement(Container$4, null,
         React__default['default'].createElement(PriceEntry, null,
-            React__default['default'].createElement(Icon$w, { width: "40px", mr: "17px" }),
+            React__default['default'].createElement(Icon$w, { className: "egg-icon", mr: "17px" }),
             React__default['default'].createElement(Text, { color: "text", fontSize: "20px" }, "$" + cakePriceUsd.toFixed(3)),
             React__default['default'].createElement(Button, { size: "sm", href: priceLink }, "Buy"))));
 };
