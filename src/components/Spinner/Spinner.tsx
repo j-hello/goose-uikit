@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { SpinnerProps } from "./types";
-import { Svg, SvgProps } from "../Svg";
+import { SvgProps } from "../Svg";
 
 const rotate = keyframes`
   from {
@@ -14,9 +14,7 @@ const rotate = keyframes`
 
 const SpinnerIcon: React.FC<SvgProps> = (props) => {
   return (
-    <Svg viewBox="0 0 96 118" {...props}>
-      <image width="96" height="118" href="/images/egg/egg-icon.png" />
-    </Svg>
+    <img src="/images/egg-icon.png" height="329" width="329" alt="Egg token" />
   );
 };
 
