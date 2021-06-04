@@ -4,20 +4,20 @@ import { tags, sizes, HeadingProps } from "./types";
 
 const style = {
   [sizes.MD]: {
-    fontSize: "20px",
+    fontSize: "16px",
   },
   [sizes.LG]: {
-    fontSize: "24px",
+    fontSize: "22px",
   },
   [sizes.XL]: {
-    fontSize: "40px",
+    fontSize: "32px",
   },
   [sizes.XXL]: {
-    fontSize: "64px",
+    fontSize: "60px",
   },
 };
 
-const Heading = styled(Text).attrs({ bold: true })<HeadingProps>`
+const Heading = styled(Text)<HeadingProps>`
   ${({ size }) => style[size || sizes.MD]}
   font-weight: 500;
   line-height: 1.1;
