@@ -29,7 +29,6 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss, mb }) => 
       <Text bold color="primary" mr="16px">
         {title}
       </Text>
-      <Icon width="32px" />
     </Button>
   );
 };

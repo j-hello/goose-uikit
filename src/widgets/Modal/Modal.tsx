@@ -22,7 +22,7 @@ const StyledModal = styled.div`
   overflow-y: auto;
   ${({ theme }) => theme.mediaQueries.xs} {
     width: auto;
-    min-width: 360px;
+    min-width: 420px;
     max-width: 100%;
   }
 `;
@@ -31,7 +31,7 @@ const ModalHeader = styled.div`
   display: flex;
   align-items: center;
   align-items: center;
-  padding: 12px 24px;
+  padding: 25.5px 25.5px 0;
 `;
 
 const ModalTitle = styled(Flex)`
@@ -45,7 +45,7 @@ const Modal: React.FC<Props> = ({
   onBack,
   children,
   hideCloseButton = false,
-  bodyPadding = "24px",
+  bodyPadding = "25.5px",
 }) => (
   <StyledModal>
     <ModalHeader>
