@@ -614,7 +614,7 @@ var getBackgroundColor = function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return theme.colors[variant === variants.SUBTLE ? "input" : "tertiary"];
 };
-var StyledButtonMenu = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 16px;\n  display: inline-flex;\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n"], ["\n  background-color: ", ";\n  border-radius: 16px;\n  display: inline-flex;\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n"])), getBackgroundColor);
+var StyledButtonMenu = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 16px;\n  display: inline-flex;\n\n  & > button + button,\n  & > a + a {\n    margin-left: 8.5px; // To avoid focus shadow overlap\n  }\n"], ["\n  background-color: ", ";\n  border-radius: 16px;\n  display: inline-flex;\n\n  & > button + button,\n  & > a + a {\n    margin-left: 8.5px; // To avoid focus shadow overlap\n  }\n"])), getBackgroundColor);
 var templateObject_1$7;
 
 var ButtonMenu = function (_a) {
@@ -2025,7 +2025,7 @@ var PanelFooter = function (_a) {
         React.createElement(PriceEntry, null,
             React.createElement(Icon$w, { className: "egg-icon", mr: "17px" }),
             React.createElement(Text, { color: "text", fontSize: "22px", letterSpacing: "0.01em" }, "$" + cakePriceUsd.toFixed(3)),
-            React.createElement(Button, { as: "a", variant: "secondary", href: priceLink }, "BUY"))));
+            React.createElement(Button, { as: "a", variant: "primary", href: priceLink }, "BUY"))));
 };
 var templateObject_1$B, templateObject_2$d;
 
@@ -2463,12 +2463,12 @@ var light$1 = (_a$2 = {},
         color: "#FFFFFF",
     },
     _a$2[SECONDARY] = {
-        background: "#fff",
+        background: lightColors.tertiary,
         backgroundActive: "none",
         backgroundHover: "none",
         border: 0,
         borderColorHover: "none",
-        boxShadow: "0 0 5px 0 rgb(115 66 167 / 40%), 0 0 25px 0 rgb(115 66 167 / 30%), 0 0 50px 0 rgb(115 66 167 / 20%)",
+        boxShadow: "rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px",
         boxShadowActive: "none",
         color: lightColors.primary,
     },

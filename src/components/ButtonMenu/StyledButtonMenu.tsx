@@ -17,7 +17,7 @@ const StyledButtonMenu = styled.div<{ variant: Variants }>`
 
   & > button + button,
   & > a + a {
-    margin-left: 2px; // To avoid focus shadow overlap
+    margin-left: 8.5px; // To avoid focus shadow overlap
   }
 `;
 
