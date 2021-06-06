@@ -1717,10 +1717,10 @@ var Modal = function (_a) {
         React.createElement(ModalHeader, null,
             React.createElement(ModalTitle, null,
                 onBack && (React.createElement(IconButton, { variant: "text", onClick: onBack, "area-label": "go back", mr: "8px" },
-                    React.createElement(Icon$5, { color: "primary" }))),
-                React.createElement(Heading, null, title)),
+                    React.createElement(Icon$5, { color: "primary", width: "18px" }))),
+                React.createElement(Heading, { bold: true }, title)),
             !hideCloseButton && (React.createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
-                React.createElement(Icon$k, { color: "primary" })))),
+                React.createElement(Icon$k, { color: "primary", width: "18px" })))),
         React.createElement(Flex, { flexDirection: "column", p: bodyPadding }, children)));
 };
 var templateObject_1$u, templateObject_2$9, templateObject_3$5;
@@ -1933,7 +1933,7 @@ var SIDEBAR_WIDTH_FULL = 300;
 var LinkLabel = styled.div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  flex-grow: 1;\n"], ["\n  flex-grow: 1;\n"])));
 var MenuEntry = styled.div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
     var secondary = _a.secondary;
-    return (secondary ? "0 0 17px 68px" : "0 0 21.25px 51px");
+    return (secondary ? "0 0 8.5px 68px" : "0 0 8.5px 51px");
 }, function (_a) {
     var secondary = _a.secondary;
     return (secondary ? "20px" : "22px");

@@ -52,14 +52,14 @@ const Modal: React.FC<Props> = ({
       <ModalTitle>
         {onBack && (
           <IconButton variant="text" onClick={onBack} area-label="go back" mr="8px">
-            <ArrowBackIcon color="primary" />
+            <ArrowBackIcon color="primary" width="18px" />
           </IconButton>
         )}
-        <Heading>{title}</Heading>
+        <Heading bold>{title}</Heading>
       </ModalTitle>
       {!hideCloseButton && (
         <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
-          <CloseIcon color="primary" />
+          <CloseIcon color="primary" width="18px" />
         </IconButton>
       )}
     </ModalHeader>
