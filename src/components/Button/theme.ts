@@ -15,7 +15,7 @@ export const light: ButtonTheme = {
     color: "#FFFFFF",
   },
   [SECONDARY]: {
-    background: lightColors.tertiary,
+    background: lightColors.secondary,
     backgroundActive: "none",
     backgroundHover: "none",
     border: 0,
