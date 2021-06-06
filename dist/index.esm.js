@@ -159,7 +159,7 @@ var getButtonVariantProp = function (prop) { return function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? variants.PRIMARY : _b;
     return theme.button[variant][prop];
 }; };
-var StyledButton = styled.button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 500;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  justify-content: center;\n  outline: 0;\n  padding: 0.7em 1.25em;\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 500;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  justify-content: center;\n  outline: 0;\n  padding: 0.7em 1.25em;\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
+var StyledButton = styled.button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 500;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  letter-spacing: 0.02em;\n  justify-content: center;\n  outline: 0;\n  padding: 0.7em 1.25em;\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 500;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  letter-spacing: 0.02em;\n  justify-content: center;\n  outline: 0;\n  padding: 0.7em 1.25em;\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "100%" : "max-content");
 }, function (_a) {
@@ -1936,7 +1936,7 @@ var MenuEntry = styled.div(templateObject_2$a || (templateObject_2$a = __makeTem
     return (secondary ? "0 0 8.5px 68px" : "0 0 8.5px 51px");
 }, function (_a) {
     var secondary = _a.secondary;
-    return (secondary ? "20px" : "22px");
+    return (secondary ? "18.4725px" : "20.945px");
 }, function (_a) {
     var isActive = _a.isActive, theme = _a.theme;
     return (isActive ? theme.colors.primary : theme.colors.text);
@@ -2012,8 +2012,7 @@ var PanelBody = function (_a) {
             if (entry.items) {
                 return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
                     entry.items.map(function (item) { return (React.createElement(SubMenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname, onClick: handleClick },
-                        React.createElement(MenuLink, { href: item.href },
-                            React.createElement(LinkLabel, null, item.label)))); })));
+                        React.createElement(MenuLink, { href: item.href }, item.label))); })));
             }
             return (React.createElement(SubMenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
                 React.createElement(MenuLink, { href: entry.href, onClick: handleClick },
@@ -2030,7 +2029,7 @@ var PanelFooter = function (_a) {
     return (React.createElement(Container$4, null,
         React.createElement(PriceEntry, null,
             React.createElement(Icon$w, { className: "egg-icon", mr: "17px" }),
-            React.createElement(Text, { color: "text", fontSize: "22px" }, "$" + cakePriceUsd.toFixed(3)),
+            React.createElement(Text, { color: "text", fontSize: "20.945px" }, "$" + cakePriceUsd.toFixed(3)),
             React.createElement(Button, { as: "a", variant: "primary", href: priceLink }, "Buy"))));
 };
 var templateObject_1$B, templateObject_2$d;

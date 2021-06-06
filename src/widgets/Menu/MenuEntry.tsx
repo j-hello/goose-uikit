@@ -15,7 +15,7 @@ const MenuEntry = styled.div<Props>`
   display: flex;
   align-items: center;
   margin: ${({ secondary }) => (secondary ? "0 0 8.5px 68px" : "0 0 8.5px 51px")};
-  font-size: ${({ secondary }) => (secondary ? "20px" : "22px")};
+  font-size: ${({ secondary }) => (secondary ? "18.4725px" : "20.945px")};
 
   a {
     display: flex;
