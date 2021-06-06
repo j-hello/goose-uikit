@@ -2162,14 +2162,14 @@ var WalletCard = function (_a) {
             login(walletConfig.connectorId);
             window.localStorage.setItem(localStorageKey, "1");
             onDismiss();
-        }, style: { justifyContent: "space-between" }, mb: mb, id: "wallet-connect-" + title.toLocaleLowerCase() },
+        }, mb: mb, id: "wallet-connect-" + title.toLocaleLowerCase() },
         React.createElement(Text, { bold: true, color: "primary", mr: "16px" }, title)));
 };
 
 styled(Link)(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 24px;\n"], ["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 24px;\n"])));
 var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
-    return (React.createElement(Modal, { title: "Connect to a wallet", onDismiss: onDismiss }, connectors.map(function (entry, index) { return (React.createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss, mb: index < connectors.length - 1 ? "8px" : "0" })); })));
+    return (React.createElement(Modal, { title: "Connect to a wallet", onDismiss: onDismiss }, connectors.map(function (entry, index) { return (React.createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss, mb: index < connectors.length - 1 ? "8.5px" : "0" })); })));
 };
 var templateObject_1$D;
 
@@ -2454,8 +2454,8 @@ var PRIMARY = variants.PRIMARY, SECONDARY = variants.SECONDARY, TERTIARY = varia
 var light$1 = (_a$2 = {},
     _a$2[PRIMARY] = {
         background: lightColors.primary,
-        backgroundActive: lightColors.primary,
-        backgroundHover: lightColors.primary,
+        backgroundActive: "none",
+        backgroundHover: "none",
         border: 0,
         borderColorHover: "none",
         boxShadow: "0 0 5px 0 rgb(115 66 167 / 40%), 0 0 25px 0 rgb(115 66 167 / 30%), 0 0 50px 0 rgb(115 66 167 / 20%)",
@@ -2464,8 +2464,8 @@ var light$1 = (_a$2 = {},
     },
     _a$2[SECONDARY] = {
         background: "#fff",
-        backgroundActive: "#fff",
-        backgroundHover: "#fff",
+        backgroundActive: "none",
+        backgroundHover: "none",
         border: 0,
         borderColorHover: "none",
         boxShadow: "0 0 5px 0 rgb(115 66 167 / 40%), 0 0 25px 0 rgb(115 66 167 / 30%), 0 0 50px 0 rgb(115 66 167 / 20%)",
@@ -2474,11 +2474,11 @@ var light$1 = (_a$2 = {},
     },
     _a$2[TERTIARY] = {
         background: lightColors.tertiary,
-        backgroundActive: lightColors.tertiary,
-        backgroundHover: lightColors.tertiary,
+        backgroundActive: "none",
+        backgroundHover: "none",
         border: 0,
-        borderColorHover: "currentColor",
-        boxShadow: "none",
+        borderColorHover: "none",
+        boxShadow: "rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px",
         boxShadowActive: "none",
         color: lightColors.primary,
     },

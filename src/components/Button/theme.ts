@@ -6,8 +6,8 @@ const { PRIMARY, SECONDARY, TERTIARY, TEXT, DANGER, SUBTLE, SUCCESS } = variants
 export const light: ButtonTheme = {
   [PRIMARY]: {
     background: lightColors.primary,
-    backgroundActive: lightColors.primary,
-    backgroundHover: lightColors.primary,
+    backgroundActive: "none",
+    backgroundHover: "none",
     border: 0,
     borderColorHover: "none",
     boxShadow: "0 0 5px 0 rgb(115 66 167 / 40%), 0 0 25px 0 rgb(115 66 167 / 30%), 0 0 50px 0 rgb(115 66 167 / 20%)",
@@ -16,8 +16,8 @@ export const light: ButtonTheme = {
   },
   [SECONDARY]: {
     background: "#fff",
-    backgroundActive: "#fff",
-    backgroundHover: "#fff",
+    backgroundActive: "none",
+    backgroundHover: "none",
     border: 0,
     borderColorHover: "none",
     boxShadow: "0 0 5px 0 rgb(115 66 167 / 40%), 0 0 25px 0 rgb(115 66 167 / 30%), 0 0 50px 0 rgb(115 66 167 / 20%)",
@@ -26,11 +26,11 @@ export const light: ButtonTheme = {
   },
   [TERTIARY]: {
     background: lightColors.tertiary,
-    backgroundActive: lightColors.tertiary,
-    backgroundHover: lightColors.tertiary,
+    backgroundActive: "none",
+    backgroundHover: "none",
     border: 0,
-    borderColorHover: "currentColor",
-    boxShadow: "none",
+    borderColorHover: "none",
+    boxShadow: "rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px",
     boxShadowActive: "none",
     color: lightColors.primary,
   },
