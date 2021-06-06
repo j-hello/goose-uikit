@@ -805,13 +805,13 @@ var style = (_a = {},
         fontSize: "16px",
     },
     _a[sizes$1.LG] = {
-        fontSize: "22px",
+        fontSize: "25.89px",
     },
     _a[sizes$1.XL] = {
-        fontSize: "32px",
+        fontSize: "41.89px",
     },
     _a[sizes$1.XXL] = {
-        fontSize: "60px",
+        fontSize: "67.77px",
     },
     _a);
 var Heading = styled__default['default'](Text)(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight: ", ";\n  line-height: 1.1;\n"], ["\n  ", "\n  font-weight: ", ";\n  line-height: 1.1;\n"])), function (_a) {

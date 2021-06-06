@@ -7,13 +7,13 @@ const style = {
     fontSize: "16px",
   },
   [sizes.LG]: {
-    fontSize: "22px",
+    fontSize: "25.89px",
   },
   [sizes.XL]: {
-    fontSize: "32px",
+    fontSize: "41.89px",
   },
   [sizes.XXL]: {
-    fontSize: "60px",
+    fontSize: "67.77px",
   },
 };
 
