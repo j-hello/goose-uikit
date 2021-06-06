@@ -801,9 +801,12 @@ var style = (_a = {},
         fontSize: "60px",
     },
     _a);
-var Heading = styled(Text)(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight: 500;\n  line-height: 1.1;\n"], ["\n  ", "\n  font-weight: 500;\n  line-height: 1.1;\n"])), function (_a) {
+var Heading = styled(Text)(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight: ", ";\n  line-height: 1.1;\n"], ["\n  ", "\n  font-weight: ", ";\n  line-height: 1.1;\n"])), function (_a) {
     var size = _a.size;
     return style[size || sizes$1.MD];
+}, function (_a) {
+    var bold = _a.bold;
+    return bold ? "500" : "400";
 });
 Heading.defaultProps = {
     as: tags.H2,
