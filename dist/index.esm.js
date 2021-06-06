@@ -666,7 +666,7 @@ var Card = function (_a) {
 
 var CardBody = styled.div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), space);
 CardBody.defaultProps = {
-    p: "17px",
+    p: "25.5px",
 };
 var templateObject_1$a;
 
