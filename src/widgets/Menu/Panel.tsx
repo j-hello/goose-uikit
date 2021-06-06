@@ -15,10 +15,10 @@ const StyledPanel = styled.div`
   left: 0;
   display: flex;
   flex-direction: column;
+  justify-items: space-between;
   flex-shrink: 0;
   background-color: ${({ theme }) => theme.nav.background};
   width: ${SIDEBAR_WIDTH_FULL}px;
-  height: 100vh;
   z-index: 11;
   transform: translate3d(0, 0, 0);
   padding-top: 51px;
