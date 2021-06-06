@@ -16,7 +16,6 @@ const MenuEntry = styled.div<Props>`
   align-items: center;
   margin: ${({ secondary }) => (secondary ? "0 0 17px 68px" : "0 0 21.25px 51px")};
   font-size: ${({ secondary }) => (secondary ? "20px" : "22px")};
-  letter-spacing: 0.01em;
 
   a {
     display: flex;

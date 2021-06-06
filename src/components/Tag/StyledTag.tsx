@@ -20,7 +20,7 @@ export const StyledTag = styled.div<ThemedProps>`
   font-size: 14px;
   font-weight: 400;
   height: 28px;
-  line-height: 1.5;
+  line-height: 1.4;
   padding: 0 8px;
   white-space: nowrap;
 
