@@ -636,7 +636,7 @@ var InactiveButton = styled(Button)(templateObject_1$8 || (templateObject_1$8 = 
 var ButtonMenuItem = function (_a) {
     var _b = _a.isActive, isActive = _b === void 0 ? false : _b, _c = _a.size, size = _c === void 0 ? sizes.MD : _c, _d = _a.variant, variant = _d === void 0 ? variants.PRIMARY : _d, as = _a.as, props = __rest(_a, ["isActive", "size", "variant", "as"]);
     if (!isActive) {
-        return (React.createElement(InactiveButton, __assign({ forwardedAs: as, size: size, variant: "tertiary", colorKey: variant === variants.PRIMARY ? "primary" : "textSubtle" }, props)));
+        return (React.createElement(InactiveButton, __assign({ forwardedAs: as, size: size, variant: "secondary", colorKey: variant === variants.PRIMARY ? "primary" : "textSubtle" }, props)));
     }
     return React.createElement(Button, __assign({ as: as, size: size, variant: variant }, props));
 };
@@ -2234,7 +2234,7 @@ var UserBlock = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout;
     var _b = useWalletModal(login, logout, account), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
-    return (React.createElement("div", null, account ? (React.createElement(Button, { size: "sm", variant: "tertiary", onClick: function () {
+    return (React.createElement("div", null, account ? (React.createElement(Button, { size: "sm", variant: "secondary", onClick: function () {
             onPresentAccountModal();
         } }, accountEllipsis)) : (React.createElement(Button, { size: "sm", onClick: function () {
             onPresentConnectModal();
