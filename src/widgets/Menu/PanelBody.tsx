@@ -82,6 +82,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                 label={entry.label}
                 initialOpenState={entry.initialOpenState}
                 className={calloutClass}
+                sub
               >
                 {isPushed &&
                   entry.items.map((item) => (

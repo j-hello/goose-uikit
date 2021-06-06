@@ -208,10 +208,7 @@ Button.defaultProps = {
     disabled: false,
 };
 
-var IconButton = styled__default['default'](Button)(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  padding: 0;\n  width: ", ";\n"], ["\n  padding: 0;\n  width: ", ";\n"])), function (_a) {
-    var size = _a.size;
-    return (size === "sm" ? "32px" : "48px");
-});
+var IconButton = styled__default['default'](Button)(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  padding: 0;\n"], ["\n  padding: 0;\n"])));
 var templateObject_1$3;
 
 var Icon$4 = function (props) {
@@ -1971,7 +1968,7 @@ var AccordionContent = styled__default['default'].div(templateObject_2$b || (tem
     return (isOpen ? maxHeight + "px" : 0);
 });
 var Accordion = function (_a) {
-    var label = _a.label, isPushed = _a.isPushed, pushNav = _a.pushNav, _b = _a.initialOpenState, initialOpenState = _b === void 0 ? false : _b, children = _a.children, className = _a.className;
+    var label = _a.label, isPushed = _a.isPushed, pushNav = _a.pushNav, _b = _a.initialOpenState, initialOpenState = _b === void 0 ? false : _b, children = _a.children, className = _a.className, sub = _a.sub;
     var _c = React.useState(initialOpenState), isOpen = _c[0], setIsOpen = _c[1];
     var handleClick = function () {
         if (isPushed) {
@@ -1983,9 +1980,14 @@ var Accordion = function (_a) {
         }
     };
     return (React__default['default'].createElement(Container$2, null,
-        React__default['default'].createElement(MenuEntry, { onClick: handleClick, className: className },
-            React__default['default'].createElement(LinkLabel, null, label),
-            isOpen ? React__default['default'].createElement(Icon$8, null) : React__default['default'].createElement(Icon$7, null)),
+        sub ?
+            React__default['default'].createElement(SubMenuEntry, { onClick: handleClick, className: className },
+                React__default['default'].createElement(LinkLabel, null, label),
+                isOpen ? React__default['default'].createElement(Icon$8, null) : React__default['default'].createElement(Icon$7, null))
+            :
+                React__default['default'].createElement(MenuEntry, { onClick: handleClick, className: className },
+                    React__default['default'].createElement(LinkLabel, null, label),
+                    isOpen ? React__default['default'].createElement(Icon$8, null) : React__default['default'].createElement(Icon$7, null)),
         React__default['default'].createElement(AccordionContent, { isOpen: isOpen, isPushed: isPushed, maxHeight: React__default['default'].Children.count(children) * MENU_ENTRY_HEIGHT }, children)));
 };
 var templateObject_1$z, templateObject_2$b;
@@ -2023,7 +2025,7 @@ var PanelBody = function (_a) {
         React__default['default'].createElement(SubContainer, null, subLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             if (entry.items) {
-                return (React__default['default'].createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
+                return (React__default['default'].createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass, sub: true }, isPushed &&
                     entry.items.map(function (item) { return (React__default['default'].createElement(SubMenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname, onClick: handleClick },
                         React__default['default'].createElement(MenuLink, { href: item.href }, item.label))); })));
             }
@@ -2042,7 +2044,7 @@ var PanelFooter = function (_a) {
     return (React__default['default'].createElement(Container$4, null,
         React__default['default'].createElement(PriceEntry, null,
             React__default['default'].createElement(Icon$w, { className: "egg-icon", mr: "17px" }),
-            React__default['default'].createElement(Text, { color: "text", fontSize: "20.945px" }, "$" + cakePriceUsd.toFixed(3)),
+            React__default['default'].createElement(Text, { color: "text", fontSize: "20.945px", bold: true }, "$" + cakePriceUsd.toFixed(3)),
             React__default['default'].createElement(Button, { as: "a", variant: "primary", href: priceLink }, "Buy"))));
 };
 var templateObject_1$B, templateObject_2$d;

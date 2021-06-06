@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { MENU_ENTRY_HEIGHT } from "./config";
-import { MenuEntry, LinkLabel } from "./MenuEntry";
+import { MenuEntry, LinkLabel, SubMenuEntry } from "./MenuEntry";
 import { PushedProps } from "./types";
 import { ArrowDropDownIcon, ArrowDropUpIcon } from "../../components/Svg";
 
@@ -9,6 +9,7 @@ interface Props extends PushedProps {
   label: string;
   initialOpenState?: boolean;
   className?: string;
+  sub?: boolean
 }
 
 const Container = styled.div`
@@ -24,7 +25,7 @@ const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHei
   overflow: hidden;
 `;
 
-const Accordion: React.FC<Props> = ({ label, isPushed, pushNav, initialOpenState = false, children, className }) => {
+const Accordion: React.FC<Props> = ({ label, isPushed, pushNav, initialOpenState = false, children, className, sub }) => {
   const [isOpen, setIsOpen] = useState(initialOpenState);
 
   const handleClick = () => {
@@ -38,10 +39,18 @@ const Accordion: React.FC<Props> = ({ label, isPushed, pushNav, initialOpenState
 
   return (
     <Container>
+      {sub ? 
+      <SubMenuEntry onClick={handleClick} className={className}>
+        <LinkLabel>{label}</LinkLabel>
+        {isOpen ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
+      </SubMenuEntry>
+      :
       <MenuEntry onClick={handleClick} className={className}>
         <LinkLabel>{label}</LinkLabel>
         {isOpen ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
       </MenuEntry>
+      }
+
       <AccordionContent
         isOpen={isOpen}
         isPushed={isPushed}
