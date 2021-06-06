@@ -1071,11 +1071,14 @@ var LinkExternal = function (_a) {
         React__default['default'].createElement(Icon$t, { color: "primary", ml: "4px" })));
 };
 
-var Bar = styled__default['default'].div(templateObject_1$p || (templateObject_1$p = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ", ";\n  border-top-left-radius: 32px;\n  border-bottom-left-radius: 32px;\n  height: 16px;\n  transition: width 200ms ease;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ", ";\n  border-top-left-radius: 32px;\n  border-bottom-left-radius: 32px;\n  height: 16px;\n  transition: width 200ms ease;\n"])), function (props) { return (props.primary ? props.theme.colors.secondary : props.theme.colors.secondary + "80"); });
+var Bar = styled__default['default'].div(templateObject_1$p || (templateObject_1$p = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ", ";\n  border-top-left-radius: 24px;\n  border-bottom-left-radius: 24px;\n  height: 17px;\n  transition: width 200ms ease;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ", ";\n  border-top-left-radius: 24px;\n  border-bottom-left-radius: 24px;\n  height: 17px;\n  transition: width 200ms ease;\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.primary;
+});
 Bar.defaultProps = {
     primary: false,
 };
-var StyledProgress = styled__default['default'].div(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  position: relative;\n  background-color: ", ";\n  border-radius: 32px;\n  box-shadow: ", ";\n  height: 16px;\n  overflow: hidden;\n"], ["\n  position: relative;\n  background-color: ", ";\n  border-radius: 32px;\n  box-shadow: ", ";\n  height: 16px;\n  overflow: hidden;\n"])), function (_a) {
+var StyledProgress = styled__default['default'].div(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  position: relative;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  height: 17px;\n  overflow: hidden;\n"], ["\n  position: relative;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  height: 17px;\n  overflow: hidden;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.input;
 }, function (_a) {
@@ -2038,7 +2041,7 @@ var PanelFooter = function (_a) {
         React__default['default'].createElement(PriceEntry, null,
             React__default['default'].createElement(Icon$w, { className: "egg-icon", mr: "17px" }),
             React__default['default'].createElement(Text, { color: "text", fontSize: "22px", letterSpacing: "0.01em" }, "$" + cakePriceUsd.toFixed(3)),
-            React__default['default'].createElement(Button, { as: "a", variant: "primary", href: priceLink }, "BUY"))));
+            React__default['default'].createElement(Button, { as: "a", variant: "primary", href: priceLink }, "Buy"))));
 };
 var templateObject_1$B, templateObject_2$d;
 
