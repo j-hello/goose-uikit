@@ -22,7 +22,7 @@ const StyledModal = styled.div`
   overflow-y: auto;
   ${({ theme }) => theme.mediaQueries.xs} {
     width: auto;
-    min-width: 420px;
+    min-width: 400px;
     max-width: 100%;
   }
 `;
