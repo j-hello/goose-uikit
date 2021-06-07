@@ -1154,16 +1154,10 @@ var Handle = styled__default['default'].div(templateObject_1$t || (templateObjec
     var theme = _a.theme;
     return theme.toggle.handleBackground;
 });
-var Input$1 = styled__default['default'].input(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 36px);\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"], ["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 36px);\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"])), Handle, Handle, function (_a) {
-    var theme = _a.theme;
-    return theme.shadows.focus;
-}, Handle, function (_a) {
-    var theme = _a.theme;
-    return theme.shadows.focus;
-});
+var Input$1 = styled__default['default'].input(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 36px);\n  }\n\n"], ["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 36px);\n  }\n\n"])), Handle);
 var StyledToggle = styled__default['default'].div(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: 40px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 72px;\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: 40px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 72px;\n"])), function (_a) {
     var theme = _a.theme, checked = _a.checked;
-    return theme.colors[checked ? "success" : "input"];
+    return theme.colors[checked ? "success" : "card"];
 }, function (_a) {
     var theme = _a.theme;
     return theme.shadows.inset;
@@ -1941,7 +1935,7 @@ var MENU_ENTRY_HEIGHT = 50;
 var SIDEBAR_WIDTH_FULL = 300;
 
 var LinkLabel = styled__default['default'].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  flex-grow: 1;\n"], ["\n  flex-grow: 1;\n"])));
-var MenuEntry = styled__default['default'].div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
+var MenuEntry = styled__default['default'].div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
     var secondary = _a.secondary;
     return (secondary ? "0 0 8.5px 68px" : "0 0 8.5px 51px");
 }, function (_a) {
@@ -1956,7 +1950,10 @@ MenuEntry.defaultProps = {
     isActive: false,
     role: "button",
 };
-var SubMenuEntry = styled__default['default'](MenuEntry)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  font-size: 16px;\n  div,\n  a div {\n    color: ", ";\n  }\n"], ["\n  font-size: 16px;\n  div,\n  a div {\n    color: ", ";\n  }\n"])), function (_a) {
+var SubMenuEntry = styled__default['default'](MenuEntry)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  color: ", ";\n  font-size: 16px;\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"], ["\n  color: ", ";\n  font-size: 16px;\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"])), function (_a) {
+    var isActive = _a.isActive, theme = _a.theme;
+    return (isActive ? theme.colors.primary : theme.colors.textSubtle);
+}, function (_a) {
     var isActive = _a.isActive, theme = _a.theme;
     return (isActive ? theme.colors.primary : theme.colors.textSubtle);
 });
@@ -2449,7 +2446,7 @@ var baseColors = {
     primaryBright: "#7342a7",
     primaryDark: "#7342a7",
     secondary: "#ffffff",
-    success: "#31D0AA",
+    success: "#7342a7",
     warning: "#FFB237",
 };
 var brandColors = {
@@ -2580,10 +2577,10 @@ var dark$3 = {
 };
 
 var light$4 = {
-    handleBackground: lightColors.card,
+    handleBackground: lightColors.primary,
 };
 var dark$4 = {
-    handleBackground: darkColors.card,
+    handleBackground: darkColors.primary,
 };
 
 var light$5 = {

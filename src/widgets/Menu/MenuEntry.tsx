@@ -24,7 +24,8 @@ const MenuEntry = styled.div<Props>`
     height: 100%;
   }
   div,
-  a div {
+  a div,
+  div a {
     color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.text)};
   }
 
@@ -39,9 +40,11 @@ MenuEntry.defaultProps = {
 };
 
 const SubMenuEntry = styled(MenuEntry)`
+  color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.textSubtle)};
   font-size: 16px;
   div,
-  a div {
+  a div,
+  div a {
     color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.textSubtle)};
   }
 `;
