@@ -6,8 +6,8 @@ type ThemedProps = {
   theme: DefaultTheme;
 } & ButtonProps;
 
-const getDisabledStyles = ({ isLoading, theme }: ThemedProps) => {
-  if (isLoading === true) {
+const getDisabledStyles = ({ isloading, theme }: ThemedProps) => {
+  if (isloading === true) {
     return `
       &:disabled,
       &.button--disabled {
@@ -58,14 +58,14 @@ const StyledButton = styled.button<ButtonProps>`
   font-size: 16px;
   font-weight: 500;
   /* max-content instead of auto for Safari fix */
-  width: ${({ fullWidth }) => (fullWidth ? "100%" : "max-content")};
+  width: max-content;
   line-height: 1;
   letter-spacing: 0.02em;
   justify-content: center;
   outline: 0;
   padding: 0.7em 1.25em;
   transition: background-color 0.2s;
-  opacity: ${({ isLoading }) => (isLoading ? 0.5 : 1)};
+  opacity: ${({ isloading }) => (isloading ? 0.5 : 1)};
 
   ${getDisabledStyles}
   ${removePointerEvents}
@@ -73,7 +73,6 @@ const StyledButton = styled.button<ButtonProps>`
 `;
 
 StyledButton.defaultProps = {
-  fullWidth: false,
   type: "button",
 };
 
