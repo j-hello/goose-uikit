@@ -1934,7 +1934,7 @@ var links = [
 var MENU_ENTRY_HEIGHT = 50;
 var SIDEBAR_WIDTH_FULL = 300;
 
-var LinkLabel = styled__default['default'].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  flex-grow: 1;\n"], ["\n  flex-grow: 1;\n"])));
+var LinkLabel = styled__default['default'].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  margin-right: 8.5px;\n"], ["\n  margin-right: 8.5px;\n"])));
 var MenuEntry = styled__default['default'].div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
     var secondary = _a.secondary;
     return (secondary ? "0 0 8.5px 68px" : "0 0 8.5px 51px");

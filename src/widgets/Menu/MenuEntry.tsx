@@ -7,7 +7,7 @@ export interface Props {
 }
 
 const LinkLabel = styled.div`
-  flex-grow: 1;
+  margin-right: 8.5px;
 `;
 
 const MenuEntry = styled.div<Props>`
