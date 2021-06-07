@@ -13,7 +13,7 @@ export const StyledTag = styled.div<ThemedProps>`
   align-items: center;
   background-color: ${({ outline, theme, variant = "primary" }) =>
     outline ? "transparent" : getColor(variant, theme)};
-  border: 2px solid ${({outline,  variant = "primary", theme }) => outline ? `2px solid ${getColor(variant, theme)}` : "none"};
+  border: ${({outline,  variant = "primary", theme }) => outline ? `2px solid ${getColor(variant, theme)}` : "none"};
   border-radius: 2em;
   color: ${getThemeTextColor};
   display: inline-flex;

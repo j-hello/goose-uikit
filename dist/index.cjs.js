@@ -1025,8 +1025,8 @@ var getThemeTextColor = function (_a) {
     var outline = _a.outline, _b = _a.variant, variant = _b === void 0 ? "primary" : _b, theme = _a.theme;
     return outline ? getColor$1(variant, theme) : "#ffffff";
 };
-var StyledTag = styled__default['default'].div(templateObject_1$n || (templateObject_1$n = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: 2px solid ", ";\n  border-radius: 2em;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: 500;\n  height: 28px;\n  line-height: 28px;\n  padding: 0 8.5px;\n  white-space: nowrap;\n\n  box-shadow: ", ";\n  \n\n  svg {\n    fill: ", ";\n  }\n"], ["\n  align-items: center;\n  background-color: ",
-    ";\n  border: 2px solid ", ";\n  border-radius: 2em;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: 500;\n  height: 28px;\n  line-height: 28px;\n  padding: 0 8.5px;\n  white-space: nowrap;\n\n  box-shadow: ", ";\n  \n\n  svg {\n    fill: ", ";\n  }\n"])), function (_a) {
+var StyledTag = styled__default['default'].div(templateObject_1$n || (templateObject_1$n = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: 500;\n  height: 28px;\n  line-height: 28px;\n  padding: 0 8.5px;\n  white-space: nowrap;\n\n  box-shadow: ", ";\n  \n\n  svg {\n    fill: ", ";\n  }\n"], ["\n  align-items: center;\n  background-color: ",
+    ";\n  border: ", ";\n  border-radius: 2em;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: 500;\n  height: 28px;\n  line-height: 28px;\n  padding: 0 8.5px;\n  white-space: nowrap;\n\n  box-shadow: ", ";\n  \n\n  svg {\n    fill: ", ";\n  }\n"])), function (_a) {
     var outline = _a.outline, theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? "primary" : _b;
     return outline ? "transparent" : getColor$1(variant, theme);
 }, function (_a) {
