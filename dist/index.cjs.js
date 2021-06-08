@@ -2175,8 +2175,8 @@ var WalletCard = function (_a) {
             login(walletConfig.connectorId);
             window.localStorage.setItem(localStorageKey, "1");
             onDismiss();
-        }, mb: mb, id: "wallet-connect-" + title.toLocaleLowerCase() },
-        React__default['default'].createElement(Text, { bold: true, color: "primary", mr: "16px" }, title)));
+        }, mb: mb, id: "wallet-connect-" + title.toLocaleLowerCase(), style: { width: "100%" } },
+        React__default['default'].createElement(Text, { bold: true, color: "primary" }, title)));
 };
 
 styled__default['default'](Link)(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 24px;\n"], ["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 24px;\n"])));
