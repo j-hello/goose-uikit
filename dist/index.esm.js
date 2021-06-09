@@ -1786,7 +1786,7 @@ var Logo = function (_a) {
     return (React.createElement("img", __assign({ src: "/images/goose-logo.png", height: "166", width: "500", alt: "Goose Defi logo" }, props)));
 };
 
-var StyledLink$1 = styled(Link$1)(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .desktop-icon {\n    width: 225px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .desktop-icon {\n    width: 225px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n"])), function (_a) {
+var StyledLink$1 = styled(Link$1)(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .desktop-icon {\n    width: 225px;\n    ", " {\n      display: block;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .desktop-icon {\n    width: 225px;\n    ", " {\n      display: block;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
@@ -1914,7 +1914,6 @@ var links = [
     },
 ];
 var MENU_ENTRY_HEIGHT = 50;
-var SIDEBAR_WIDTH_FULL = 300;
 
 var LinkLabel = styled.div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  margin-right: 8.5px;\n"], ["\n  margin-right: 8.5px;\n"])));
 var MenuEntry = styled.div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
@@ -2028,13 +2027,13 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$B, templateObject_2$d;
 
-var StyledPanel = styled.div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  position: sticky;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding-top: 51px;\n\n  ", " {\n    width: ", "px;\n  }\n"], ["\n  position: sticky;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding-top: 51px;\n\n  ", " {\n    width: ", "px;\n  }\n"])), function (_a) {
+var StyledPanel = styled.div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  display: none;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding-top: 51px;\n\n  ", " {\n    max-width: 300px;\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"], ["\n  display: none;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding-top: 51px;\n\n  ", " {\n    max-width: 300px;\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
-}, SIDEBAR_WIDTH_FULL, function (_a) {
+}, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
-}, SIDEBAR_WIDTH_FULL);
+});
 var Panel = function (props) {
     return (React.createElement(StyledPanel, null,
         React.createElement(PanelBody, __assign({}, props)),

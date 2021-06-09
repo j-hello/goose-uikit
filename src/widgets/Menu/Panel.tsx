@@ -10,22 +10,23 @@ interface Props extends PanelProps, PushedProps {
 }
 
 const StyledPanel = styled.div`
-  position: sticky;
-  top: 0;
-  left: 0;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-self: flex-start;
   justify-items: space-between;
   flex-shrink: 0;
   background-color: ${({ theme }) => theme.nav.background};
-  width: ${SIDEBAR_WIDTH_FULL}px;
+  width: 100%;
   z-index: 11;
   transform: translate3d(0, 0, 0);
   padding-top: 51px;
 
   ${({ theme }) => theme.mediaQueries.nav} {
-    width: ${SIDEBAR_WIDTH_FULL}px;
+    max-width: 300px;
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 0;
   }
 `;
 
