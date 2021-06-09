@@ -55,11 +55,11 @@ const StyledButton = styled.button<ButtonProps>`
   cursor: pointer;
   display: inline-flex;
   font-family: inherit;
-  font-size: 16px;
+  font-size: var(--md-size);
   font-weight: 500;
   /* max-content instead of auto for Safari fix */
   width: max-content;
-  line-height: 1;
+  line-height: 1.2;
   letter-spacing: 0.02em;
   justify-content: center;
   outline: 0;

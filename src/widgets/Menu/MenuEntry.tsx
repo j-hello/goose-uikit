@@ -15,7 +15,7 @@ const MenuEntry = styled.div<Props>`
   display: flex;
   align-items: center;
   margin: ${({ secondary }) => (secondary ? "4.25px 0 4.25px 17px" : "4.25px 0 4.25px 0")};
-  font-size: ${({ secondary }) => (secondary ? "18.4725px" : "20.945px")};
+  font-size: ${({ secondary }) => (secondary ? "var(--subnav-size)" : "var(--nav-size)")};
 
   a {
     display: flex;
@@ -41,7 +41,7 @@ MenuEntry.defaultProps = {
 
 const SubMenuEntry = styled(MenuEntry)`
   color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.textSubtle)};
-  font-size: 16px;
+  font-size: var(--md-size));
   div,
   a div,
   div a {

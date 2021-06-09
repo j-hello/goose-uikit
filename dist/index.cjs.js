@@ -118,7 +118,7 @@ var getColor = function (_a) {
 };
 var getFontSize = function (_a) {
     var fontSize = _a.fontSize, small = _a.small;
-    return small ? "14px" : fontSize || "16px";
+    return small ? "var(--sm-size)" : fontSize || "var(--md-size)";
 };
 var Text = styled__default['default'].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.4;\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.4;\n  ", "\n  ", "\n"])), getColor, getFontSize, function (_a) {
     var bold = _a.bold;
@@ -170,7 +170,7 @@ var getButtonVariantProp = function (prop) { return function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? variants.PRIMARY : _b;
     return theme.button[variant][prop];
 }; };
-var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 500;\n  /* max-content instead of auto for Safari fix */\n  width: max-content;\n  line-height: 1;\n  letter-spacing: 0.02em;\n  justify-content: center;\n  outline: 0;\n  padding: 0.7em 1.25em;\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 500;\n  /* max-content instead of auto for Safari fix */\n  width: max-content;\n  line-height: 1;\n  letter-spacing: 0.02em;\n  justify-content: center;\n  outline: 0;\n  padding: 0.7em 1.25em;\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
+var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: var(--md-size);\n  font-weight: 500;\n  /* max-content instead of auto for Safari fix */\n  width: max-content;\n  line-height: 1.2;\n  letter-spacing: 0.02em;\n  justify-content: center;\n  outline: 0;\n  padding: 0.7em 1.25em;\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: var(--md-size);\n  font-weight: 500;\n  /* max-content instead of auto for Safari fix */\n  width: max-content;\n  line-height: 1.2;\n  letter-spacing: 0.02em;\n  justify-content: center;\n  outline: 0;\n  padding: 0.7em 1.25em;\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
     var isloading = _a.isloading;
     return (isloading ? 0.5 : 1);
 }, getDisabledStyles, removePointerEvents, styledSystem.space);
@@ -917,7 +917,7 @@ var getHeight = function (_a) {
             return "40px";
     }
 };
-var Input = styled__default['default'].input(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"], ["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"])), function (_a) {
+var Input = styled__default['default'].input(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  background-color: ", ";\n  border: 0;\n  border-radius: 1em;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: var(--md-size);\n  height: ", ";\n  outline: 0;\n  padding: 0 17px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"], ["\n  background-color: ", ";\n  border: 0;\n  border-radius: 1em;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: var(--md-size);\n  height: ", ";\n  outline: 0;\n  padding: 0 17px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.input;
 }, getBoxShadow, function (_a) {
@@ -1934,7 +1934,7 @@ var MenuEntry = styled__default['default'].div(templateObject_2$a || (templateOb
     return (secondary ? "4.25px 0 4.25px 17px" : "4.25px 0 4.25px 0");
 }, function (_a) {
     var secondary = _a.secondary;
-    return (secondary ? "18.4725px" : "20.945px");
+    return (secondary ? "var(--subnav-size)" : "var(--nav-size)");
 }, function (_a) {
     var isActive = _a.isActive, theme = _a.theme;
     return (isActive ? theme.colors.primary : theme.colors.text);
@@ -1944,7 +1944,7 @@ MenuEntry.defaultProps = {
     isActive: false,
     role: "button",
 };
-var SubMenuEntry = styled__default['default'](MenuEntry)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  color: ", ";\n  font-size: 16px;\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"], ["\n  color: ", ";\n  font-size: 16px;\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"])), function (_a) {
+var SubMenuEntry = styled__default['default'](MenuEntry)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  color: ", ";\n  font-size: var(--md-size));\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"], ["\n  color: ", ";\n  font-size: var(--md-size));\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"])), function (_a) {
     var isActive = _a.isActive, theme = _a.theme;
     return (isActive ? theme.colors.primary : theme.colors.textSubtle);
 }, function (_a) {
@@ -2035,7 +2035,7 @@ var PanelFooter = function (_a) {
     return (React__default['default'].createElement(Container$4, null,
         React__default['default'].createElement(PriceEntry, null,
             React__default['default'].createElement(Icon$w, { className: "egg-icon", mr: "17px" }),
-            React__default['default'].createElement(Text, { color: "text", fontSize: "20.945px", bold: true }, "$" + cakePriceUsd.toFixed(3)),
+            React__default['default'].createElement(Text, { color: "text", fontSize: "var(--nav-size)", bold: true }, "$" + cakePriceUsd.toFixed(3)),
             React__default['default'].createElement(Button, { as: "a", variant: "primary", href: priceLink }, "Buy"))));
 };
 var templateObject_1$B, templateObject_2$d;
