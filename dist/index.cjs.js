@@ -793,54 +793,24 @@ var sizes$1 = {
 var _a;
 var style = (_a = {},
     _a[sizes$1.MD] = {
-        fontSize: "16px",
+        fontSize: "var(--md-size)",
     },
     _a[sizes$1.LG] = {
-        fontSize: "25.89px",
+        fontSize: "var(--lg-size)",
     },
     _a[sizes$1.XL] = {
-        fontSize: "32px",
+        fontSize: "var(--xl-size)",
     },
     _a[sizes$1.XXL] = {
-        fontSize: "67.77px",
+        fontSize: "var(--xxl-size)",
     },
     _a);
-var Heading = styled__default['default'](Text)(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight: ", ";\n  line-height: 1.3;\n\n  ", " {\n    ", "\n  }\n  ", " {\n    ", "\n  }\n  ", " {\n    ", "\n  }\n  ", " {\n    ", "\n  }\n  ", " {\n    ", "\n  }\n\n"], ["\n  ", "\n  font-weight: ", ";\n  line-height: 1.3;\n\n  ", " {\n    ", "\n  }\n  ", " {\n    ", "\n  }\n  ", " {\n    ", "\n  }\n  ", " {\n    ", "\n  }\n  ", " {\n    ", "\n  }\n\n"])), function (_a) {
+var Heading = styled__default['default'](Text)(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight: ", ";\n  line-height: 1.3;\n"], ["\n  ", "\n  font-weight: ", ";\n  line-height: 1.3;\n"])), function (_a) {
     var size = _a.size;
-    return style["calc( " + (size || sizes$1.MD) + " * 0.7);"];
+    return style[size || sizes$1.MD];
 }, function (_a) {
     var bold = _a.bold;
     return bold ? "500" : "400";
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.xs;
-}, function (_a) {
-    var size = _a.size;
-    return style["calc( " + (size || sizes$1.MD) + " * 0.75);"];
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.sm;
-}, function (_a) {
-    var size = _a.size;
-    return style["calc( " + (size || sizes$1.MD) + " * 0.8);"];
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.md;
-}, function (_a) {
-    var size = _a.size;
-    return style["calc( " + (size || sizes$1.MD) + " * 0.85);"];
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.lg;
-}, function (_a) {
-    var size = _a.size;
-    return style["calc( " + (size || sizes$1.MD) + " * 0.9);"];
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.xl;
-}, function (_a) {
-    var size = _a.size;
-    return style[size || sizes$1.MD];
 });
 Heading.defaultProps = {
     as: tags.H2,
