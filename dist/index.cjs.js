@@ -8,7 +8,6 @@ var styledSystem = require('styled-system');
 var get = require('lodash/get');
 var noop = require('lodash/noop');
 var debounce = require('lodash/debounce');
-var throttle = require('lodash/throttle');
 var reactRouterDom = require('react-router-dom');
 var reactTransitionGroup = require('react-transition-group');
 
@@ -19,7 +18,6 @@ var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 var get__default = /*#__PURE__*/_interopDefaultLegacy(get);
 var noop__default = /*#__PURE__*/_interopDefaultLegacy(noop);
 var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
-var throttle__default = /*#__PURE__*/_interopDefaultLegacy(throttle);
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -1807,9 +1805,9 @@ var StyledLink$1 = styled__default['default'](reactRouterDom.Link)(templateObjec
 var Logo$1 = function (_a) {
     var href = _a.href;
     var isAbsoluteUrl = href.startsWith("http");
-    var innerLogo = (React__default['default'].createElement(React__default['default'].Fragment, null,
-        React__default['default'].createElement(Logo, { className: "desktop-icon" })));
-    return (React__default['default'].createElement(Flex, null, isAbsoluteUrl ? (React__default['default'].createElement(StyledLink$1, { as: "a", href: href, "aria-label": "Goose home page" }, innerLogo)) : (React__default['default'].createElement(StyledLink$1, { to: href, "aria-label": "Goose home page" }, innerLogo))));
+    return (React__default['default'].createElement(Flex, null, isAbsoluteUrl ? (React__default['default'].createElement(StyledLink$1, { as: "a", href: href, "aria-label": "Goose home page" },
+        React__default['default'].createElement(Logo, { className: "desktop-icon" }))) : (React__default['default'].createElement(StyledLink$1, { to: href, "aria-label": "Goose home page" },
+        React__default['default'].createElement(Logo, { className: "desktop-icon" })))));
 };
 var templateObject_1$x;
 
@@ -2042,7 +2040,7 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$B, templateObject_2$d;
 
-var StyledPanel = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  position: sticky;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-items: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding-top: 51px;\n\n  ", " {\n    width: ", "px;\n  }\n"], ["\n  position: sticky;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-items: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding-top: 51px;\n\n  ", " {\n    width: ", "px;\n  }\n"])), function (_a) {
+var StyledPanel = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  position: sticky;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding-top: 51px;\n\n  ", " {\n    width: ", "px;\n  }\n"], ["\n  position: sticky;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding-top: 51px;\n\n  ", " {\n    width: ", "px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
 }, SIDEBAR_WIDTH_FULL, function (_a) {
@@ -2306,40 +2304,12 @@ var Menu = function (_a) {
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
     var _c = React.useState(!isMobile), isPushed = _c[0], setIsPushed = _c[1];
-    var _d = React.useState(true); _d[0]; var setShowMenu = _d[1];
-    var refPrevOffset = React.useRef(window.pageYOffset);
-    React.useEffect(function () {
-        var handleScroll = function () {
-            var currentOffset = window.pageYOffset;
-            var isBottomOfPage = window.document.body.clientHeight === currentOffset + window.innerHeight;
-            var isTopOfPage = currentOffset === 0;
-            // Always show the menu when user reach the top
-            if (isTopOfPage) {
-                setShowMenu(true);
-            }
-            // Avoid triggering anything at the bottom because of layout shift
-            else if (!isBottomOfPage) {
-                if (currentOffset < refPrevOffset.current) {
-                    // Has scroll up
-                    setShowMenu(true);
-                }
-                else {
-                    // Has scroll down
-                    setShowMenu(false);
-                }
-            }
-            refPrevOffset.current = currentOffset;
-        };
-        var throttledHandleScroll = throttle__default['default'](handleScroll, 200);
-        window.addEventListener("scroll", throttledHandleScroll);
-        return function () {
-            window.removeEventListener("scroll", throttledHandleScroll);
-        };
-    }, []);
+    var _d = React.useState(true), showMenu = _d[0]; _d[1];
+    React.useRef(window.pageYOffset);
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "Home"; });
     return (React__default['default'].createElement(Wrapper$1, null,
-        React__default['default'].createElement(StyledNav, null,
+        React__default['default'].createElement(StyledNav, { showMenu: showMenu },
             React__default['default'].createElement(Logo$1, { href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React__default['default'].createElement(Flex, null,
                 React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }),

@@ -15,6 +15,7 @@ const StyledPanel = styled.div`
   left: 0;
   display: flex;
   flex-direction: column;
+  align-self: flex-start;
   justify-items: space-between;
   flex-shrink: 0;
   background-color: ${({ theme }) => theme.nav.background};

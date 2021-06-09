@@ -22,21 +22,16 @@ const StyledLink = styled(Link)`
 
 const Logo: React.FC<Props> = ({ href }) => {
   const isAbsoluteUrl = href.startsWith("http");
-  const innerLogo = (
-    <>
-      <LogoWithText className="desktop-icon" />
-    </>
-  );
 
   return (
     <Flex>
       {isAbsoluteUrl ? (
         <StyledLink as="a" href={href} aria-label="Goose home page">
-          {innerLogo}
+          <LogoWithText className="desktop-icon" />
         </StyledLink>
       ) : (
         <StyledLink to={href} aria-label="Goose home page">
-          {innerLogo}
+          <LogoWithText className="desktop-icon" />
         </StyledLink>
       )}
     </Flex>
