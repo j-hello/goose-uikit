@@ -15,6 +15,7 @@ const Container = styled.div`
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
+  flex: 1;
 `;
 
 const SubContainer = styled(Container)`

@@ -15,14 +15,14 @@ const StyledPanel = styled.div`
   align-self: flex-start;
   justify-items: space-between;
   flex-shrink: 0;
-  background-color: ${({ theme }) => theme.nav.background};
   width: 100%;
   z-index: 11;
   transform: translate3d(0, 0, 0);
   padding: var(--site-pad);
+  padding-right: 0;
 
   ${({ theme }) => theme.mediaQueries.nav} {
-    max-width: 300px;
+    max-width: ${SIDEBAR_WIDTH_FULL};
     display: flex;
     position: sticky;
     top: 0;

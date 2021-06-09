@@ -1926,6 +1926,7 @@ var links = [
     },
 ];
 var MENU_ENTRY_HEIGHT = 50;
+var SIDEBAR_WIDTH_FULL = 300;
 
 var LinkLabel = styled__default['default'].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  margin-right: 8.5px;\n"], ["\n  margin-right: 8.5px;\n"])));
 var MenuEntry = styled__default['default'].div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
@@ -1991,7 +1992,7 @@ var MenuLink = function (_a) {
     return React__default['default'].createElement(Tag, __assign({}, props, otherProps));
 };
 
-var Container$3 = styled__default['default'].div(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n"], ["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n"])));
+var Container$3 = styled__default['default'].div(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  flex: 1;\n"], ["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  flex: 1;\n"])));
 var SubContainer = styled__default['default'](Container$3)(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  padding-top: var(--site-pad);\n"], ["\n  padding-top: var(--site-pad);\n"])));
 var PanelBody = function (_a) {
     var isPushed = _a.isPushed, pushNav = _a.pushNav, isMobile = _a.isMobile, links = _a.links;
@@ -2026,7 +2027,7 @@ var PanelBody = function (_a) {
 };
 var templateObject_1$A, templateObject_2$c;
 
-var Container$4 = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  flex: none;\n  padding-top: var(--site-pad);\n  padding-bottom: var(--site-pad);\n"], ["\n  flex: none;\n  padding-top: var(--site-pad);\n  padding-bottom: var(--site-pad);\n"])));
+var Container$4 = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  flex: none;\n  padding-top: var(--site-pad);\n"], ["\n  flex: none;\n  padding-top: var(--site-pad);\n"])));
 var PriceEntry = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right: 17px;\n    width: 50px;\n  }\n  a {\n    margin-left: auto;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right: 17px;\n    width: 50px;\n  }\n  a {\n    margin-left: auto;\n  }\n"])));
 var PanelFooter = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd, priceLink = _a.priceLink;
@@ -2039,13 +2040,10 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$B, templateObject_2$d;
 
-var StyledPanel = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  display: none;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding: var(--site-pad);\n\n  ", " {\n    max-width: 300px;\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"], ["\n  display: none;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding: var(--site-pad);\n\n  ", " {\n    max-width: 300px;\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.nav.background;
-}, function (_a) {
+var StyledPanel = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  display: none;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding: var(--site-pad);\n  padding-right: 0;\n\n  ", " {\n    max-width: ", ";\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"], ["\n  display: none;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding: var(--site-pad);\n  padding-right: 0;\n\n  ", " {\n    max-width: ", ";\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
-});
+}, SIDEBAR_WIDTH_FULL);
 var Panel = function (props) {
     return (React__default['default'].createElement(StyledPanel, null,
         React__default['default'].createElement(PanelBody, __assign({}, props)),
