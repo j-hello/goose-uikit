@@ -18,7 +18,7 @@ const Container = styled.div`
 `;
 
 const SubContainer = styled(Container)`
-  padding-top: 34px;
+  padding-top: var(--site-pad);
 `;
 
 const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {

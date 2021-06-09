@@ -1918,7 +1918,7 @@ var MENU_ENTRY_HEIGHT = 50;
 var LinkLabel = styled.div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  margin-right: 8.5px;\n"], ["\n  margin-right: 8.5px;\n"])));
 var MenuEntry = styled.div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
     var secondary = _a.secondary;
-    return (secondary ? "0 0 8.5px 68px" : "0 0 8.5px 51px");
+    return (secondary ? "4.25px 0 4.25px 17px" : "4.25px 0 4.25px 0");
 }, function (_a) {
     var secondary = _a.secondary;
     return (secondary ? "18.4725px" : "20.945px");
@@ -1980,7 +1980,7 @@ var MenuLink = function (_a) {
 };
 
 var Container$3 = styled.div(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n"], ["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n"])));
-var SubContainer = styled(Container$3)(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  padding-top: 34px;\n"], ["\n  padding-top: 34px;\n"])));
+var SubContainer = styled(Container$3)(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  padding-top: var(--site-pad);\n"], ["\n  padding-top: var(--site-pad);\n"])));
 var PanelBody = function (_a) {
     var isPushed = _a.isPushed, pushNav = _a.pushNav, isMobile = _a.isMobile, links = _a.links;
     var location = useLocation();
@@ -2014,7 +2014,7 @@ var PanelBody = function (_a) {
 };
 var templateObject_1$A, templateObject_2$c;
 
-var Container$4 = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  flex: none;\n  padding: 34px 0 0 51px;\n"], ["\n  flex: none;\n  padding: 34px 0 0 51px;\n"])));
+var Container$4 = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  flex: none;\n  padding-top: var(--site-pad);\n  padding-bottom: var(--site-pad);\n"], ["\n  flex: none;\n  padding-top: var(--site-pad);\n  padding-bottom: var(--site-pad);\n"])));
 var PriceEntry = styled.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right: 17px;\n    width: 50px;\n  }\n  a {\n    margin-left: auto;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right: 17px;\n    width: 50px;\n  }\n  a {\n    margin-left: auto;\n  }\n"])));
 var PanelFooter = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd, priceLink = _a.priceLink;
@@ -2027,7 +2027,7 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$B, templateObject_2$d;
 
-var StyledPanel = styled.div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  display: none;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding-top: 51px;\n\n  ", " {\n    max-width: 300px;\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"], ["\n  display: none;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding-top: 51px;\n\n  ", " {\n    max-width: 300px;\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"])), function (_a) {
+var StyledPanel = styled.div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  display: none;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding: var(--site-pad);\n\n  ", " {\n    max-width: 300px;\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"], ["\n  display: none;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding: var(--site-pad);\n\n  ", " {\n    max-width: 300px;\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
 }, function (_a) {
@@ -2275,7 +2275,7 @@ var Avatar = function (_a) {
 var templateObject_1$F, templateObject_2$f;
 
 var Wrapper$1 = styled.div(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var StyledNav = styled.nav(templateObject_2$g || (templateObject_2$g = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 51px 51px 0;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 51px 51px 0;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
+var StyledNav = styled.nav(templateObject_2$g || (templateObject_2$g = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: var(--site-pad) var(--site-pad) 0;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: var(--site-pad) var(--site-pad) 0;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
 });

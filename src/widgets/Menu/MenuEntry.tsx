@@ -14,7 +14,7 @@ const MenuEntry = styled.div<Props>`
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin: ${({ secondary }) => (secondary ? "0 0 8.5px 68px" : "0 0 8.5px 51px")};
+  margin: ${({ secondary }) => (secondary ? "4.25px 0 4.25px 17px" : "4.25px 0 4.25px 0")};
   font-size: ${({ secondary }) => (secondary ? "18.4725px" : "20.945px")};
 
   a {

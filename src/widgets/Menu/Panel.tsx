@@ -19,7 +19,7 @@ const StyledPanel = styled.div`
   width: 100%;
   z-index: 11;
   transform: translate3d(0, 0, 0);
-  padding-top: 51px;
+  padding: var(--site-pad);
 
   ${({ theme }) => theme.mediaQueries.nav} {
     max-width: 300px;

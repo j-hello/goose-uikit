@@ -9,7 +9,8 @@ interface Props extends PanelProps, PushedProps {}
 
 const Container = styled.div`
   flex: none;
-  padding: 34px 0 0 51px;
+  padding-top: var(--site-pad);
+  padding-bottom: var(--site-pad);
 `;
 
 const PriceEntry = styled.div`
