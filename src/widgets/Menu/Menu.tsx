@@ -10,6 +10,7 @@ import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_FULL } from "./config";
 import Avatar from "./Avatar";
+import Hamburger from "./Hamburger";
 
 const Wrapper = styled.div`
   position: relative;
@@ -37,21 +38,6 @@ const Inner = styled.div`
   transform: translate3d(0, 0, 0);
 `;
 
-const Hamburger = styled.div`
-  width: 38px;
-  height: 26px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  margin-left: 17px;
-
-  > span {
-    height: 4px;
-    background: ${({ theme }) => theme.colors.primary};
-    width: 100%;
-  }
-`;
-
 const MobileOnlyOverlay = styled(Overlay)`
   position: fixed;
   height: 100%;
@@ -59,6 +45,11 @@ const MobileOnlyOverlay = styled(Overlay)`
   ${({ theme }) => theme.mediaQueries.nav} {
     display: none;
   }
+`;
+
+const FloatingButton = styled.div`
+  padding: calc(var(--site-pad) * 2) 0 var(--site-pad);
+  text-align: center;
 `;
 
 const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links, priceLink, profile, children }) => {
@@ -77,20 +68,16 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
         <Logo href={homeLink?.href ?? "/"} />
         <Flex>
           {isMobile ? (
-            <Hamburger>
-              <span></span>
-              <span></span>
-              <span></span>
-            </Hamburger>
+            <Hamburger togglePush={() => setIsPushed((prevState: boolean) => !prevState)} />
           ) : (
             <UserBlock account={account} login={login} logout={logout} />
           )}
         </Flex>
       </StyledNav>
       {isMobile && (
-        <div>
+        <FloatingButton>
           <UserBlock account={account} login={login} logout={logout} />
-        </div>
+        </FloatingButton>
       )}
       <BodyWrapper>
         <Panel
