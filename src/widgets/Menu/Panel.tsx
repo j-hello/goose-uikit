@@ -22,7 +22,7 @@ const StyledPanel = styled.div`
   padding-right: 0;
 
   ${({ theme }) => theme.mediaQueries.nav} {
-    max-width: ${SIDEBAR_WIDTH_FULL};
+    max-width: ${SIDEBAR_WIDTH_FULL}px;
     display: flex;
     position: sticky;
     top: 0;
