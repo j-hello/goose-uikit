@@ -37,6 +37,21 @@ const Inner = styled.div`
   transform: translate3d(0, 0, 0);
 `;
 
+const Hamburger = styled.div`
+  width: 38px;
+  height: 26px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-left: 17px;
+
+  > span {
+    height: 4px;
+    background: ${({ theme }) => theme.colors.primary};
+    width: 100%;
+  }
+`;
+
 const MobileOnlyOverlay = styled(Overlay)`
   position: fixed;
   height: 100%;
@@ -61,10 +76,22 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
       <StyledNav showMenu={showMenu}>
         <Logo href={homeLink?.href ?? "/"} />
         <Flex>
-          <UserBlock account={account} login={login} logout={logout} />
-          {profile && <Avatar profile={profile} />}
+          {isMobile ? (
+            <Hamburger>
+              <span></span>
+              <span></span>
+              <span></span>
+            </Hamburger>
+          ) : (
+            <UserBlock account={account} login={login} logout={logout} />
+          )}
         </Flex>
       </StyledNav>
+      {isMobile && (
+        <div>
+          <UserBlock account={account} login={login} logout={logout} />
+        </div>
+      )}
       <BodyWrapper>
         <Panel
           isPushed={isPushed}
