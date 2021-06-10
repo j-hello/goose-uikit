@@ -2040,9 +2040,9 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$B, templateObject_2$d;
 
-var StyledPanel = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding: var(--site-pad);\n  padding-right: 0;\n  margin-left: ", ";\n\n  position: fixed;\n  top: 0;\n  right: 0;\n  background-color: ", ";\n\n  ", " {\n    max-width: ", "px;\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"], ["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding: var(--site-pad);\n  padding-right: 0;\n  margin-left: ", ";\n\n  position: fixed;\n  top: 0;\n  right: 0;\n  background-color: ", ";\n\n  ", " {\n    max-width: ", "px;\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"])), function (_a) {
+var StyledPanel = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 2) calc(var(--site-pad) * 4);: \n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  padding-top: \n  background-color: ", ";\n  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    max-width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    display: flex;\n    position: sticky;\n    top: 0;\n    right: auto;\n    left: 0;\n  }\n"], ["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 2) calc(var(--site-pad) * 4);: \n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  padding-top: \n  background-color: ", ";\n  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    max-width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    display: flex;\n    position: sticky;\n    top: 0;\n    right: auto;\n    left: 0;\n  }\n"])), function (_a) {
     var isPushed = _a.isPushed;
-    return (isPushed ? SIDEBAR_WIDTH_FULL : "-" + SIDEBAR_WIDTH_FULL) + "px";
+    return "translate3d(" + (isPushed ? "100%%" : "0") + " 0, 0)";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.background;
@@ -2277,7 +2277,7 @@ styled__default['default'](Overlay)(templateObject_5$1 || (templateObject_5$1 = 
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
-var FloatingButton = styled__default['default'].div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  padding: calc(var(--site-pad) * 2) 0 var(--site-pad);\n  text-align: center;\n"], ["\n  padding: calc(var(--site-pad) * 2) 0 var(--site-pad);\n  text-align: center;\n"])));
+styled__default['default'].div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  padding: calc(var(--site-pad) * 2) 0 var(--site-pad);\n  text-align: center;\n"], ["\n  padding: calc(var(--site-pad) * 2) 0 var(--site-pad);\n  text-align: center;\n"])));
 var Menu = function (_a) {
     var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink; _a.profile; var children = _a.children;
@@ -2291,8 +2291,6 @@ var Menu = function (_a) {
         React__default['default'].createElement(StyledNav, { showMenu: showMenu },
             React__default['default'].createElement(Logo$1, { href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React__default['default'].createElement(Flex, null, isMobile ? (React__default['default'].createElement(Hamburger, { togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); } })) : (React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout })))),
-        isMobile && (React__default['default'].createElement(FloatingButton, null,
-            React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }))),
         React__default['default'].createElement(BodyWrapper, null,
             React__default['default'].createElement(Panel, { isPushed: isPushed, isMobile: isMobile, showMenu: showMenu, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
             React__default['default'].createElement(Inner, null, children))));

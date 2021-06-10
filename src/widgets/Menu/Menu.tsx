@@ -71,11 +71,6 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
           )}
         </Flex>
       </StyledNav>
-      {isMobile && (
-        <FloatingButton>
-          <UserBlock account={account} login={login} logout={logout} />
-        </FloatingButton>
-      )}
       <BodyWrapper>
         <Panel
           isPushed={isPushed}
