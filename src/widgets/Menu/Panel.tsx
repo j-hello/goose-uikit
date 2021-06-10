@@ -6,7 +6,6 @@ import { SIDEBAR_WIDTH_FULL } from "./config";
 import { PanelProps, PushedProps } from "./types";
 
 interface Props extends PanelProps, PushedProps {
-  showMenu: boolean;
   isMobile: boolean;
 }
 
@@ -23,7 +22,7 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
   top: 0;
   bottom: 0;
   right: 0;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.secondary};
   box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
   transition: transform 0.25s ease-in-out;
 

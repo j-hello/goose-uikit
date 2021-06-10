@@ -69,7 +69,6 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
         <Panel
           isPushed={isPushed}
           isMobile={isMobile}
-          showMenu={showMenu}
           cakePriceUsd={cakePriceUsd}
           pushNav={setIsPushed}
           links={links}
