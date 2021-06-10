@@ -14,8 +14,6 @@ interface Props extends PanelProps, PushedProps {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  overflow-x: hidden;
   flex: 1;
 `;
 

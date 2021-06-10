@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Overlay from "../../components/Overlay/Overlay";
-import { Flex } from "../../components/Flex";
 import { useMatchBreakpoints } from "../../hooks";
 import Logo from "./Logo";
 import Panel from "./Panel";
@@ -52,26 +51,22 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
 
-  console.log("menu", isPushed, "mobile", isMobile);
-
   return (
     <Wrapper>
       <StyledNav>
         <Logo href={homeLink?.href ?? "/"} />
-        <Flex>
-          {isMobile ? (
-            <Hamburger togglePush={() => setIsPushed((prevState: boolean) => !prevState)} />
-          ) : (
-            <UserBlock account={account} login={login} logout={logout} />
-          )}
-        </Flex>
+        {isMobile ? (
+          <Hamburger togglePush={() => setIsPushed((prevState: boolean) => !prevState)} />
+        ) : (
+          <UserBlock account={account} login={login} logout={logout} />
+        )}
       </StyledNav>
       <BodyWrapper>
         <Panel
           isPushed={isPushed}
           isMobile={isMobile}
           cakePriceUsd={cakePriceUsd}
-          pushNav={setIsPushed}
+          pushNav={() => setIsPushed(false)}
           links={links}
           priceLink={priceLink}
         />

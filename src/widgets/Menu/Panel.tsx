@@ -16,13 +16,15 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
   justify-items: space-between;
   flex-shrink: 0;
   z-index: 11;
-  padding: calc(var(--site-pad) * 3) calc(var(--site-pad) * 2);
+  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);
+  height: 100%;
   width: 75%;
   transform: ${({ isPushed }) => `translate3d(${isPushed ? "0" : "100%"}, 0, 0)`};
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
+  overflow-y: auto;
   background-color: ${({ theme }) => theme.colors.secondary};
   transition: transform 0.25s ease-in-out;
 
