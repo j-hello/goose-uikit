@@ -2028,12 +2028,9 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$B, templateObject_2$d;
 
-var StyledPanel = styled.div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 4) calc(var(--site-pad) * 2);\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  background-color: ", ";\n  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    display: flex;\n    position: sticky;\n    top: 0;\n    right: auto;\n    left: 0;\n  }\n"], ["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 4) calc(var(--site-pad) * 2);\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  background-color: ", ";\n  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    display: flex;\n    position: sticky;\n    top: 0;\n    right: auto;\n    left: 0;\n  }\n"])), function (_a) {
+var StyledPanel = styled.div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 4) calc(var(--site-pad) * 2);\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  background-color: #fff;\n  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    display: flex;\n    position: sticky;\n    top: 0;\n    right: auto;\n    left: 0;\n    box-shadow: none;\n  }\n"], ["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 4) calc(var(--site-pad) * 2);\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  background-color: #fff;\n  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    display: flex;\n    position: sticky;\n    top: 0;\n    right: auto;\n    left: 0;\n    box-shadow: none;\n  }\n"])), function (_a) {
     var isPushed = _a.isPushed;
-    return "translate3d(" + (isPushed ? "100%%" : "0") + ", 0, 0)";
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.background;
+    return "translate3d(" + (isPushed ? "100%" : "0") + ", 0, 0)";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
@@ -2261,7 +2258,7 @@ var StyledNav = styled.nav(templateObject_2$f || (templateObject_2$f = __makeTem
 });
 var BodyWrapper = styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
 var Inner = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  flex-grow: 1;\n  transform: translate3d(0, 0, 0);\n"], ["\n  flex-grow: 1;\n  transform: translate3d(0, 0, 0);\n"])));
-styled(Overlay)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"], ["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
+var MobileOnlyOverlay = styled(Overlay)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"], ["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
@@ -2280,7 +2277,8 @@ var Menu = function (_a) {
             React.createElement(Flex, null, isMobile ? (React.createElement(Hamburger, { togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); } })) : (React.createElement(UserBlock, { account: account, login: login, logout: logout })))),
         React.createElement(BodyWrapper, null,
             React.createElement(Panel, { isPushed: isPushed, isMobile: isMobile, showMenu: showMenu, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
-            React.createElement(Inner, null, children))));
+            React.createElement(Inner, null, children),
+            React.createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" }))));
 };
 var templateObject_1$G, templateObject_2$f, templateObject_3$7, templateObject_4$2, templateObject_5$1;
 
