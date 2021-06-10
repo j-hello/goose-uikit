@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import Accordion from "./Accordion";
 import { MenuEntry, LinkLabel, SubMenuEntry } from "./MenuEntry";
 import MenuLink from "./MenuLink";
 import { PanelProps, PushedProps } from "./types";
+import Close from "./Close";
 
 interface Props extends PanelProps, PushedProps {
   isMobile: boolean;
@@ -33,6 +34,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
 
   return (
     <>
+      <Close togglePush={() => pushNav(false)} />
       <Container>
         {mainLinks.map((entry) => {
           const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;

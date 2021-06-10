@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Overlay from "../../components/Overlay/Overlay";
 import { Flex } from "../../components/Flex";
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const StyledNav = styled.nav<{ showMenu: boolean }>`
+const StyledNav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,18 +44,19 @@ const MobileOnlyOverlay = styled(Overlay)`
   }
 `;
 
-const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links, priceLink, profile, children }) => {
+const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links, priceLink, children }) => {
   const { isXl } = useMatchBreakpoints();
   const isMobile = isXl === false;
   const [isPushed, setIsPushed] = useState(!isMobile);
-  const [showMenu, setShowMenu] = useState(true);
 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
 
+  console.log("menu", isPushed, "mobile", isMobile);
+
   return (
     <Wrapper>
-      <StyledNav showMenu={showMenu}>
+      <StyledNav>
         <Logo href={homeLink?.href ?? "/"} />
         <Flex>
           {isMobile ? (

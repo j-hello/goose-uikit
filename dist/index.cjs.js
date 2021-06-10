@@ -1995,7 +1995,14 @@ var MenuLink = function (_a) {
     return React__default['default'].createElement(Tag, __assign({}, props, otherProps));
 };
 
-var Container$3 = styled__default['default'].div(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  flex: 1;\n"], ["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  flex: 1;\n"])));
+var Button$1 = styled__default['default'].button(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  width: 38px;\n  height: 26px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n"], ["\n  width: 38px;\n  height: 26px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n"])));
+var Close = function (_a) {
+    var togglePush = _a.togglePush;
+    return (React__default['default'].createElement(Button$1, { "aria-label": "Close menu", onClick: togglePush }, "\u00D7"));
+};
+var templateObject_1$A;
+
+var Container$3 = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  flex: 1;\n"], ["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  flex: 1;\n"])));
 var SubContainer = styled__default['default'](Container$3)(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  padding-top: var(--site-pad);\n"], ["\n  padding-top: var(--site-pad);\n"])));
 var PanelBody = function (_a) {
     var isPushed = _a.isPushed, pushNav = _a.pushNav, isMobile = _a.isMobile, links = _a.links;
@@ -2005,6 +2012,7 @@ var PanelBody = function (_a) {
     var mainLinks = links.filter(function (entry) { return !entry.sub; });
     var subLinks = links.filter(function (entry) { return entry.sub; });
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
+        React__default['default'].createElement(Close, { togglePush: function () { return pushNav(false); } }),
         React__default['default'].createElement(Container$3, null, mainLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             if (entry.items) {
@@ -2028,9 +2036,9 @@ var PanelBody = function (_a) {
                     React__default['default'].createElement(LinkLabel, null, entry.label))));
         }))));
 };
-var templateObject_1$A, templateObject_2$c;
+var templateObject_1$B, templateObject_2$c;
 
-var Container$4 = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  flex: none;\n  padding-top: var(--site-pad);\n"], ["\n  flex: none;\n  padding-top: var(--site-pad);\n"])));
+var Container$4 = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  flex: none;\n  padding-top: var(--site-pad);\n"], ["\n  flex: none;\n  padding-top: var(--site-pad);\n"])));
 var PriceEntry = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right: 17px;\n    width: 50px;\n  }\n  a {\n    margin-left: auto;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right: 17px;\n    width: 50px;\n  }\n  a {\n    margin-left: auto;\n  }\n"])));
 var PanelFooter = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd, priceLink = _a.priceLink;
@@ -2041,11 +2049,11 @@ var PanelFooter = function (_a) {
             React__default['default'].createElement(Text, { color: "text", fontSize: "var(--nav-size)", bold: true }, "$" + cakePriceUsd.toFixed(3)),
             React__default['default'].createElement(Button, { as: "a", variant: "primary", href: priceLink }, "Buy"))));
 };
-var templateObject_1$B, templateObject_2$d;
+var templateObject_1$C, templateObject_2$d;
 
-var StyledPanel = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 4) calc(var(--site-pad) * 2);\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  background-color: ", ";\n  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    display: flex;\n    position: sticky;\n    top: 0;\n    right: auto;\n    left: 0;\n    box-shadow: none;\n  }\n"], ["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 4) calc(var(--site-pad) * 2);\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  background-color: ", ";\n  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    display: flex;\n    position: sticky;\n    top: 0;\n    right: auto;\n    left: 0;\n    box-shadow: none;\n  }\n"])), function (_a) {
+var StyledPanel = styled__default['default'].div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 4) calc(var(--site-pad) * 2);\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  background-color: ", ";\n  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    display: flex;\n    position: sticky;\n    top: 0;\n    right: auto;\n    left: 0;\n    box-shadow: none;\n  }\n"], ["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 4) calc(var(--site-pad) * 2);\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  background-color: ", ";\n  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    display: flex;\n    position: sticky;\n    top: 0;\n    right: auto;\n    left: 0;\n    box-shadow: none;\n  }\n"])), function (_a) {
     var isPushed = _a.isPushed;
-    return "translate3d(" + (isPushed ? "100%" : "0") + ", 0, 0)";
+    return "translate3d(" + (isPushed ? "0" : "100%") + ", 0, 0)";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.secondary;
@@ -2059,7 +2067,7 @@ var Panel = function (props) {
         React__default['default'].createElement(PanelBody, __assign({}, props)),
         React__default['default'].createElement(PanelFooter, __assign({}, props))));
 };
-var templateObject_1$C;
+var templateObject_1$D;
 
 var Icon$I = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 96 96" }, props),
@@ -2184,14 +2192,14 @@ var WalletCard = function (_a) {
         React__default['default'].createElement(Text, { bold: true, color: "primary" }, title)));
 };
 
-styled__default['default'](Link)(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 24px;\n"], ["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 24px;\n"])));
+styled__default['default'](Link)(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 24px;\n"], ["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 24px;\n"])));
 var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     return (React__default['default'].createElement(Modal, { title: "Connect to a wallet", onDismiss: onDismiss }, connectors.map(function (entry, index) { return (React__default['default'].createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss, mb: index < connectors.length - 1 ? "8.5px" : "0" })); })));
 };
-var templateObject_1$D;
+var templateObject_1$E;
 
-var StyleButton = styled__default['default'](Text).attrs({ role: "button" })(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: ", ";\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: ", ";\n"])), function (_a) {
+var StyleButton = styled__default['default'](Text).attrs({ role: "button" })(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: ", ";\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
 });
@@ -2221,7 +2229,7 @@ var CopyToClipboard = function (_a) {
         React__default['default'].createElement(Icon$n, { width: "20px", color: "primary", ml: "4px" }),
         React__default['default'].createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, "Copied")));
 };
-var templateObject_1$E, templateObject_2$e;
+var templateObject_1$F, templateObject_2$e;
 
 var AccountModal = function (_a) {
     var account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
@@ -2256,20 +2264,20 @@ var UserBlock = function (_a) {
         } }, "Connect Wallet"))));
 };
 
-var Button$1 = styled__default['default'].button(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  width: 38px;\n  height: 26px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  > span {\n    height: 4px;\n    background: ", ";\n    width: 100%;\n  }\n"], ["\n  width: 38px;\n  height: 26px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  > span {\n    height: 4px;\n    background: ", ";\n    width: 100%;\n  }\n"])), function (_a) {
+var Button$2 = styled__default['default'].button(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  width: 38px;\n  height: 26px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  > span {\n    height: 4px;\n    background: ", ";\n    width: 100%;\n  }\n"], ["\n  width: 38px;\n  height: 26px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  > span {\n    height: 4px;\n    background: ", ";\n    width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
 });
 var Hamburger = function (_a) {
     var togglePush = _a.togglePush;
-    return (React__default['default'].createElement(Button$1, { "aria-label": "Toggle menu", onClick: togglePush },
+    return (React__default['default'].createElement(Button$2, { "aria-label": "Toggle menu", onClick: togglePush },
         React__default['default'].createElement("span", null),
         React__default['default'].createElement("span", null),
         React__default['default'].createElement("span", null)));
 };
-var templateObject_1$F;
+var templateObject_1$G;
 
-var Wrapper$1 = styled__default['default'].div(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
+var Wrapper$1 = styled__default['default'].div(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
 var StyledNav = styled__default['default'].nav(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: var(--site-pad) var(--site-pad) 0;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: var(--site-pad) var(--site-pad) 0;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
@@ -2282,15 +2290,15 @@ var MobileOnlyOverlay = styled__default['default'](Overlay)(templateObject_5$1 |
 });
 var Menu = function (_a) {
     var _b;
-    var account = _a.account, login = _a.login, logout = _a.logout, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink; _a.profile; var children = _a.children;
+    var account = _a.account, login = _a.login, logout = _a.logout, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, children = _a.children;
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
     var _c = React.useState(!isMobile), isPushed = _c[0], setIsPushed = _c[1];
-    var _d = React.useState(true), showMenu = _d[0]; _d[1];
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "Home"; });
+    console.log("menu", isPushed, "mobile", isMobile);
     return (React__default['default'].createElement(Wrapper$1, null,
-        React__default['default'].createElement(StyledNav, { showMenu: showMenu },
+        React__default['default'].createElement(StyledNav, null,
             React__default['default'].createElement(Logo$1, { href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React__default['default'].createElement(Flex, null, isMobile ? (React__default['default'].createElement(Hamburger, { togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); } })) : (React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout })))),
         React__default['default'].createElement(BodyWrapper, null,
@@ -2298,7 +2306,7 @@ var Menu = function (_a) {
             React__default['default'].createElement(Inner, null, children),
             React__default['default'].createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" }))));
 };
-var templateObject_1$G, templateObject_2$f, templateObject_3$7, templateObject_4$2, templateObject_5$1;
+var templateObject_1$H, templateObject_2$f, templateObject_3$7, templateObject_4$2, templateObject_5$1;
 
 var ToastAction = function (_a) {
     var action = _a.action;
@@ -2322,7 +2330,7 @@ var alertTypeMap = (_a$1 = {},
     _a$1[types.DANGER] = variants$1.DANGER,
     _a$1[types.WARNING] = variants$1.WARNING,
     _a$1);
-var StyledToast = styled__default['default'].div(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  right: 16px;\n  position: fixed;\n  max-width: calc(100% - 32px);\n  transition: all 250ms ease-in;\n  width: 100%;\n\n  ", " {\n    max-width: 400px;\n  }\n"], ["\n  right: 16px;\n  position: fixed;\n  max-width: calc(100% - 32px);\n  transition: all 250ms ease-in;\n  width: 100%;\n\n  ", " {\n    max-width: 400px;\n  }\n"])), function (_a) {
+var StyledToast = styled__default['default'].div(templateObject_1$I || (templateObject_1$I = __makeTemplateObject(["\n  right: 16px;\n  position: fixed;\n  max-width: calc(100% - 32px);\n  transition: all 250ms ease-in;\n  width: 100%;\n\n  ", " {\n    max-width: 400px;\n  }\n"], ["\n  right: 16px;\n  position: fixed;\n  max-width: calc(100% - 32px);\n  transition: all 250ms ease-in;\n  width: 100%;\n\n  ", " {\n    max-width: 400px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -2361,11 +2369,11 @@ var Toast = function (_a) {
                 React__default['default'].createElement(Text, { as: "p", mb: "8px" }, description),
                 React__default['default'].createElement(ToastAction, { action: action }))) : (description)))));
 };
-var templateObject_1$H;
+var templateObject_1$I;
 
 var ZINDEX = 1000;
 var TOP_POSITION = 80; // Initial position from the top
-var StyledToastContainer = styled__default['default'].div(templateObject_1$I || (templateObject_1$I = __makeTemplateObject(["\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 250ms ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 250ms ease-out;\n  }\n"], ["\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 250ms ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 250ms ease-out;\n  }\n"])));
+var StyledToastContainer = styled__default['default'].div(templateObject_1$J || (templateObject_1$J = __makeTemplateObject(["\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 250ms ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 250ms ease-out;\n  }\n"], ["\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 250ms ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 250ms ease-out;\n  }\n"])));
 var ToastContainer = function (_a) {
     var toasts = _a.toasts, onRemove = _a.onRemove, _b = _a.ttl, ttl = _b === void 0 ? 6000 : _b, _c = _a.stackSpacing, stackSpacing = _c === void 0 ? 24 : _c;
     return (React__default['default'].createElement(StyledToastContainer, null,
@@ -2375,16 +2383,16 @@ var ToastContainer = function (_a) {
             return (React__default['default'].createElement(Toast, { key: toast.id, toast: toast, onRemove: onRemove, ttl: ttl, style: { top: top + "px", zIndex: zIndex } }));
         }))));
 };
-var templateObject_1$I;
+var templateObject_1$J;
 
-var ResetCSS = styled.createGlobalStyle(templateObject_1$J || (templateObject_1$J = __makeTemplateObject(["\n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1.4;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n"], ["\n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1.4;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n"])), function (_a) {
+var ResetCSS = styled.createGlobalStyle(templateObject_1$K || (templateObject_1$K = __makeTemplateObject(["\n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1.4;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n"], ["\n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1.4;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textSubtle;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.input;
 });
-var templateObject_1$J;
+var templateObject_1$K;
 
 var baseColors = {
     failure: "#ededf2",

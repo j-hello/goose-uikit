@@ -17,7 +17,7 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
   z-index: 11;
   padding: calc(var(--site-pad) * 4) calc(var(--site-pad) * 2);
   width: 75%;
-  transform: ${({ isPushed }) => `translate3d(${isPushed ? "100%" : "0"}, 0, 0)`};
+  transform: ${({ isPushed }) => `translate3d(${isPushed ? "0" : "100%"}, 0, 0)`};
   position: fixed;
   top: 0;
   bottom: 0;
