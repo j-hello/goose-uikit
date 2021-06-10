@@ -6,8 +6,8 @@ interface Props {
 }
 
 const Button = styled.button`
-  width: 38px;
-  height: 26px;
+  width: 33px;
+  height: 21px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -17,7 +17,7 @@ const Button = styled.button`
   cursor: pointer;
 
   > span {
-    height: 4px;
+    height: 3px;
     background: ${({ theme }) => theme.colors.primary};
     width: 100%;
   }

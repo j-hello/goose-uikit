@@ -805,12 +805,15 @@ var style = (_a = {},
         fontSize: "var(--xxl-size)",
     },
     _a);
-var Heading = styled__default['default'](Text)(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight: ", ";\n  line-height: 1.3;\n"], ["\n  ", "\n  font-weight: ", ";\n  line-height: 1.3;\n"])), function (_a) {
+var Heading = styled__default['default'](Text)(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight: ", ";\n  line-height: ", ";\n\n  ", " {\n    line-height: 1.3;\n  }\n"], ["\n  ", "\n  font-weight: ", ";\n  line-height: ", ";\n\n  ", " {\n    line-height: 1.3;\n  }\n"])), function (_a) {
     var size = _a.size;
     return style[size || sizes$1.MD];
 }, function (_a) {
     var bold = _a.bold;
-    return bold ? "500" : "400";
+    return (bold ? "500" : "400");
+}, function () { return ( "1.1" ); }, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
 });
 Heading.defaultProps = {
     as: tags.H2,
@@ -2270,7 +2273,7 @@ var UserBlock = function (_a) {
         } }, "Connect Wallet"))));
 };
 
-var Button$2 = styled__default['default'].button(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  width: 38px;\n  height: 26px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  > span {\n    height: 4px;\n    background: ", ";\n    width: 100%;\n  }\n"], ["\n  width: 38px;\n  height: 26px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  > span {\n    height: 4px;\n    background: ", ";\n    width: 100%;\n  }\n"])), function (_a) {
+var Button$2 = styled__default['default'].button(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  width: 33px;\n  height: 21px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  > span {\n    height: 3px;\n    background: ", ";\n    width: 100%;\n  }\n"], ["\n  width: 33px;\n  height: 21px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  > span {\n    height: 3px;\n    background: ", ";\n    width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
 });

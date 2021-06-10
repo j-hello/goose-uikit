@@ -19,8 +19,12 @@ const style = {
 
 const Heading = styled(Text)<HeadingProps>`
   ${({ size }) => style[size || sizes.MD]}
-  font-weight: ${({ bold }) =>  bold ? "500" : "400"};
-  line-height: 1.3;
+  font-weight: ${({ bold }) => (bold ? "500" : "400")};
+  line-height: ${() => (sizes.XXL || sizes.XL ? "1.1" : "1.3")};
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    line-height: 1.3;
+  }
 `;
 
 Heading.defaultProps = {
