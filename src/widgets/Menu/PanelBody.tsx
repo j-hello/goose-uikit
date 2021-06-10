@@ -16,6 +16,9 @@ const Container = styled.div`
   flex-direction: column;
   flex: 1;
   padding-top: var(--site-pad);
+  ${({ theme }) => theme.mediaQueries.nav} {
+    padding-top: 0;
+  }
 `;
 
 const SubContainer = styled(Container)`

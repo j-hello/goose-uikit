@@ -1980,7 +1980,7 @@ var MenuLink = function (_a) {
     return React.createElement(Tag, __assign({}, props, otherProps));
 };
 
-var Button$1 = styled.button(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  color: ", ";\n  font-weight: 300;\n  position: absolute;\n  top: var(--site-pad);\n  right: calc(var(--site-pad) * 2);\n  margin-right: -19px;\n  margin-top: -9px;\n"], ["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  color: ", ";\n  font-weight: 300;\n  position: absolute;\n  top: var(--site-pad);\n  right: calc(var(--site-pad) * 2);\n  margin-right: -19px;\n  margin-top: -9px;\n"])), function (_a) {
+var Button$1 = styled.button(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  font-size: 55px;\n  color: ", ";\n  font-weight: 300;\n  position: absolute;\n  top: var(--site-pad);\n  right: calc(var(--site-pad) * 2);\n  margin-right: -19px;\n  margin-top: -9px;\n"], ["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  font-size: 55px;\n  color: ", ";\n  font-weight: 300;\n  position: absolute;\n  top: var(--site-pad);\n  right: calc(var(--site-pad) * 2);\n  margin-right: -19px;\n  margin-top: -9px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
 });
@@ -1990,7 +1990,10 @@ var Close = function (_a) {
 };
 var templateObject_1$A;
 
-var Container$3 = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  padding-top: var(--site-pad);\n"], ["\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  padding-top: var(--site-pad);\n"])));
+var Container$3 = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  padding-top: var(--site-pad);\n  ", " {\n    padding-top: 0;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  padding-top: var(--site-pad);\n  ", " {\n    padding-top: 0;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.nav;
+});
 var SubContainer = styled(Container$3)(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  padding-top: var(--site-pad);\n"], ["\n  padding-top: var(--site-pad);\n"])));
 var PanelBody = function (_a) {
     var isPushed = _a.isPushed, pushNav = _a.pushNav, isMobile = _a.isMobile, links = _a.links;
