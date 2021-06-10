@@ -45,11 +45,6 @@ const MobileOnlyOverlay = styled(Overlay)`
   }
 `;
 
-const FloatingButton = styled.div`
-  padding: calc(var(--site-pad) * 2) 0 var(--site-pad);
-  text-align: center;
-`;
-
 const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links, priceLink, profile, children }) => {
   const { isXl } = useMatchBreakpoints();
   const isMobile = isXl === false;
