@@ -1935,7 +1935,7 @@ MenuEntry.defaultProps = {
     isActive: false,
     role: "button",
 };
-var SubMenuEntry = styled(MenuEntry)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  color: ", ";\n  font-size: var(--md-size));\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"], ["\n  color: ", ";\n  font-size: var(--md-size));\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"])), function (_a) {
+var SubMenuEntry = styled(MenuEntry)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  color: ", ";\n  font-size: var(--md-size);\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"], ["\n  color: ", ";\n  font-size: var(--md-size);\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"])), function (_a) {
     var isActive = _a.isActive, theme = _a.theme;
     return (isActive ? theme.colors.primary : theme.colors.textSubtle);
 }, function (_a) {
@@ -1983,7 +1983,10 @@ var MenuLink = function (_a) {
     return React.createElement(Tag, __assign({}, props, otherProps));
 };
 
-var Button$1 = styled.button(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  width: 38px;\n  height: 26px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n"], ["\n  width: 38px;\n  height: 26px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n"])));
+var Button$1 = styled.button(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  color: ", ";\n  font-size: 60px;\n  line-height: 1;\n  font-weight: 400;\n\n  position: absolute;\n  top: var(--site-pad);\n  right: calc(var(--site-pad) * 2);\n"], ["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  color: ", ";\n  font-size: 60px;\n  line-height: 1;\n  font-weight: 400;\n\n  position: absolute;\n  top: var(--site-pad);\n  right: calc(var(--site-pad) * 2);\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.primary;
+});
 var Close = function (_a) {
     var togglePush = _a.togglePush;
     return (React.createElement(Button$1, { "aria-label": "Close menu", onClick: togglePush }, "\u00D7"));
@@ -2000,7 +2003,7 @@ var PanelBody = function (_a) {
     var mainLinks = links.filter(function (entry) { return !entry.sub; });
     var subLinks = links.filter(function (entry) { return entry.sub; });
     return (React.createElement(React.Fragment, null,
-        React.createElement(Close, { togglePush: function () { return pushNav(false); } }),
+        isMobile && React.createElement(Close, { togglePush: function () { return pushNav(false); } }),
         React.createElement(Container$3, null, mainLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             if (entry.items) {
@@ -2039,7 +2042,7 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$C, templateObject_2$d;
 
-var StyledPanel = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 4) calc(var(--site-pad) * 2);\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  background-color: ", ";\n  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    display: flex;\n    position: sticky;\n    top: 0;\n    right: auto;\n    left: 0;\n    box-shadow: none;\n  }\n"], ["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 4) calc(var(--site-pad) * 2);\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  background-color: ", ";\n  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    display: flex;\n    position: sticky;\n    top: 0;\n    right: auto;\n    left: 0;\n    box-shadow: none;\n  }\n"])), function (_a) {
+var StyledPanel = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 3) calc(var(--site-pad) * 2);\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  background-color: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    background-color: ", ";\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 3) calc(var(--site-pad) * 2);\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  background-color: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    background-color: ", ";\n  }\n"])), function (_a) {
     var isPushed = _a.isPushed;
     return "translate3d(" + (isPushed ? "0" : "100%") + ", 0, 0)";
 }, function (_a) {
@@ -2048,7 +2051,10 @@ var StyledPanel = styled.div(templateObject_1$D || (templateObject_1$D = __makeT
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
-}, SIDEBAR_WIDTH_FULL);
+}, SIDEBAR_WIDTH_FULL, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.background;
+});
 var Panel = function (props) {
     var isPushed = props.isPushed;
     return (React.createElement(StyledPanel, { isPushed: isPushed },

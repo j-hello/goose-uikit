@@ -34,7 +34,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
 
   return (
     <>
-      <Close togglePush={() => pushNav(false)} />
+      {isMobile && <Close togglePush={() => pushNav(false)} />}
       <Container>
         {mainLinks.map((entry) => {
           const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;

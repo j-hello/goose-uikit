@@ -10,12 +10,13 @@ interface Props extends PanelProps, PushedProps {
 }
 
 const StyledPanel = styled.div<{ isPushed: boolean }>`
+  display: flex;
   flex-direction: column;
   align-self: flex-start;
   justify-items: space-between;
   flex-shrink: 0;
   z-index: 11;
-  padding: calc(var(--site-pad) * 4) calc(var(--site-pad) * 2);
+  padding: calc(var(--site-pad) * 3) calc(var(--site-pad) * 2);
   width: 75%;
   transform: ${({ isPushed }) => `translate3d(${isPushed ? "0" : "100%"}, 0, 0)`};
   position: fixed;
@@ -23,7 +24,6 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
   bottom: 0;
   right: 0;
   background-color: ${({ theme }) => theme.colors.secondary};
-  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
   transition: transform 0.25s ease-in-out;
 
   ${({ theme }) => theme.mediaQueries.nav} {
@@ -31,12 +31,11 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
     transform: translate3d(0, 0, 0);
     padding: var(--site-pad);
     padding-right: 0;
-    display: flex;
     position: sticky;
-    top: 0;
-    right: auto;
     left: 0;
-    box-shadow: none;
+    bottom: auto;
+    right: auto;
+    background-color: ${({ theme }) => theme.colors.background};
   }
 `;
 

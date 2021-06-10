@@ -1,20 +1,27 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeConsumer } from "styled-components";
 
 interface Props {
   togglePush: () => void;
 }
 
 const Button = styled.button`
-  width: 38px;
-  height: 26px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
   border: 0;
   background: none;
   padding: 0;
   cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: 60px;
+  line-height: 1;
+  font-weight: 400;
+
+  position: absolute;
+  top: var(--site-pad);
+  right: calc(var(--site-pad) * 2);
 `;
 
 const Close: React.FC<Props> = ({ togglePush }) => {
