@@ -2291,6 +2291,11 @@ var Menu = function (_a) {
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
     var _c = useState(!isMobile), isPushed = _c[0], setIsPushed = _c[1];
+    useEffect(function () {
+        isPushed
+            ? document.body.setAttribute("style", "position: fixed; top: 0; left: 0; right: 0")
+            : document.body.setAttribute("style", "");
+    }, [isPushed]);
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "Home"; });
     return (React.createElement(Wrapper$1, null,

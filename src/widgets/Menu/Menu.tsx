@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Overlay from "../../components/Overlay/Overlay";
 import { useMatchBreakpoints } from "../../hooks";
@@ -47,6 +47,12 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
   const { isXl } = useMatchBreakpoints();
   const isMobile = isXl === false;
   const [isPushed, setIsPushed] = useState(!isMobile);
+
+  useEffect(() => {
+    isPushed
+      ? document.body.setAttribute("style", "position: fixed; top: 0; left: 0; right: 0")
+      : document.body.setAttribute("style", "");
+  }, [isPushed]);
 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
