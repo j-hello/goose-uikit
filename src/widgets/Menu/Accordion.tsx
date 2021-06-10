@@ -9,7 +9,7 @@ interface Props extends PushedProps {
   label: string;
   initialOpenState?: boolean;
   className?: string;
-  sub?: boolean
+  sub?: boolean;
 }
 
 const Container = styled.div`
@@ -25,31 +25,39 @@ const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHei
   overflow: hidden;
 `;
 
-const Accordion: React.FC<Props> = ({ label, isPushed, pushNav, initialOpenState = false, children, className, sub }) => {
+const Accordion: React.FC<Props> = ({
+  label,
+  isPushed,
+  pushNav,
+  initialOpenState = false,
+  children,
+  className,
+  sub,
+}) => {
   const [isOpen, setIsOpen] = useState(initialOpenState);
 
   const handleClick = () => {
     if (isPushed) {
       setIsOpen((prevState) => !prevState);
     } else {
-      pushNav(true);
+      // pushNav(true);
       setIsOpen(true);
     }
   };
 
   return (
     <Container>
-      {sub ? 
-      <SubMenuEntry onClick={handleClick} className={className}>
-        <LinkLabel>{label}</LinkLabel>
-        {isOpen ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
-      </SubMenuEntry>
-      :
-      <MenuEntry onClick={handleClick} className={className}>
-        <LinkLabel>{label}</LinkLabel>
-        {isOpen ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
-      </MenuEntry>
-      }
+      {sub ? (
+        <SubMenuEntry onClick={handleClick} className={className}>
+          <LinkLabel>{label}</LinkLabel>
+          {isOpen ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
+        </SubMenuEntry>
+      ) : (
+        <MenuEntry onClick={handleClick} className={className}>
+          <LinkLabel>{label}</LinkLabel>
+          {isOpen ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
+        </MenuEntry>
+      )}
 
       <AccordionContent
         isOpen={isOpen}

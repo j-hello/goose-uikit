@@ -63,7 +63,7 @@ const StyledButton = styled.button<ButtonProps>`
   letter-spacing: 0.02em;
   justify-content: center;
   outline: 0;
-  padding: 0.7em 1.25em;
+  padding: 0.65em 1.25em;
   transition: background-color 0.2s;
   opacity: ${({ isloading }) => (isloading ? 0.5 : 1)};
 

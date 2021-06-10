@@ -170,7 +170,7 @@ var getButtonVariantProp = function (prop) { return function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? variants.PRIMARY : _b;
     return theme.button[variant][prop];
 }; };
-var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: var(--md-size);\n  font-weight: 500;\n  /* max-content instead of auto for Safari fix */\n  width: max-content;\n  line-height: 1.2;\n  letter-spacing: 0.02em;\n  justify-content: center;\n  outline: 0;\n  padding: 0.7em 1.25em;\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: var(--md-size);\n  font-weight: 500;\n  /* max-content instead of auto for Safari fix */\n  width: max-content;\n  line-height: 1.2;\n  letter-spacing: 0.02em;\n  justify-content: center;\n  outline: 0;\n  padding: 0.7em 1.25em;\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
+var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: var(--md-size);\n  font-weight: 500;\n  /* max-content instead of auto for Safari fix */\n  width: max-content;\n  line-height: 1.2;\n  letter-spacing: 0.02em;\n  justify-content: center;\n  outline: 0;\n  padding: 0.65em 1.25em;\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: var(--md-size);\n  font-weight: 500;\n  /* max-content instead of auto for Safari fix */\n  width: max-content;\n  line-height: 1.2;\n  letter-spacing: 0.02em;\n  justify-content: center;\n  outline: 0;\n  padding: 0.65em 1.25em;\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
     var isloading = _a.isloading;
     return (isloading ? 0.5 : 1);
 }, getDisabledStyles, removePointerEvents, styledSystem.space);
@@ -805,15 +805,12 @@ var style = (_a = {},
         fontSize: "var(--xxl-size)",
     },
     _a);
-var Heading = styled__default['default'](Text)(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight: ", ";\n  line-height: ", ";\n\n  ", " {\n    line-height: 1.3;\n  }\n"], ["\n  ", "\n  font-weight: ", ";\n  line-height: ", ";\n\n  ", " {\n    line-height: 1.3;\n  }\n"])), function (_a) {
+var Heading = styled__default['default'](Text)(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight: ", ";\n  line-height: 1.1;\n"], ["\n  ", "\n  font-weight: ", ";\n  line-height: 1.1;\n"])), function (_a) {
     var size = _a.size;
     return style[size || sizes$1.MD];
 }, function (_a) {
     var bold = _a.bold;
     return (bold ? "500" : "400");
-}, function () { return ( "1.1" ); }, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.sm;
 });
 Heading.defaultProps = {
     as: tags.H2,
@@ -1932,7 +1929,7 @@ var links = [
     },
 ];
 var MENU_ENTRY_HEIGHT = 50;
-var SIDEBAR_WIDTH_FULL = 300;
+var SIDEBAR_WIDTH_FULL = 350;
 
 var LinkLabel = styled__default['default'].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  margin-right: 8.5px;\n"], ["\n  margin-right: 8.5px;\n"])));
 var MenuEntry = styled__default['default'].div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
@@ -1965,26 +1962,23 @@ var AccordionContent = styled__default['default'].div(templateObject_2$b || (tem
     return (isOpen ? maxHeight + "px" : 0);
 });
 var Accordion = function (_a) {
-    var label = _a.label, isPushed = _a.isPushed, pushNav = _a.pushNav, _b = _a.initialOpenState, initialOpenState = _b === void 0 ? false : _b, children = _a.children, className = _a.className, sub = _a.sub;
+    var label = _a.label, isPushed = _a.isPushed; _a.pushNav; var _b = _a.initialOpenState, initialOpenState = _b === void 0 ? false : _b, children = _a.children, className = _a.className, sub = _a.sub;
     var _c = React.useState(initialOpenState), isOpen = _c[0], setIsOpen = _c[1];
     var handleClick = function () {
         if (isPushed) {
             setIsOpen(function (prevState) { return !prevState; });
         }
         else {
-            pushNav(true);
+            // pushNav(true);
             setIsOpen(true);
         }
     };
     return (React__default['default'].createElement(Container$2, null,
-        sub ?
-            React__default['default'].createElement(SubMenuEntry, { onClick: handleClick, className: className },
-                React__default['default'].createElement(LinkLabel, null, label),
-                isOpen ? React__default['default'].createElement(Icon$8, null) : React__default['default'].createElement(Icon$7, null))
-            :
-                React__default['default'].createElement(MenuEntry, { onClick: handleClick, className: className },
-                    React__default['default'].createElement(LinkLabel, null, label),
-                    isOpen ? React__default['default'].createElement(Icon$8, null) : React__default['default'].createElement(Icon$7, null)),
+        sub ? (React__default['default'].createElement(SubMenuEntry, { onClick: handleClick, className: className },
+            React__default['default'].createElement(LinkLabel, null, label),
+            isOpen ? React__default['default'].createElement(Icon$8, null) : React__default['default'].createElement(Icon$7, null))) : (React__default['default'].createElement(MenuEntry, { onClick: handleClick, className: className },
+            React__default['default'].createElement(LinkLabel, null, label),
+            isOpen ? React__default['default'].createElement(Icon$8, null) : React__default['default'].createElement(Icon$7, null))),
         React__default['default'].createElement(AccordionContent, { isOpen: isOpen, isPushed: isPushed, maxHeight: React__default['default'].Children.count(children) * MENU_ENTRY_HEIGHT }, children)));
 };
 var templateObject_1$z, templateObject_2$b;
@@ -2057,7 +2051,7 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$C, templateObject_2$d;
 
-var StyledPanel = styled__default['default'].div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  background-color: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    background-color: ", ";\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 11;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  background-color: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    padding-right: 0;\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    background-color: ", ";\n  }\n"])), function (_a) {
+var StyledPanel = styled__default['default'].div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  background-color: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    background: none;\n    transition: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  background-color: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    background: none;\n    transition: none;\n  }\n"])), function (_a) {
     var isPushed = _a.isPushed;
     return "translate3d(" + (isPushed ? "0" : "100%") + ", 0, 0)";
 }, function (_a) {
@@ -2066,10 +2060,7 @@ var StyledPanel = styled__default['default'].div(templateObject_1$D || (template
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
-}, SIDEBAR_WIDTH_FULL, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.background;
-});
+}, SIDEBAR_WIDTH_FULL);
 var Panel = function (props) {
     var isPushed = props.isPushed;
     return (React__default['default'].createElement(StyledPanel, { isPushed: isPushed },

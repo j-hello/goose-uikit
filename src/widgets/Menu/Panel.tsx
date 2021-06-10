@@ -15,7 +15,7 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
   align-self: flex-start;
   justify-items: space-between;
   flex-shrink: 0;
-  z-index: 11;
+  z-index: 12;
   padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);
   height: 100%;
   width: 75%;
@@ -31,13 +31,14 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
   ${({ theme }) => theme.mediaQueries.nav} {
     width: ${SIDEBAR_WIDTH_FULL}px;
     transform: translate3d(0, 0, 0);
+    z-index: 10;
     padding: var(--site-pad);
-    padding-right: 0;
     position: sticky;
     left: 0;
     bottom: auto;
     right: auto;
-    background-color: ${({ theme }) => theme.colors.background};
+    background: none;
+    transition: none;
   }
 `;
 
