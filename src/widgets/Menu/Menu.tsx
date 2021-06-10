@@ -8,8 +8,6 @@ import Logo from "./Logo";
 import Panel from "./Panel";
 import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
-import { MENU_HEIGHT, SIDEBAR_WIDTH_FULL } from "./config";
-import Avatar from "./Avatar";
 import Hamburger from "./Hamburger";
 
 const Wrapper = styled.div`
@@ -57,7 +55,6 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
   const isMobile = isXl === false;
   const [isPushed, setIsPushed] = useState(!isMobile);
   const [showMenu, setShowMenu] = useState(true);
-  const refPrevOffset = useRef(window.pageYOffset);
 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
@@ -83,6 +80,7 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
         <Panel
           isPushed={isPushed}
           isMobile={isMobile}
+          showMenu={showMenu}
           cakePriceUsd={cakePriceUsd}
           pushNav={setIsPushed}
           links={links}

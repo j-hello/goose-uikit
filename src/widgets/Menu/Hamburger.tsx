@@ -16,7 +16,10 @@ const Button = styled.button`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  margin-left: 17px;
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
 
   > span {
     height: 4px;

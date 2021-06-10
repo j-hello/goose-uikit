@@ -2028,12 +2028,19 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$B, templateObject_2$d;
 
-var StyledPanel = styled.div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  display: none;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding: var(--site-pad);\n  padding-right: 0;\n\n  ", " {\n    max-width: ", "px;\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"], ["\n  display: none;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding: var(--site-pad);\n  padding-right: 0;\n\n  ", " {\n    max-width: ", "px;\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"])), function (_a) {
+var StyledPanel = styled.div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding: var(--site-pad);\n  padding-right: 0;\n  margin-left: ", ";\n\n  position: fixed;\n  top: 0;\n  right: 0;\n  background-color: ", ";\n\n  ", " {\n    max-width: ", "px;\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"], ["\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  width: 100%;\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n  padding: var(--site-pad);\n  padding-right: 0;\n  margin-left: ", ";\n\n  position: fixed;\n  top: 0;\n  right: 0;\n  background-color: ", ";\n\n  ", " {\n    max-width: ", "px;\n    display: flex;\n    position: sticky;\n    top: 0;\n    left: 0;\n  }\n"])), function (_a) {
+    var isPushed = _a.isPushed;
+    return (isPushed ? SIDEBAR_WIDTH_FULL : "-" + SIDEBAR_WIDTH_FULL) + "px";
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.background;
+}, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 }, SIDEBAR_WIDTH_FULL);
 var Panel = function (props) {
-    return (React.createElement(StyledPanel, null,
+    var isPushed = props.isPushed;
+    return (React.createElement(StyledPanel, { isPushed: isPushed },
         React.createElement(PanelBody, __assign({}, props)),
         React.createElement(PanelFooter, __assign({}, props))));
 };
@@ -2234,7 +2241,7 @@ var UserBlock = function (_a) {
         } }, "Connect Wallet"))));
 };
 
-var Button$1 = styled.button(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  width: 38px;\n  height: 26px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  margin-left: 17px;\n\n  > span {\n    height: 4px;\n    background: ", ";\n    width: 100%;\n  }\n"], ["\n  width: 38px;\n  height: 26px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  margin-left: 17px;\n\n  > span {\n    height: 4px;\n    background: ", ";\n    width: 100%;\n  }\n"])), function (_a) {
+var Button$1 = styled.button(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  width: 38px;\n  height: 26px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  > span {\n    height: 4px;\n    background: ", ";\n    width: 100%;\n  }\n"], ["\n  width: 38px;\n  height: 26px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  > span {\n    height: 4px;\n    background: ", ";\n    width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
 });
@@ -2266,7 +2273,6 @@ var Menu = function (_a) {
     var isMobile = isXl === false;
     var _c = useState(!isMobile), isPushed = _c[0], setIsPushed = _c[1];
     var _d = useState(true), showMenu = _d[0]; _d[1];
-    useRef(window.pageYOffset);
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "Home"; });
     return (React.createElement(Wrapper$1, null,
@@ -2276,7 +2282,7 @@ var Menu = function (_a) {
         isMobile && (React.createElement(FloatingButton, null,
             React.createElement(UserBlock, { account: account, login: login, logout: logout }))),
         React.createElement(BodyWrapper, null,
-            React.createElement(Panel, { isPushed: isPushed, isMobile: isMobile, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
+            React.createElement(Panel, { isPushed: isPushed, isMobile: isMobile, showMenu: showMenu, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
             React.createElement(Inner, null, children))));
 };
 var templateObject_1$G, templateObject_2$f, templateObject_3$7, templateObject_4$2, templateObject_5$1, templateObject_6;
