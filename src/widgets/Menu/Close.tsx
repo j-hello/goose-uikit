@@ -15,13 +15,12 @@ const Button = styled.button`
   justify-content: space-between;
   flex-direction: column;
   color: ${({ theme }) => theme.colors.primary};
-  font-size: 60px;
-  line-height: 1;
-  font-weight: 400;
-
+  font-weight: 300;
   position: absolute;
   top: var(--site-pad);
   right: calc(var(--site-pad) * 2);
+  margin-right: -19px;
+  margin-top: -9px;
 `;
 
 const Close: React.FC<Props> = ({ togglePush }) => {
