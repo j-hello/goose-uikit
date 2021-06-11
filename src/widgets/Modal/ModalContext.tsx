@@ -19,7 +19,7 @@ const ModalWrapper = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: ${({ theme }) => theme.zIndices.modal - 1};
+  z-index: 99};
 `;
 
 export const Context = createContext<ModalsContext>({

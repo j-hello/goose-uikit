@@ -14,11 +14,11 @@ interface Props extends InjectedProps {
 }
 
 const StyledModal = styled.div`
-  background-color: var(--secondary-color);
+  background-color: var(--background-color);
   box-shadow: var(--box-shadow);
-  border-radius: 2m;
+  border-radius: 2em;
   width: 100%;
-  z-index: ${({ theme }) => theme.zIndices.modal};
+  z-index: 100;
   overflow-y: auto;
   ${({ theme }) => theme.mediaQueries.xs} {
     width: auto;
