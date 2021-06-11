@@ -18,4 +18,5 @@ export interface HeadingProps {
     as?: Tags;
     size?: Sizes;
     bold?: boolean;
+    clamped?: boolean;
 }

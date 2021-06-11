@@ -793,12 +793,15 @@ var style = (_a = {},
         fontSize: "var(--xxl-size)",
     },
     _a);
-var Heading = styled(Text)(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight: ", ";\n  line-height: 1.1;\n"], ["\n  ", "\n  font-weight: ", ";\n  line-height: 1.1;\n"])), function (_a) {
+var Heading = styled(Text)(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight: ", ";\n  line-height: ", ";\n"], ["\n  ", "\n  font-weight: ", ";\n  line-height: ", ";\n"])), function (_a) {
     var size = _a.size;
     return style[size || sizes$1.MD];
 }, function (_a) {
     var bold = _a.bold;
     return (bold ? "500" : "400");
+}, function (_a) {
+    var clamped = _a.clamped;
+    return (clamped ? "1.1" : "1.4");
 });
 Heading.defaultProps = {
     as: tags.H2,
