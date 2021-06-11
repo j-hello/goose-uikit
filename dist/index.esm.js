@@ -1685,10 +1685,7 @@ var useParticleBurst = function (options) {
     return { initialize: initialize, teardown: teardown };
 };
 
-var StyledModal = styled.div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  background: ", ";\n  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;\n  border-radius: 24px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 100%;\n  }\n"], ["\n  background: ", ";\n  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;\n  border-radius: 24px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 100%;\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.modal.background;
-}, function (_a) {
+var StyledModal = styled.div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  background-color: var(--secondary-color);\n  box-shadow: var(--box-shadow);\n  border-radius: 2m;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 100%;\n  }\n"], ["\n  background-color: var(--secondary-color);\n  box-shadow: var(--box-shadow);\n  border-radius: 2m;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.zIndices.modal;
 }, function (_a) {
@@ -1927,8 +1924,8 @@ var MenuEntry = styled.div(templateObject_2$a || (templateObject_2$a = __makeTem
     var secondary = _a.secondary;
     return (secondary ? "var(--subnav-size)" : "var(--nav-size)");
 }, function (_a) {
-    var isActive = _a.isActive, theme = _a.theme;
-    return (isActive ? theme.colors.primary : theme.colors.text);
+    var isActive = _a.isActive; _a.theme;
+    return (isActive ? "var(--primary-color)" : "var(--text-color)");
 });
 MenuEntry.defaultProps = {
     secondary: false,
@@ -1936,11 +1933,11 @@ MenuEntry.defaultProps = {
     role: "button",
 };
 var SubMenuEntry = styled(MenuEntry)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  color: ", ";\n  font-size: var(--md-size);\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"], ["\n  color: ", ";\n  font-size: var(--md-size);\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"])), function (_a) {
-    var isActive = _a.isActive, theme = _a.theme;
-    return (isActive ? theme.colors.primary : theme.colors.textSubtle);
+    var isActive = _a.isActive; _a.theme;
+    return (isActive ? "var(--primary-color)" : "var(--text-subtle-color)");
 }, function (_a) {
-    var isActive = _a.isActive, theme = _a.theme;
-    return (isActive ? theme.colors.primary : theme.colors.textSubtle);
+    var isActive = _a.isActive; _a.theme;
+    return (isActive ? "var(--primary-color)" : "var(--text-subtle-color)");
 });
 var templateObject_1$y, templateObject_2$a, templateObject_3$6;
 
@@ -1980,10 +1977,7 @@ var MenuLink = function (_a) {
     return React.createElement(Tag, __assign({}, props, otherProps));
 };
 
-var Button$1 = styled.button(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  font-size: 55px;\n  color: ", ";\n  font-weight: 300;\n  position: absolute;\n  top: var(--site-pad);\n  right: calc(var(--site-pad) * 2);\n  margin-right: -19px;\n  margin-top: -9px;\n"], ["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  font-size: 55px;\n  color: ", ";\n  font-weight: 300;\n  position: absolute;\n  top: var(--site-pad);\n  right: calc(var(--site-pad) * 2);\n  margin-right: -19px;\n  margin-top: -9px;\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.primary;
-});
+var Button$1 = styled.button(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  font-size: 55px;\n  color: var(--primary-color);\n  font-weight: 300;\n  position: absolute;\n  top: var(--site-pad);\n  right: calc(var(--site-pad) * 2);\n  margin-right: -19px;\n  margin-top: -9px;\n"], ["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  font-size: 55px;\n  color: var(--primary-color);\n  font-weight: 300;\n  position: absolute;\n  top: var(--site-pad);\n  right: calc(var(--site-pad) * 2);\n  margin-right: -19px;\n  margin-top: -9px;\n"])));
 var Close = function (_a) {
     var togglePush = _a.togglePush;
     return (React.createElement(Button$1, { "aria-label": "Close menu", onClick: togglePush }, "\u00D7"));
@@ -2042,12 +2036,9 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$C, templateObject_2$d;
 
-var StyledPanel = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  background-color: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    background: none;\n    transition: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  background-color: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    background: none;\n    transition: none;\n  }\n"])), function (_a) {
+var StyledPanel = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    background: none;\n    transition: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    background: none;\n    transition: none;\n  }\n"])), function (_a) {
     var isPushed = _a.isPushed;
     return "translate3d(" + (isPushed ? "0" : "100%") + ", 0, 0)";
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.secondary;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
@@ -2255,10 +2246,7 @@ var UserBlock = function (_a) {
         } }, "Connect Wallet"))));
 };
 
-var Button$2 = styled.button(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  width: 33px;\n  height: 21px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  > span {\n    height: 3px;\n    background: ", ";\n    width: 100%;\n  }\n"], ["\n  width: 33px;\n  height: 21px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  > span {\n    height: 3px;\n    background: ", ";\n    width: 100%;\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.primary;
-});
+var Button$2 = styled.button(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  width: 33px;\n  height: 21px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  > span {\n    height: 3px;\n    background: var(--primary-color);\n    width: 100%;\n  }\n"], ["\n  width: 33px;\n  height: 21px;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  > span {\n    height: 3px;\n    background: var(--primary-color);\n    width: 100%;\n  }\n"])));
 var Hamburger = function (_a) {
     var togglePush = _a.togglePush;
     return (React.createElement(Button$2, { "aria-label": "Toggle menu", onClick: togglePush },
@@ -2434,7 +2422,7 @@ var light$1 = (_a$2 = {},
         backgroundHover: "none",
         border: 0,
         borderColorHover: "none",
-        boxShadow: "rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px",
+        boxShadow: "var(--box-shadow)",
         boxShadowActive: "none",
         color: lightColors.primary,
     },
@@ -2444,7 +2432,7 @@ var light$1 = (_a$2 = {},
         backgroundHover: "none",
         border: 0,
         borderColorHover: "none",
-        boxShadow: "rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px",
+        boxShadow: "var(--box-shadow)",
         boxShadowActive: "none",
         color: lightColors.primary,
     },

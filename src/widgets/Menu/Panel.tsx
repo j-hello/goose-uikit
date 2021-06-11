@@ -25,7 +25,7 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
   bottom: 0;
   right: 0;
   overflow-y: auto;
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background-color: var(--secondary-color);
   transition: transform 0.25s ease-in-out;
 
   ${({ theme }) => theme.mediaQueries.nav} {

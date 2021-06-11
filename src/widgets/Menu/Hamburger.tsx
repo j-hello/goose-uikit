@@ -18,7 +18,7 @@ const Button = styled.button`
 
   > span {
     height: 3px;
-    background: ${({ theme }) => theme.colors.primary};
+    background: var(--primary-color);
     width: 100%;
   }
 `;

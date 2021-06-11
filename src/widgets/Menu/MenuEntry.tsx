@@ -26,7 +26,7 @@ const MenuEntry = styled.div<Props>`
   div,
   a div,
   div a {
-    color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.text)};
+    color: ${({ isActive, theme }) => (isActive ? "var(--primary-color)" : "var(--text-color)")};
   }
 
   // Safari fix
@@ -40,12 +40,12 @@ MenuEntry.defaultProps = {
 };
 
 const SubMenuEntry = styled(MenuEntry)`
-  color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.textSubtle)};
+  color: ${({ isActive, theme }) => (isActive ? "var(--primary-color)" : "var(--text-subtle-color)")};
   font-size: var(--md-size);
   div,
   a div,
   div a {
-    color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.textSubtle)};
+    color: ${({ isActive, theme }) => (isActive ? "var(--primary-color)" : "var(--text-subtle-color)")};
   }
 `;
 

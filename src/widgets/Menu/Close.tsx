@@ -15,7 +15,7 @@ const Button = styled.button`
   justify-content: space-between;
   flex-direction: column;
   font-size: 55px;
-  color: ${({ theme }) => theme.colors.primary};
+  color: var(--primary-color);
   font-weight: 300;
   position: absolute;
   top: var(--site-pad);

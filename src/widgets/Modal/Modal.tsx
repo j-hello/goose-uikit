@@ -14,9 +14,9 @@ interface Props extends InjectedProps {
 }
 
 const StyledModal = styled.div`
-  background: ${({ theme }) => theme.modal.background};
-  box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
-  border-radius: 24px;
+  background-color: var(--secondary-color);
+  box-shadow: var(--box-shadow);
+  border-radius: 2m;
   width: 100%;
   z-index: ${({ theme }) => theme.zIndices.modal};
   overflow-y: auto;
