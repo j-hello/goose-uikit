@@ -25,11 +25,6 @@ const SubContainer = styled(Container)`
   padding-top: var(--site-pad);
 `;
 
-const SubAccordion = styled(Accordion)`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-`;
-
 const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
   const location = useLocation();
 
@@ -85,7 +80,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
 
           if (entry.items) {
             return (
-              <SubAccordion
+              <Accordion
                 key={entry.label}
                 isPushed={isPushed}
                 pushNav={pushNav}
@@ -105,7 +100,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                       <MenuLink href={item.href}>{item.label}</MenuLink>
                     </SubMenuEntry>
                   ))}
-              </SubAccordion>
+              </Accordion>
             );
           }
 

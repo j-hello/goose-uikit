@@ -1948,9 +1948,15 @@ var SubMenuEntry = styled__default['default'](MenuEntry)(templateObject_3$6 || (
 var templateObject_1$y, templateObject_2$a, templateObject_3$6;
 
 var Container$2 = styled__default['default'].div(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  display: flex;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n"])));
-var AccordionContent = styled__default['default'].div(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  margin-bottom: 8.5px;\n"], ["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  margin-bottom: 8.5px;\n"])), function (_a) {
+var AccordionContent = styled__default['default'].div(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  margin-bottom: ", ";\n\n  display: ", ";\n  grid-template-columns: 1fr 1fr;\n"], ["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  margin-bottom: ", ";\n\n  display: ", ";\n  grid-template-columns: 1fr 1fr;\n"])), function (_a) {
     var isOpen = _a.isOpen, maxHeight = _a.maxHeight;
     return (isOpen ? maxHeight + "px" : 0);
+}, function (_a) {
+    var isOpen = _a.isOpen;
+    return (isOpen ? "17px" : 0);
+}, function (_a) {
+    var sub = _a.sub;
+    return (sub ? "grid" : "block");
 });
 var Accordion = function (_a) {
     var label = _a.label, isPushed = _a.isPushed; _a.pushNav; var _b = _a.initialOpenState, initialOpenState = _b === void 0 ? false : _b, children = _a.children, className = _a.className, sub = _a.sub;
@@ -1970,7 +1976,7 @@ var Accordion = function (_a) {
             isOpen ? React__default['default'].createElement(Icon$8, null) : React__default['default'].createElement(Icon$7, null))) : (React__default['default'].createElement(MenuEntry, { onClick: handleClick, className: className },
             React__default['default'].createElement(LinkLabel, null, label),
             isOpen ? React__default['default'].createElement(Icon$8, null) : React__default['default'].createElement(Icon$7, null))),
-        React__default['default'].createElement(AccordionContent, { isOpen: isOpen, isPushed: isPushed, maxHeight: React__default['default'].Children.count(children) * MENU_ENTRY_HEIGHT }, children)));
+        React__default['default'].createElement(AccordionContent, { isOpen: isOpen, isPushed: isPushed, maxHeight: React__default['default'].Children.count(children) * MENU_ENTRY_HEIGHT, sub: sub ? true : false }, children)));
 };
 var templateObject_1$z, templateObject_2$b;
 

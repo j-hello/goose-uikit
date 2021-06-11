@@ -19,11 +19,14 @@ const Container = styled.div`
   flex-shrink: 0;
 `;
 
-const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHeight: number }>`
+const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHeight: number; sub: boolean }>`
   max-height: ${({ isOpen, maxHeight }) => (isOpen ? `${maxHeight}px` : 0)};
   transition: max-height 0.3s ease-out;
   overflow: hidden;
-  margin-bottom: 8.5px;
+  margin-bottom: ${({ isOpen }) => (isOpen ? "17px" : 0)};
+
+  display: ${({ sub }) => (sub ? "grid" : "block")};
+  grid-template-columns: 1fr 1fr;
 `;
 
 const Accordion: React.FC<Props> = ({
@@ -64,6 +67,7 @@ const Accordion: React.FC<Props> = ({
         isOpen={isOpen}
         isPushed={isPushed}
         maxHeight={React.Children.count(children) * MENU_ENTRY_HEIGHT}
+        sub={sub ? true : false}
       >
         {children}
       </AccordionContent>
