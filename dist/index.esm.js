@@ -1941,7 +1941,7 @@ var AccordionContent = styled.div(templateObject_2$b || (templateObject_2$b = __
     return (isOpen ? maxHeight + "px" : 0);
 }, function (_a) {
     var isOpen = _a.isOpen;
-    return (isOpen ? "17px" : 0);
+    return (isOpen ? "8.5px" : 0);
 }, function (_a) {
     var sub = _a.sub;
     return (sub ? "grid" : "block");
@@ -2274,14 +2274,6 @@ var Menu = function (_a) {
     var isMobile = isXl === false;
     var _c = useState(!isMobile), isPushed = _c[0], setIsPushed = _c[1];
     useEffect(function () {
-        function handleOverlay() {
-            isPushed && isMobile
-                ? document.body.setAttribute("style", "position: fixed; top: 0; left: 0; right: 0")
-                : document.body.setAttribute("style", "");
-        }
-        window.addEventListener("resize", handleOverlay);
-        handleOverlay();
-        return function () { return window.removeEventListener("resize", handleOverlay); };
     }, [isPushed]);
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "Home"; });

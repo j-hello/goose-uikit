@@ -50,15 +50,14 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
 
   useEffect(() => {
     function handleOverlay() {
-      isPushed && isMobile
-        ? document.body.setAttribute("style", "position: fixed; top: 0; left: 0; right: 0")
-        : document.body.setAttribute("style", "");
+      if (isPushed && isMobile) {
+        document.body.setAttribute("style", "position: fixed; top: 0; left: 0; right: 0");
+        window.addEventListener("resize", handleOverlay);
+      } else {
+        document.body.setAttribute("style", "");
+        window.removeEventListener("resize", handleOverlay);
+      }
     }
-
-    window.addEventListener("resize", handleOverlay);
-    handleOverlay();
-
-    return () => window.removeEventListener("resize", handleOverlay);
   }, [isPushed]);
 
   // Find the home link if provided

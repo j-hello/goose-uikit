@@ -23,7 +23,7 @@ const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHei
   max-height: ${({ isOpen, maxHeight }) => (isOpen ? `${maxHeight}px` : 0)};
   transition: max-height 0.3s ease-out;
   overflow: hidden;
-  margin-bottom: ${({ isOpen }) => (isOpen ? "17px" : 0)};
+  margin-bottom: ${({ isOpen }) => (isOpen ? "8.5px" : 0)};
 
   display: ${({ sub }) => (sub ? "grid" : "block")};
   grid-template-columns: 1fr 1fr;
