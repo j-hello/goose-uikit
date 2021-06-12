@@ -20,7 +20,7 @@ const style = {
 const Heading = styled(Text)<HeadingProps>`
   ${({ size }) => style[size || sizes.MD]}
   font-weight: ${({ bold }) => (bold ? "500" : "400")};
-  line-height: ${({ clamped }) => (clamped ? "1.1" : "1.4")};
+  line-height: ${({ clamped }) => (clamped ? "1.1" : "1.3")};
 `;
 
 Heading.defaultProps = {

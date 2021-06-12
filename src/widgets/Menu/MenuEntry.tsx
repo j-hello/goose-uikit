@@ -14,7 +14,7 @@ const MenuEntry = styled.div<Props>`
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin: ${({ secondary }) => (secondary ? "4.25px 0 4.25px 17px" : "4.25px 0 4.25px 0")};
+  margin: ${({ secondary }) => (secondary ? "8.5px 0 8.5px 17px" : "4.25px 0 4.25px 0")};
   font-size: ${({ secondary }) => (secondary ? "var(--subnav-size)" : "var(--nav-size)")};
 
   a {
@@ -26,7 +26,7 @@ const MenuEntry = styled.div<Props>`
   div,
   a div,
   div a {
-    color: ${({ isActive, theme }) => (isActive ? "var(--primary-color)" : "var(--text-color)")};
+    color: ${({ isActive }) => (isActive ? "var(--primary-color)" : "var(--text-color)")};
   }
 
   // Safari fix
@@ -40,12 +40,12 @@ MenuEntry.defaultProps = {
 };
 
 const SubMenuEntry = styled(MenuEntry)`
-  color: ${({ isActive, theme }) => (isActive ? "var(--primary-color)" : "var(--text-subtle-color)")};
+  color: ${({ isActive }) => (isActive ? "var(--primary-color)" : "var(--text-subtle-color)")};
   font-size: var(--md-size);
   div,
   a div,
   div a {
-    color: ${({ isActive, theme }) => (isActive ? "var(--primary-color)" : "var(--text-subtle-color)")};
+    color: ${({ isActive }) => (isActive ? "var(--primary-color)" : "var(--text-subtle-color)")};
   }
 `;
 

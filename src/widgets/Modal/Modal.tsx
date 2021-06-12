@@ -14,7 +14,7 @@ interface Props extends InjectedProps {
 }
 
 const StyledModal = styled.div`
-  background-color: var(--background-color);
+  background-color: var(--secondary-color);
   box-shadow: var(--box-shadow);
   border-radius: 2em;
   width: 100%;

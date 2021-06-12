@@ -801,7 +801,7 @@ var Heading = styled(Text)(templateObject_1$g || (templateObject_1$g = __makeTem
     return (bold ? "500" : "400");
 }, function (_a) {
     var clamped = _a.clamped;
-    return (clamped ? "1.1" : "1.4");
+    return (clamped ? "1.1" : "1.3");
 });
 Heading.defaultProps = {
     as: tags.H2,
@@ -1688,7 +1688,7 @@ var useParticleBurst = function (options) {
     return { initialize: initialize, teardown: teardown };
 };
 
-var StyledModal = styled.div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  background-color: var(--background-color);\n  box-shadow: var(--box-shadow);\n  border-radius: 2em;\n  width: 100%;\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 100%;\n  }\n"], ["\n  background-color: var(--background-color);\n  box-shadow: var(--box-shadow);\n  border-radius: 2em;\n  width: 100%;\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 100%;\n  }\n"])), function (_a) {
+var StyledModal = styled.div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  background-color: var(--secondary-color);\n  box-shadow: var(--box-shadow);\n  border-radius: 2em;\n  width: 100%;\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 100%;\n  }\n"], ["\n  background-color: var(--secondary-color);\n  box-shadow: var(--box-shadow);\n  border-radius: 2em;\n  width: 100%;\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xs;
 });
@@ -1916,12 +1916,12 @@ var SIDEBAR_WIDTH_FULL = 350;
 var LinkLabel = styled.div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  margin-right: 8.5px;\n"], ["\n  margin-right: 8.5px;\n"])));
 var MenuEntry = styled.div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
     var secondary = _a.secondary;
-    return (secondary ? "4.25px 0 4.25px 17px" : "4.25px 0 4.25px 0");
+    return (secondary ? "8.5px 0 8.5px 17px" : "4.25px 0 4.25px 0");
 }, function (_a) {
     var secondary = _a.secondary;
     return (secondary ? "var(--subnav-size)" : "var(--nav-size)");
 }, function (_a) {
-    var isActive = _a.isActive; _a.theme;
+    var isActive = _a.isActive;
     return (isActive ? "var(--primary-color)" : "var(--text-color)");
 });
 MenuEntry.defaultProps = {
@@ -1930,21 +1930,18 @@ MenuEntry.defaultProps = {
     role: "button",
 };
 var SubMenuEntry = styled(MenuEntry)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  color: ", ";\n  font-size: var(--md-size);\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"], ["\n  color: ", ";\n  font-size: var(--md-size);\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"])), function (_a) {
-    var isActive = _a.isActive; _a.theme;
+    var isActive = _a.isActive;
     return (isActive ? "var(--primary-color)" : "var(--text-subtle-color)");
 }, function (_a) {
-    var isActive = _a.isActive; _a.theme;
+    var isActive = _a.isActive;
     return (isActive ? "var(--primary-color)" : "var(--text-subtle-color)");
 });
 var templateObject_1$y, templateObject_2$a, templateObject_3$6;
 
 var Container$2 = styled.div(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  display: flex;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n"])));
-var AccordionContent = styled.div(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  margin-bottom: ", ";\n\n  display: ", ";\n  grid-template-columns: 1fr 1fr;\n"], ["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  margin-bottom: ", ";\n\n  display: ", ";\n  grid-template-columns: 1fr 1fr;\n"])), function (_a) {
+var AccordionContent = styled.div(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n\n  display: ", ";\n  grid-template-columns: 1fr 1fr;\n"], ["\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n\n  display: ", ";\n  grid-template-columns: 1fr 1fr;\n"])), function (_a) {
     var isOpen = _a.isOpen, maxHeight = _a.maxHeight;
     return (isOpen ? maxHeight + "px" : 0);
-}, function (_a) {
-    var isOpen = _a.isOpen;
-    return (isOpen ? "8.5px" : 0);
 }, function (_a) {
     var sub = _a.sub;
     return (sub ? "grid" : "block");
@@ -2169,7 +2166,7 @@ var localStorageKey = "accountStatus";
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss, mb = _a.mb;
     var title = walletConfig.title; walletConfig.icon;
-    return (React.createElement(Button, { variant: "secondary", onClick: function () {
+    return (React.createElement(Button, { variant: "tertiary", onClick: function () {
             login(walletConfig.connectorId);
             window.localStorage.setItem(localStorageKey, "1");
             onDismiss();
@@ -2224,7 +2221,7 @@ var AccountModal = function (_a) {
             React.createElement(LinkExternal, { small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, "View on BscScan"),
             React.createElement(CopyToClipboard, { toCopy: account }, "Copy Address")),
         React.createElement(Flex, { justifyContent: "center" },
-            React.createElement(Button, { size: "sm", variant: "secondary", onClick: function () {
+            React.createElement(Button, { size: "sm", variant: "tertiary", onClick: function () {
                     logout();
                     window.localStorage.removeItem(localStorageKey);
                     onDismiss();
@@ -2275,7 +2272,7 @@ var Menu = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, children = _a.children;
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
-    var _c = useState(!isMobile), isPushed = _c[0], setIsPushed = _c[1];
+    var _c = useState(false), isPushed = _c[0], setIsPushed = _c[1];
     useEffect(function () {
     }, [isPushed]);
     // Find the home link if provided
