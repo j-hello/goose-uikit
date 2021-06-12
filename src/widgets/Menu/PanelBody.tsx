@@ -43,14 +43,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
 
           if (entry.items) {
             return (
-              <Accordion
-                key={entry.label}
-                isPushed={isPushed}
-                pushNav={pushNav}
-                label={entry.label}
-                initialOpenState={entry.initialOpenState || false}
-                className={calloutClass}
-              >
+              <Accordion key={entry.label} label={entry.label} initialOpenState={false} className={calloutClass}>
                 {entry.items.map((item) => (
                   <MenuEntry
                     key={item.href}
@@ -83,15 +76,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
 
           if (entry.items) {
             return (
-              <Accordion
-                key={entry.label}
-                isPushed={isPushed}
-                pushNav={pushNav}
-                label={entry.label}
-                initialOpenState={entry.initialOpenState || false}
-                className={calloutClass}
-                sub
-              >
+              <Accordion key={entry.label} label={entry.label} initialOpenState={false} className={calloutClass} sub>
                 {entry.items.map((item) => (
                   <SubMenuEntry
                     key={item.href}

@@ -1951,16 +1951,10 @@ var AccordionContent = styled.div(templateObject_2$b || (templateObject_2$b = __
     return (sub ? "grid" : "block");
 });
 var Accordion = function (_a) {
-    var label = _a.label, isPushed = _a.isPushed; _a.pushNav; var _b = _a.initialOpenState, initialOpenState = _b === void 0 ? false : _b, children = _a.children, className = _a.className, sub = _a.sub;
+    var label = _a.label, _b = _a.initialOpenState, initialOpenState = _b === void 0 ? false : _b, children = _a.children, className = _a.className, sub = _a.sub;
     var _c = useState(initialOpenState), isOpen = _c[0], setIsOpen = _c[1];
     var handleClick = function () {
-        if (isPushed) {
-            setIsOpen(false);
-        }
-        else {
-            // pushNav(true);
-            setIsOpen(true);
-        }
+        isOpen ? setIsOpen(false) : setIsOpen(true);
     };
     return (React.createElement(Container$2, null,
         sub ? (React.createElement(SubMenuEntry, { onClick: handleClick, className: className },
@@ -1968,7 +1962,7 @@ var Accordion = function (_a) {
             isOpen ? React.createElement(Icon$8, null) : React.createElement(Icon$7, null))) : (React.createElement(MenuEntry, { onClick: handleClick, className: className },
             React.createElement(LinkLabel, null, label),
             isOpen ? React.createElement(Icon$8, null) : React.createElement(Icon$7, null))),
-        React.createElement(AccordionContent, { isOpen: isOpen, isPushed: isPushed, maxHeight: React.Children.count(children) * MENU_ENTRY_HEIGHT, sub: sub ? true : false }, children)));
+        React.createElement(AccordionContent, { isOpen: isOpen, maxHeight: React.Children.count(children) * MENU_ENTRY_HEIGHT, sub: sub ? true : false }, children)));
 };
 var templateObject_1$z, templateObject_2$b;
 
@@ -1994,7 +1988,7 @@ var Container$3 = styled.div(templateObject_1$B || (templateObject_1$B = __makeT
 });
 var SubContainer = styled(Container$3)(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  padding-top: var(--site-pad);\n"], ["\n  padding-top: var(--site-pad);\n"])));
 var PanelBody = function (_a) {
-    var isPushed = _a.isPushed, pushNav = _a.pushNav, isMobile = _a.isMobile, links = _a.links;
+    _a.isPushed; var pushNav = _a.pushNav, isMobile = _a.isMobile, links = _a.links;
     var location = useLocation();
     // Close the menu when a user clicks a link on mobile
     var handleClick = isMobile ? function () { return pushNav(false); } : undefined;
@@ -2005,7 +1999,7 @@ var PanelBody = function (_a) {
         React.createElement(Container$3, null, mainLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             if (entry.items) {
-                return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, label: entry.label, initialOpenState: entry.initialOpenState || false, className: calloutClass }, entry.items.map(function (item) { return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname || location.pathname.includes(item.href), onClick: handleClick },
+                return (React.createElement(Accordion, { key: entry.label, label: entry.label, initialOpenState: false, className: calloutClass }, entry.items.map(function (item) { return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname || location.pathname.includes(item.href), onClick: handleClick },
                     React.createElement(MenuLink, { href: item.href }, item.label))); })));
             }
             return (React.createElement(MenuEntry, { key: entry.label, isActive: entry.href ? entry.href === location.pathname || location.pathname.includes(entry.href) : false, className: calloutClass },
@@ -2015,7 +2009,7 @@ var PanelBody = function (_a) {
         React.createElement(SubContainer, null, subLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             if (entry.items) {
-                return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, label: entry.label, initialOpenState: entry.initialOpenState || false, className: calloutClass, sub: true }, entry.items.map(function (item) { return (React.createElement(SubMenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname || location.pathname.includes(item.href), onClick: handleClick },
+                return (React.createElement(Accordion, { key: entry.label, label: entry.label, initialOpenState: false, className: calloutClass, sub: true }, entry.items.map(function (item) { return (React.createElement(SubMenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname || location.pathname.includes(item.href), onClick: handleClick },
                     React.createElement(MenuLink, { href: item.href }, item.label))); })));
             }
             return (React.createElement(SubMenuEntry, { key: entry.label, isActive: entry.href ? entry.href === location.pathname || location.pathname.includes(entry.href) : false, className: calloutClass },
@@ -2038,7 +2032,7 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$C, templateObject_2$d;
 
-var StyledPanel = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  visibility: ", ";\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    background: none;\n    transition: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  visibility: ", ";\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    background: none;\n    transition: none;\n  }\n"])), function (_a) {
+var StyledPanel = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  visibility: ", ";\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    visibility: visible;\n    background: none;\n    transition: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  visibility: ", ";\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    visibility: visible;\n    background: none;\n    transition: none;\n  }\n"])), function (_a) {
     var isPushed = _a.isPushed;
     return "translate3d(" + (isPushed ? "0" : "100%") + ", 0, 0)";
 }, function (_a) {

@@ -38,6 +38,7 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
     left: 0;
     bottom: auto;
     right: auto;
+    visibility: visible;
     background: none;
     transition: none;
   }
