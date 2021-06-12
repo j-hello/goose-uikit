@@ -40,12 +40,7 @@ const Accordion: React.FC<Props> = ({
   const [isOpen, setIsOpen] = useState(initialOpenState);
 
   const handleClick = () => {
-    if (isPushed) {
-      setIsOpen((prevState) => !prevState);
-    } else {
-      // pushNav(true);
-      setIsOpen(true);
-    }
+    isPushed ? setIsOpen(false) : setIsOpen(true);
   };
 
   return (

@@ -8,6 +8,7 @@ const StyledLink = styled(Text)<LinkProps>`
   display: flex;
   align-items: center;
   width: fit-content;
+  font-weight: ${({ bold }) => (bold ? "500" : "400")};
   &:hover {
     text-decoration: underline;
   }
@@ -15,11 +16,12 @@ const StyledLink = styled(Text)<LinkProps>`
 
 const Link: React.FC<LinkProps> = ({ external, ...props }) => {
   const internalProps = external ? getExternalLinkProps() : {};
-  return <StyledLink as="a" bold {...internalProps} {...props} />;
+  return <StyledLink as="a" {...internalProps} {...props} />;
 };
 
 Link.defaultProps = {
   color: "primary",
+  bold: false,
 };
 
 export default Link;
