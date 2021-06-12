@@ -31,6 +31,7 @@ const MenuEntry = styled.div<Props>`
 
   // Safari fix
   flex-shrink: 0;
+  width: max-content;
 `;
 
 MenuEntry.defaultProps = {
