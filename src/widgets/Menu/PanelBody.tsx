@@ -48,7 +48,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                 isPushed={isPushed}
                 pushNav={pushNav}
                 label={entry.label}
-                initialOpenState={entry.initialOpenState}
+                initialOpenState={entry.initialOpenState || false}
                 className={calloutClass}
               >
                 {entry.items.map((item) => (
@@ -88,7 +88,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                 isPushed={isPushed}
                 pushNav={pushNav}
                 label={entry.label}
-                initialOpenState={entry.initialOpenState}
+                initialOpenState={entry.initialOpenState || false}
                 className={calloutClass}
                 sub
               >
