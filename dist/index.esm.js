@@ -2273,6 +2273,17 @@ var Menu = function (_a) {
     var isMobile = isXl === false;
     var _c = useState(false), isPushed = _c[0], setIsPushed = _c[1];
     useEffect(function () {
+        function handleOverlay() {
+            if (isPushed && isMobile) {
+                document.body.setAttribute("style", "position: fixed; top: 0; left: 0; right: 0");
+                window.addEventListener("resize", handleOverlay);
+            }
+            else {
+                document.body.setAttribute("style", "");
+                window.removeEventListener("resize", handleOverlay);
+            }
+        }
+        handleOverlay();
     }, [isPushed]);
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "Home"; });

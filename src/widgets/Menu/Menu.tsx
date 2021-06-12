@@ -58,6 +58,7 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
         window.removeEventListener("resize", handleOverlay);
       }
     }
+    handleOverlay();
   }, [isPushed]);
 
   // Find the home link if provided
