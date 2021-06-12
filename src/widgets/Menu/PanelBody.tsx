@@ -51,22 +51,25 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                 initialOpenState={entry.initialOpenState}
                 className={calloutClass}
               >
-                {isPushed &&
-                  entry.items.map((item) => (
-                    <MenuEntry
-                      key={item.href}
-                      secondary
-                      isActive={item.href === location.pathname}
-                      onClick={handleClick}
-                    >
-                      <MenuLink href={item.href}>{item.label}</MenuLink>
-                    </MenuEntry>
-                  ))}
+                {entry.items.map((item) => (
+                  <MenuEntry
+                    key={item.href}
+                    secondary
+                    isActive={item.href === location.pathname || location.pathname.includes(item.href)}
+                    onClick={handleClick}
+                  >
+                    <MenuLink href={item.href}>{item.label}</MenuLink>
+                  </MenuEntry>
+                ))}
               </Accordion>
             );
           }
           return (
-            <MenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
+            <MenuEntry
+              key={entry.label}
+              isActive={entry.href ? entry.href === location.pathname || location.pathname.includes(entry.href) : false}
+              className={calloutClass}
+            >
               <MenuLink href={entry.href} onClick={handleClick}>
                 <LinkLabel>{entry.label}</LinkLabel>
               </MenuLink>
@@ -89,23 +92,26 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                 className={calloutClass}
                 sub
               >
-                {isPushed &&
-                  entry.items.map((item) => (
-                    <SubMenuEntry
-                      key={item.href}
-                      secondary
-                      isActive={item.href === location.pathname}
-                      onClick={handleClick}
-                    >
-                      <MenuLink href={item.href}>{item.label}</MenuLink>
-                    </SubMenuEntry>
-                  ))}
+                {entry.items.map((item) => (
+                  <SubMenuEntry
+                    key={item.href}
+                    secondary
+                    isActive={item.href === location.pathname || location.pathname.includes(item.href)}
+                    onClick={handleClick}
+                  >
+                    <MenuLink href={item.href}>{item.label}</MenuLink>
+                  </SubMenuEntry>
+                ))}
               </Accordion>
             );
           }
 
           return (
-            <SubMenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
+            <SubMenuEntry
+              key={entry.label}
+              isActive={entry.href ? entry.href === location.pathname || location.pathname.includes(entry.href) : false}
+              className={calloutClass}
+            >
               <MenuLink href={entry.href} onClick={handleClick}>
                 <LinkLabel>{entry.label}</LinkLabel>
               </MenuLink>

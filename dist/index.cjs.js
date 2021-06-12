@@ -2013,22 +2013,20 @@ var PanelBody = function (_a) {
         React__default['default'].createElement(Container$3, null, mainLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             if (entry.items) {
-                return (React__default['default'].createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
-                    entry.items.map(function (item) { return (React__default['default'].createElement(MenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname, onClick: handleClick },
-                        React__default['default'].createElement(MenuLink, { href: item.href }, item.label))); })));
+                return (React__default['default'].createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, entry.items.map(function (item) { return (React__default['default'].createElement(MenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname || location.pathname.includes(item.href), onClick: handleClick },
+                    React__default['default'].createElement(MenuLink, { href: item.href }, item.label))); })));
             }
-            return (React__default['default'].createElement(MenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
+            return (React__default['default'].createElement(MenuEntry, { key: entry.label, isActive: entry.href ? entry.href === location.pathname || location.pathname.includes(entry.href) : false, className: calloutClass },
                 React__default['default'].createElement(MenuLink, { href: entry.href, onClick: handleClick },
                     React__default['default'].createElement(LinkLabel, null, entry.label))));
         })),
         React__default['default'].createElement(SubContainer, null, subLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             if (entry.items) {
-                return (React__default['default'].createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass, sub: true }, isPushed &&
-                    entry.items.map(function (item) { return (React__default['default'].createElement(SubMenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname, onClick: handleClick },
-                        React__default['default'].createElement(MenuLink, { href: item.href }, item.label))); })));
+                return (React__default['default'].createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass, sub: true }, entry.items.map(function (item) { return (React__default['default'].createElement(SubMenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname || location.pathname.includes(item.href), onClick: handleClick },
+                    React__default['default'].createElement(MenuLink, { href: item.href }, item.label))); })));
             }
-            return (React__default['default'].createElement(SubMenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
+            return (React__default['default'].createElement(SubMenuEntry, { key: entry.label, isActive: entry.href ? entry.href === location.pathname || location.pathname.includes(entry.href) : false, className: calloutClass },
                 React__default['default'].createElement(MenuLink, { href: entry.href, onClick: handleClick },
                     React__default['default'].createElement(LinkLabel, null, entry.label))));
         }))));
