@@ -25,7 +25,7 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
   bottom: 0;
   right: 0;
   overflow-y: auto;
-  visibility: ${({ isPushed }) => (isPushed ? "visible" : "hidden")};
+  opacity: ${({ isPushed }) => (isPushed ? "1" : "0")};
   background-color: var(--secondary-color);
   transition: transform 0.25s ease-in-out;
 
@@ -38,7 +38,7 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
     left: 0;
     bottom: auto;
     right: auto;
-    visibility: visible;
+    opacity: 1;
     background: none;
     transition: none;
   }
