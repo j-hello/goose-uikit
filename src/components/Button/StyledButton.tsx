@@ -74,6 +74,7 @@ const StyledButton = styled.button<ButtonProps>`
 
 StyledButton.defaultProps = {
   type: "button",
+  isloading: false,
 };
 
 export default StyledButton;

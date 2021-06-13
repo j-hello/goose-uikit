@@ -164,6 +164,7 @@ var StyledButton = styled.button(templateObject_1$2 || (templateObject_1$2 = __m
 }, getDisabledStyles, removePointerEvents, space);
 StyledButton.defaultProps = {
     type: "button",
+    isloading: false,
 };
 var templateObject_1$2;
 
@@ -178,7 +179,7 @@ var Button = function (_a) {
         isloading: false,
         disabled: false,
     };
-    return (React.createElement(StyledButton, __assign({}, internalProps, props, { disabled: isDisabled }),
+    return (React.createElement(StyledButton, __assign({}, internalProps, props, { isloading: isloading, disabled: isDisabled }),
         React.isValidElement(startIcon) &&
             React.cloneElement(startIcon, {
                 mr: "0.5rem",
