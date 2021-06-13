@@ -13,7 +13,7 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  justify-items: space-between;
+  justify-content: space-between;
   flex-shrink: 0;
   z-index: 12;
   padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);

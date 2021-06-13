@@ -2031,7 +2031,7 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$C, templateObject_2$d;
 
-var StyledPanel = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hidden & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hidden & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"])), function (_a) {
+var StyledPanel = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hidden & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hidden & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"])), function (_a) {
     var isPushed = _a.isPushed;
     return "translate3d(" + (isPushed ? "0" : "100%") + ", 0, 0)";
 }, function (_a) {
@@ -2270,10 +2270,10 @@ var Menu = function (_a) {
     var _c = useState(false), isPushed = _c[0], setIsPushed = _c[1];
     useEffect(function () {
         function handleOverlay() {
+            console.log("running,", isPushed, isMobile);
             if (isPushed && isMobile) {
                 document.body.classList.remove("mobile-menu-hide");
                 document.body.setAttribute("style", "position: fixed; top: 0; left: 0; right: 0");
-                window.addEventListener("resize", handleOverlay);
                 var timer_1 = setTimeout(function () {
                     document.body.classList.add("mobile-menu-hide");
                 }, 500);
@@ -2281,10 +2281,10 @@ var Menu = function (_a) {
             }
             else {
                 document.body.setAttribute("style", "");
-                window.removeEventListener("resize", handleOverlay);
             }
         }
         handleOverlay();
+        window.addEventListener("resize", handleOverlay);
     }, [isPushed]);
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "Home"; });

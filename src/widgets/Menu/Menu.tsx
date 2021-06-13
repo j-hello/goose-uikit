@@ -50,22 +50,20 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
 
   useEffect(() => {
     function handleOverlay() {
+      console.log("running,", isPushed, isMobile);
       if (isPushed && isMobile) {
         document.body.classList.remove("mobile-menu-hide");
         document.body.setAttribute("style", "position: fixed; top: 0; left: 0; right: 0");
-        window.addEventListener("resize", handleOverlay);
-
         const timer = setTimeout(() => {
           document.body.classList.add("mobile-menu-hide");
         }, 500);
         return () => clearTimeout(timer);
       } else {
         document.body.setAttribute("style", "");
-        window.removeEventListener("resize", handleOverlay);
       }
     }
-
     handleOverlay();
+    window.addEventListener("resize", handleOverlay);
   }, [isPushed]);
 
   // Find the home link if provided
