@@ -1040,7 +1040,7 @@ var LinkExternal = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
     return (React.createElement(Link, __assign({ external: true }, props),
         children,
-        React.createElement(Icon$t, { color: "primary", ml: "4px" })));
+        React.createElement(Icon$t, { color: "primary", ml: "4.25px", width: "18px" })));
 };
 
 var Bar = styled.div(templateObject_1$p || (templateObject_1$p = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: var(--primary-color);\n  border-top-left-radius: 24px;\n  border-bottom-left-radius: 24px;\n  height: 17px;\n  transition: width 200ms ease;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: var(--primary-color);\n  border-top-left-radius: 24px;\n  border-bottom-left-radius: 24px;\n  height: 17px;\n  transition: width 200ms ease;\n"])));
@@ -2094,7 +2094,7 @@ var CopyToClipboard = function (_a) {
             }
         } }, props),
         children,
-        React.createElement(Icon$n, { fill: "var(--color-secondary)", width: "20px", color: "secondary", ml: "4px" }),
+        React.createElement(Icon$n, { fill: "var(--secondary-color)", width: "20px", color: "secondary", ml: "4.25px" }),
         React.createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, "Copied")));
 };
 var templateObject_1$B, templateObject_2$c;
