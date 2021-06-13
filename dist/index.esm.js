@@ -2031,7 +2031,11 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$C, templateObject_2$d;
 
-var StyledPanel = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"])), function (_a) {
+var Sticky = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  z-index: 12;\n  overflow-y: auto;\n\n  ", " {\n    z-index: 10;\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n  }\n"], ["\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  z-index: 12;\n  overflow-y: auto;\n\n  ", " {\n    z-index: 10;\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.nav;
+});
+var StyledPanel = styled.div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  transform: ", ";\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  transform: ", ";\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"])), function (_a) {
     var isPushed = _a.isPushed;
     return "translate3d(" + (isPushed ? "0" : "100%") + ", 0, 0)";
 }, function (_a) {
@@ -2040,11 +2044,12 @@ var StyledPanel = styled.div(templateObject_1$D || (templateObject_1$D = __makeT
 });
 var Panel = function (props) {
     var isPushed = props.isPushed;
-    return (React.createElement(StyledPanel, { isPushed: isPushed },
-        React.createElement(PanelBody, __assign({}, props)),
-        React.createElement(PanelFooter, __assign({}, props))));
+    return (React.createElement(Sticky, null,
+        React.createElement(StyledPanel, { isPushed: isPushed },
+            React.createElement(PanelBody, __assign({}, props)),
+            React.createElement(PanelFooter, __assign({}, props)))));
 };
-var templateObject_1$D;
+var templateObject_1$D, templateObject_2$e;
 
 var Icon$I = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 96 96" }, props),
@@ -2180,7 +2185,7 @@ var StyleButton = styled(Text).attrs({ role: "button" })(templateObject_1$F || (
     var theme = _a.theme;
     return theme.colors.primary;
 });
-var Tooltip = styled.div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: 0;\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"], ["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: 0;\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"])), function (_a) {
+var Tooltip = styled.div(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: 0;\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"], ["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: 0;\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"])), function (_a) {
     var isTooltipDisplayed = _a.isTooltipDisplayed;
     return (isTooltipDisplayed ? "block" : "none");
 }, function (_a) {
@@ -2206,7 +2211,7 @@ var CopyToClipboard = function (_a) {
         React.createElement(Icon$n, { width: "20px", color: "primary", ml: "4px" }),
         React.createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, "Copied")));
 };
-var templateObject_1$F, templateObject_2$e;
+var templateObject_1$F, templateObject_2$f;
 
 var AccountModal = function (_a) {
     var account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
@@ -2252,7 +2257,7 @@ var Hamburger = function (_a) {
 var templateObject_1$G;
 
 var Wrapper$1 = styled.div(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var StyledNav = styled.nav(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: var(--site-pad) var(--site-pad) 0;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: var(--site-pad) var(--site-pad) 0;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
+var StyledNav = styled.nav(templateObject_2$g || (templateObject_2$g = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: var(--site-pad) var(--site-pad) 0;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: var(--site-pad) var(--site-pad) 0;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
 });
@@ -2270,7 +2275,6 @@ var Menu = function (_a) {
     var _c = useState(false), isPushed = _c[0], setIsPushed = _c[1];
     useEffect(function () {
         function handleOverlay() {
-            console.log("running overlay,", isPushed, isMobile);
             if (isPushed && isMobile) {
                 document.body.setAttribute("style", "position: fixed; top: 0; left: 0; right: 0");
                 document.body.classList.remove("mobile-menu-hide");
@@ -2284,17 +2288,6 @@ var Menu = function (_a) {
             }
         }
         handleOverlay();
-        // function handleResize() {
-        //   console.log("running resize,", isPushed, isMobile);
-        //   if (isPushed && !isMobile) document.body.setAttribute("style", "");
-        // }
-        // handleOverlay();
-        // window.addEventListener("resize", handleResize, {
-        //   passive: true,
-        // });
-        // return () => {
-        //   window.removeEventListener("resize", handleResize);
-        // };
     }, [isPushed, isMobile]);
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "Home"; });
@@ -2307,7 +2300,7 @@ var Menu = function (_a) {
             React.createElement(Inner, null, children),
             React.createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" }))));
 };
-var templateObject_1$H, templateObject_2$f, templateObject_3$7, templateObject_4$2, templateObject_5$1;
+var templateObject_1$H, templateObject_2$g, templateObject_3$7, templateObject_4$2, templateObject_5$1;
 
 var ToastAction = function (_a) {
     var action = _a.action;
