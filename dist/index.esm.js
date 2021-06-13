@@ -171,7 +171,14 @@ var Button = function (_a) {
     var startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, external = _a.external, isloading = _a.isloading, disabled = _a.disabled, props = __rest(_a, ["startIcon", "endIcon", "children", "external", "isloading", "disabled"]);
     var internalProps = external ? getExternalLinkProps() : {};
     var isDisabled = isloading || disabled;
-    return (React.createElement(StyledButton, __assign({}, internalProps, props, { isloading: isloading ? true : false, disabled: isDisabled }),
+    Button.defaultProps = {
+        variant: variants.PRIMARY,
+        size: sizes.MD,
+        external: false,
+        isloading: false,
+        disabled: false,
+    };
+    return (React.createElement(StyledButton, __assign({}, internalProps, props, { disabled: isDisabled }),
         React.isValidElement(startIcon) &&
             React.cloneElement(startIcon, {
                 mr: "0.5rem",
@@ -181,13 +188,6 @@ var Button = function (_a) {
             React.cloneElement(endIcon, {
                 ml: "0.5rem",
             })));
-};
-Button.defaultProps = {
-    variant: variants.PRIMARY,
-    size: sizes.MD,
-    external: false,
-    isloading: false,
-    disabled: false,
 };
 
 var IconButton = styled(Button)(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  padding: 0;\n"], ["\n  padding: 0;\n"])));
