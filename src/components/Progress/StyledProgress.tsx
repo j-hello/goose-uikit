@@ -8,7 +8,7 @@ export const Bar = styled.div<BarProps>`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: var(--primary-color);
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
   height: 17px;
@@ -21,7 +21,7 @@ Bar.defaultProps = {
 
 const StyledProgress = styled.div`
   position: relative;
-  background-color: ${({ theme }) => theme.colors.input};
+  background-color: var(--input-color);
   border-radius: 24px;
   box-shadow: ${({ theme }) => theme.shadows.inset};
   height: 17px;
