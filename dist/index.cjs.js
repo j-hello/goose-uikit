@@ -191,7 +191,7 @@ var Button = function (_a) {
         isloading: false,
         disabled: false,
     };
-    return (React__default['default'].createElement(StyledButton, __assign({}, internalProps, props, { isloading: isloading, disabled: isDisabled }),
+    return (React__default['default'].createElement(StyledButton, __assign({}, internalProps, props, { disabled: isDisabled }),
         React__default['default'].isValidElement(startIcon) &&
             React__default['default'].cloneElement(startIcon, {
                 mr: "0.5rem",
