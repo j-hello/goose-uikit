@@ -11,14 +11,15 @@ const Button = styled.button`
   padding: 0;
   cursor: pointer;
 
-  font-size: 55px;
+  font-size: 50px;
   color: var(--primary-color);
   font-weight: 300;
-  // position: absolute;
-  // top: var(--site-pad);
-  // right: calc(var(--site-pad) * 2);
-  margin-right: -19px;
+  margin-right: -6px;
   margin-top: -9px;
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    font-size: 55px;
+  }
 `;
 
 const Close: React.FC<Props> = ({ togglePush }) => {

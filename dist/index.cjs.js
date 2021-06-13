@@ -2181,7 +2181,10 @@ var MenuLink = function (_a) {
     return React__default['default'].createElement(Tag, __assign({}, props, otherProps));
 };
 
-var Button$1 = styled__default['default'].button(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  font-size: 55px;\n  color: var(--primary-color);\n  font-weight: 300;\n  // position: absolute;\n  // top: var(--site-pad);\n  // right: calc(var(--site-pad) * 2);\n  margin-right: -19px;\n  margin-top: -9px;\n"], ["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  font-size: 55px;\n  color: var(--primary-color);\n  font-weight: 300;\n  // position: absolute;\n  // top: var(--site-pad);\n  // right: calc(var(--site-pad) * 2);\n  margin-right: -19px;\n  margin-top: -9px;\n"])));
+var Button$1 = styled__default['default'].button(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  font-size: 50px;\n  color: var(--primary-color);\n  font-weight: 300;\n  margin-right: -6px;\n  margin-top: -9px;\n\n  ", " {\n    font-size: 55px;\n  }\n"], ["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  font-size: 50px;\n  color: var(--primary-color);\n  font-weight: 300;\n  margin-right: -6px;\n  margin-top: -9px;\n\n  ", " {\n    font-size: 55px;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.md;
+});
 var Close = function (_a) {
     var togglePush = _a.togglePush;
     return (React__default['default'].createElement(Button$1, { "aria-label": "Close menu", onClick: togglePush }, "\u00D7"));
