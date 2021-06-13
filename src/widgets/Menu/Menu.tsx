@@ -47,8 +47,6 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
   const { isXl } = useMatchBreakpoints();
   const isMobile = isXl === false;
   const [isPushed, setIsPushed] = useState(false);
-  const [height, setHeight] = useState(0);
-  const ref = useRef(null as null | HTMLDivElement);
 
   useEffect(() => {
     function handleOverlay() {
@@ -64,7 +62,6 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
       }
     }
     handleOverlay();
-    if (ref?.current?.clientHeight) setHeight(ref.current.clientHeight);
   }, [isPushed, isMobile]);
 
   // Find the home link if provided
@@ -72,7 +69,7 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
 
   return (
     <Wrapper>
-      <StyledNav ref={ref}>
+      <StyledNav>
         <Logo href={homeLink?.href ?? "/"} />
         {isMobile ? (
           <Hamburger togglePush={() => setIsPushed((prevState: boolean) => !prevState)} />
@@ -88,7 +85,6 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
           pushNav={() => setIsPushed(false)}
           links={links}
           priceLink={priceLink}
-          headerHeight={height}
         />
         <Inner>{children}</Inner>
         <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />

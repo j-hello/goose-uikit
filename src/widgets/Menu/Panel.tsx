@@ -6,10 +6,9 @@ import { PanelProps, PushedProps } from "./types";
 
 interface Props extends PanelProps, PushedProps {
   isMobile: boolean;
-  headerHeight: number;
 }
 
-const Sticky = styled.div<{ isPushed: boolean; headerHeight: number }>`
+const Sticky = styled.div<{ isPushed: boolean }>`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -24,7 +23,7 @@ const Sticky = styled.div<{ isPushed: boolean; headerHeight: number }>`
     left: 0;
     bottom: auto;
     right: auto;
-    height: calc(100vh - ${({ headerHeight }) => (headerHeight ? `${headerHeight}px` : `0`)});
+    height: 100%;
     width: 375px;
     z-index: 10;
     transform: translate3d(0, 0, 0);
@@ -37,6 +36,7 @@ const StyledPanel = styled.div`
   flex-direction: column;
   align-self: flex-start;
   justify-content: space-between;
+  flex-shrink: 0;
   height: 100%;
   padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);
   opacity: 1;
@@ -54,10 +54,10 @@ const StyledPanel = styled.div`
 `;
 
 const Panel: React.FC<Props> = (props) => {
-  const { isPushed, headerHeight } = props;
+  const { isPushed } = props;
 
   return (
-    <Sticky isPushed={isPushed} headerHeight={headerHeight}>
+    <Sticky isPushed={isPushed}>
       <StyledPanel>
         <PanelBody {...props} />
         <PanelFooter {...props} />
