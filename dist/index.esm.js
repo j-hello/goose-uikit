@@ -2031,20 +2031,23 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$C, templateObject_2$d;
 
-var Sticky = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  z-index: 12;\n  transform: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    width: 375px;\n    z-index: 10;\n    transform: translate3d(0, 0, 0);\n    transition: none;\n  }\n"], ["\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  z-index: 12;\n  transform: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    width: 375px;\n    z-index: 10;\n    transform: translate3d(0, 0, 0);\n    transition: none;\n  }\n"])), function (_a) {
+var Sticky = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  z-index: 12;\n  transform: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    height: calc(100vh - ", ");\n    width: 375px;\n    z-index: 10;\n    transform: translate3d(0, 0, 0);\n    transition: none;\n  }\n"], ["\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  z-index: 12;\n  transform: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    height: calc(100vh - ", ");\n    width: 375px;\n    z-index: 10;\n    transform: translate3d(0, 0, 0);\n    transition: none;\n  }\n"])), function (_a) {
     var isPushed = _a.isPushed;
     return "translate3d(" + (isPushed ? "0" : "100%") + ", 0, 0)";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
+}, function (_a) {
+    var headerHeight = _a.headerHeight;
+    return (headerHeight ? headerHeight + "px" : "0");
 });
 var StyledPanel = styled.div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  height: 100%;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  opacity: 1;\n  background-color: var(--secondary-color);\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    padding: var(--site-pad);\n    opacity: 1 !important;\n    background: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  height: 100%;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  opacity: 1;\n  background-color: var(--secondary-color);\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    padding: var(--site-pad);\n    opacity: 1 !important;\n    background: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
 var Panel = function (props) {
-    var isPushed = props.isPushed;
-    return (React.createElement(Sticky, { isPushed: isPushed },
+    var isPushed = props.isPushed, headerHeight = props.headerHeight;
+    return (React.createElement(Sticky, { isPushed: isPushed, headerHeight: headerHeight },
         React.createElement(StyledPanel, null,
             React.createElement(PanelBody, __assign({}, props)),
             React.createElement(PanelFooter, __assign({}, props)))));
@@ -2273,7 +2276,10 @@ var Menu = function (_a) {
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
     var _c = useState(false), isPushed = _c[0], setIsPushed = _c[1];
+    var _d = useState(0), height = _d[0], setHeight = _d[1];
+    var ref = useRef(null);
     useEffect(function () {
+        var _a;
         function handleOverlay() {
             if (isPushed && isMobile) {
                 document.body.setAttribute("style", "position: fixed; top: 0; left: 0; right: 0");
@@ -2288,15 +2294,17 @@ var Menu = function (_a) {
             }
         }
         handleOverlay();
+        if ((_a = ref === null || ref === void 0 ? void 0 : ref.current) === null || _a === void 0 ? void 0 : _a.clientHeight)
+            setHeight(ref.current.clientHeight);
     }, [isPushed, isMobile]);
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "Home"; });
     return (React.createElement(Wrapper$1, null,
-        React.createElement(StyledNav, null,
+        React.createElement(StyledNav, { ref: ref },
             React.createElement(Logo$1, { href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             isMobile ? (React.createElement(Hamburger, { togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); } })) : (React.createElement(UserBlock, { account: account, login: login, logout: logout }))),
         React.createElement(BodyWrapper, null,
-            React.createElement(Panel, { isPushed: isPushed, isMobile: isMobile, cakePriceUsd: cakePriceUsd, pushNav: function () { return setIsPushed(false); }, links: links, priceLink: priceLink }),
+            React.createElement(Panel, { isPushed: isPushed, isMobile: isMobile, cakePriceUsd: cakePriceUsd, pushNav: function () { return setIsPushed(false); }, links: links, priceLink: priceLink, headerHeight: height }),
             React.createElement(Inner, null, children),
             React.createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" }))));
 };

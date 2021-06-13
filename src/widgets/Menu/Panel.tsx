@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import { useMatchBreakpoints } from "../../hooks";
 import PanelBody from "./PanelBody";
 import PanelFooter from "./PanelFooter";
 import { PanelProps, PushedProps } from "./types";
 
 interface Props extends PanelProps, PushedProps {
   isMobile: boolean;
+  headerHeight: number;
 }
 
-const Sticky = styled.div<{ isPushed: boolean }>`
+const Sticky = styled.div<{ isPushed: boolean; headerHeight: number }>`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -24,6 +24,7 @@ const Sticky = styled.div<{ isPushed: boolean }>`
     left: 0;
     bottom: auto;
     right: auto;
+    height: calc(100vh - ${({ headerHeight }) => (headerHeight ? `${headerHeight}px` : `0`)});
     width: 375px;
     z-index: 10;
     transform: translate3d(0, 0, 0);
@@ -53,10 +54,10 @@ const StyledPanel = styled.div`
 `;
 
 const Panel: React.FC<Props> = (props) => {
-  const { isPushed } = props;
+  const { isPushed, headerHeight } = props;
 
   return (
-    <Sticky isPushed={isPushed}>
+    <Sticky isPushed={isPushed} headerHeight={headerHeight}>
       <StyledPanel>
         <PanelBody {...props} />
         <PanelFooter {...props} />
