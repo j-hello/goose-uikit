@@ -2282,7 +2282,7 @@ var Menu = function (_a) {
     var _c = React.useState(false), isPushed = _c[0], setIsPushed = _c[1];
     React.useEffect(function () {
         function handleOverlay() {
-            console.log("running overylay,", isPushed, isMobile);
+            console.log("running overlay,", isPushed, isMobile);
             if (isPushed && isMobile) {
                 document.body.setAttribute("style", "position: fixed; top: 0; left: 0; right: 0");
                 document.body.classList.remove("mobile-menu-hide");
@@ -2295,19 +2295,19 @@ var Menu = function (_a) {
                 return function () { return clearTimeout(timer_1); };
             }
         }
-        function handleResize() {
-            console.log("running resize,", isPushed, isMobile);
-            if (isPushed && !isMobile)
-                document.body.setAttribute("style", "");
-        }
         handleOverlay();
-        window.addEventListener("resize", handleResize, {
-            passive: true,
-        });
-        return function () {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, [isPushed]);
+        // function handleResize() {
+        //   console.log("running resize,", isPushed, isMobile);
+        //   if (isPushed && !isMobile) document.body.setAttribute("style", "");
+        // }
+        // handleOverlay();
+        // window.addEventListener("resize", handleResize, {
+        //   passive: true,
+        // });
+        // return () => {
+        //   window.removeEventListener("resize", handleResize);
+        // };
+    }, [isPushed, isMobile]);
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "Home"; });
     return (React__default['default'].createElement(Wrapper$1, null,
