@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import Accordion from "./Accordion";
@@ -15,6 +15,12 @@ interface Props extends PanelProps, PushedProps {
   login: Login;
   logout: () => void;
 }
+
+const Actions = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
 
 const Container = styled.div`
   display: flex;
@@ -41,11 +47,11 @@ const PanelBody: React.FC<Props> = ({ pushNav, isMobile, links, account, login, 
 
   return (
     <>
-      {isMobile && <Close togglePush={() => pushNav(false)} />}
       {isMobile && (
-        <Container>
+        <Actions>
+          <Close togglePush={() => pushNav(false)} />
           <UserBlock account={account} login={login} logout={logout} />
-        </Container>
+        </Actions>
       )}
       <Container>
         {mainLinks.map((entry) => {

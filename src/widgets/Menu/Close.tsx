@@ -11,15 +11,12 @@ const Button = styled.button`
   padding: 0;
   cursor: pointer;
 
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
   font-size: 55px;
   color: var(--primary-color);
   font-weight: 300;
-  position: absolute;
-  top: var(--site-pad);
-  right: calc(var(--site-pad) * 2);
+  // position: absolute;
+  // top: var(--site-pad);
+  // right: calc(var(--site-pad) * 2);
   margin-right: -19px;
   margin-top: -9px;
 `;
