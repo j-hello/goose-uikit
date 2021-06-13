@@ -2082,7 +2082,7 @@ var ConnectModal = function (_a) {
 };
 var templateObject_1$A;
 
-var StyleButton = styled__default['default'](Text).attrs({ role: "button" })(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: var(--secondary-color;\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: var(--secondary-color;\n"])));
+var StyleButton = styled__default['default'](Text).attrs({ role: "button" })(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: var(--secondary-color);\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: var(--secondary-color);\n"])));
 var Tooltip = styled__default['default'].div(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: 0;\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"], ["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: 0;\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"])), function (_a) {
     var isTooltipDisplayed = _a.isTooltipDisplayed;
     return (isTooltipDisplayed ? "block" : "none");
