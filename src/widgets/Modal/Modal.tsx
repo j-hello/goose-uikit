@@ -18,12 +18,13 @@ const StyledModal = styled.div`
   box-shadow: var(--glow);
   border-radius: 2em;
   width: 100%;
+  max-width: 90%;
   z-index: 100;
   overflow-y: auto;
   ${({ theme }) => theme.mediaQueries.xs} {
     width: auto;
     min-width: 400px;
-    max-width: 100%;
+    max-width: 500px;
   }
 `;
 

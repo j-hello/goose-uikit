@@ -17,20 +17,26 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
   <Modal title="Your wallet" onDismiss={onDismiss}>
     <Text
       fontSize="var(--lg-size)"
+      color={"var(--secondary-color"}
       bold
       style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "12.75px" }}
     >
       {account}
     </Text>
     <Flex mb="25.5px">
-      <LinkExternal href={`https://bscscan.com/address/${account}`} mr="17px" bold>
-        View on BscScan
+      <LinkExternal
+        color={"var(--secondary-color"}
+        href={`https://bscscan.com/address/${account}`}
+        mr="17px"
+        bold
+        style={{ fill: "var(--secondary-color" }}
+      >
+        BscScan
       </LinkExternal>
-      <CopyToClipboard toCopy={account}>Copy Address</CopyToClipboard>
+      <CopyToClipboard toCopy={account}>Copy</CopyToClipboard>
     </Flex>
     <Flex justifyContent="flex-start">
       <Button
-        size="sm"
         variant="tertiary"
         onClick={() => {
           logout();

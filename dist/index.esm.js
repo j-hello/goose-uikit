@@ -1666,7 +1666,7 @@ var useParticleBurst = function (options) {
     return { initialize: initialize, teardown: teardown };
 };
 
-var StyledModal = styled.div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  background-color: var(--primary-color);\n  box-shadow: var(--glow);\n  border-radius: 2em;\n  width: 100%;\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 100%;\n  }\n"], ["\n  background-color: var(--primary-color);\n  box-shadow: var(--glow);\n  border-radius: 2em;\n  width: 100%;\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 100%;\n  }\n"])), function (_a) {
+var StyledModal = styled.div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  background-color: var(--primary-color);\n  box-shadow: var(--glow);\n  border-radius: 2em;\n  width: 100%;\n  max-width: 90%;\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 500px;\n  }\n"], ["\n  background-color: var(--primary-color);\n  box-shadow: var(--glow);\n  border-radius: 2em;\n  width: 100%;\n  max-width: 90%;\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 500px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xs;
 });
@@ -2070,10 +2070,7 @@ var ConnectModal = function (_a) {
 };
 var templateObject_1$A;
 
-var StyleButton = styled(Text).attrs({ role: "button" })(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: ", ";\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: ", ";\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.primary;
-});
+var StyleButton = styled(Text).attrs({ role: "button" })(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: var(--secondary-color;\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: var(--secondary-color;\n"])));
 var Tooltip = styled.div(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: 0;\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"], ["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: 0;\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"])), function (_a) {
     var isTooltipDisplayed = _a.isTooltipDisplayed;
     return (isTooltipDisplayed ? "block" : "none");
@@ -2097,7 +2094,7 @@ var CopyToClipboard = function (_a) {
             }
         } }, props),
         children,
-        React.createElement(Icon$n, { width: "20px", color: "primary", ml: "4px" }),
+        React.createElement(Icon$n, { width: "20px", color: "secondary", ml: "4px" }),
         React.createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, "Copied")));
 };
 var templateObject_1$B, templateObject_2$c;
@@ -2105,12 +2102,12 @@ var templateObject_1$B, templateObject_2$c;
 var AccountModal = function (_a) {
     var account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     return (React.createElement(Modal, { title: "Your wallet", onDismiss: onDismiss },
-        React.createElement(Text, { fontSize: "var(--lg-size)", bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "12.75px" } }, account),
+        React.createElement(Text, { fontSize: "var(--lg-size)", color: "var(--secondary-color", bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "12.75px" } }, account),
         React.createElement(Flex, { mb: "25.5px" },
-            React.createElement(LinkExternal, { href: "https://bscscan.com/address/" + account, mr: "17px", bold: true }, "View on BscScan"),
-            React.createElement(CopyToClipboard, { toCopy: account }, "Copy Address")),
+            React.createElement(LinkExternal, { color: "var(--secondary-color", href: "https://bscscan.com/address/" + account, mr: "17px", bold: true, style: { fill: "var(--secondary-color" } }, "BscScan"),
+            React.createElement(CopyToClipboard, { toCopy: account }, "Copy")),
         React.createElement(Flex, { justifyContent: "flex-start" },
-            React.createElement(Button, { size: "sm", variant: "tertiary", onClick: function () {
+            React.createElement(Button, { variant: "tertiary", onClick: function () {
                     logout();
                     window.localStorage.removeItem(localStorageKey);
                     onDismiss();
