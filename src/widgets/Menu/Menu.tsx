@@ -85,6 +85,9 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
           pushNav={() => setIsPushed(false)}
           links={links}
           priceLink={priceLink}
+          account={account}
+          login={login}
+          logout={logout}
         />
         <Inner>{children}</Inner>
         <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />

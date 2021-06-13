@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import Accordion from "./Accordion";
+import UserBlock from "./UserBlock";
 import { MenuEntry, LinkLabel, SubMenuEntry } from "./MenuEntry";
 import MenuLink from "./MenuLink";
 import { PanelProps, PushedProps } from "./types";
 import Close from "./Close";
+import { Login } from "../WalletModal/types";
 
 interface Props extends PanelProps, PushedProps {
   isMobile: boolean;
+  account?: string;
+  login: Login;
+  logout: () => void;
 }
 
 const Container = styled.div`
@@ -25,7 +30,7 @@ const SubContainer = styled(Container)`
   padding-top: var(--site-pad);
 `;
 
-const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
+const PanelBody: React.FC<Props> = ({ pushNav, isMobile, links, account, login, logout }) => {
   const location = useLocation();
 
   // Close the menu when a user clicks a link on mobile
@@ -37,6 +42,11 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
   return (
     <>
       {isMobile && <Close togglePush={() => pushNav(false)} />}
+      {isMobile && (
+        <Container>
+          <UserBlock account={account} login={login} logout={logout} />
+        </Container>
+      )}
       <Container>
         {mainLinks.map((entry) => {
           const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
