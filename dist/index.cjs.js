@@ -2096,7 +2096,7 @@ var Tooltip = styled__default['default'].div(templateObject_2$c || (templateObje
 var CopyToClipboard = function (_a) {
     var toCopy = _a.toCopy, children = _a.children, props = __rest(_a, ["toCopy", "children"]);
     var _b = React.useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
-    return (React__default['default'].createElement(StyleButton, __assign({ small: true, bold: true, onClick: function () {
+    return (React__default['default'].createElement(StyleButton, __assign({ bold: true, onClick: function () {
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(toCopy);
                 setIsTooltipDisplayed(true);
@@ -2106,7 +2106,7 @@ var CopyToClipboard = function (_a) {
             }
         } }, props),
         children,
-        React__default['default'].createElement(Icon$n, { width: "20px", color: "secondary", ml: "4px" }),
+        React__default['default'].createElement(Icon$n, { fill: "var(--color-secondary)", width: "20px", color: "secondary", ml: "4px" }),
         React__default['default'].createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, "Copied")));
 };
 var templateObject_1$B, templateObject_2$c;
