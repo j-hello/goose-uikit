@@ -14,7 +14,7 @@ const Button = styled.button`
   font-size: 50px;
   color: var(--primary-color);
   font-weight: 300;
-  margin-right: -6px;
+  margin-left: -4px;
   margin-top: -9px;
 
   ${({ theme }) => theme.mediaQueries.md} {

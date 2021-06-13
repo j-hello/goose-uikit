@@ -30,6 +30,7 @@ export interface MenuEntry {
     calloutClass?: string;
     initialOpenState?: boolean;
     sub?: boolean;
+    featured?: boolean;
 }
 export interface PanelProps {
     cakePriceUsd?: number;

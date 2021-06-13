@@ -37,6 +37,34 @@ const SubContainer = styled(Container)`
   padding-top: var(--site-pad);
 `;
 
+const Ping = styled.span`
+  position: absolute;
+  top: 0;
+  right: -8.5px;
+  margin-left: 12.75px;
+  width: 11px;
+  height: 11px;
+  background: var(--primary-color);
+  border-radius: 100%;
+
+  @keyframes ping {
+    75%,
+    to {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  > span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+`;
+
 const PanelBody: React.FC<Props> = ({ pushNav, isMobile, links, account, login, logout }) => {
   const location = useLocation();
 
@@ -50,8 +78,8 @@ const PanelBody: React.FC<Props> = ({ pushNav, isMobile, links, account, login, 
     <>
       {isMobile && (
         <Actions>
-          <UserBlock account={account} login={login} logout={logout} />
           <Close togglePush={() => pushNav(false)} />
+          <UserBlock account={account} login={login} logout={logout} />
         </Actions>
       )}
       <Container>
@@ -83,6 +111,12 @@ const PanelBody: React.FC<Props> = ({ pushNav, isMobile, links, account, login, 
               <MenuLink href={entry.href} onClick={handleClick}>
                 <LinkLabel>{entry.label}</LinkLabel>
               </MenuLink>
+
+              {entry.featured && (
+                <Ping>
+                  <span></span>
+                </Ping>
+              )}
             </MenuEntry>
           );
         })}

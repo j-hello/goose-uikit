@@ -1,10 +1,9 @@
-import { DefaultTheme } from "styled-components";
 export interface Props {
     secondary?: boolean;
     isActive?: boolean;
-    theme: DefaultTheme;
+    featured?: boolean;
 }
-declare const LinkLabel: import("styled-components").StyledComponent<"div", DefaultTheme, {}, never>;
-declare const MenuEntry: import("styled-components").StyledComponent<"div", DefaultTheme, Props, never>;
-declare const SubMenuEntry: import("styled-components").StyledComponent<"div", DefaultTheme, Props, never>;
+declare const LinkLabel: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
+declare const MenuEntry: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, Props, never>;
+declare const SubMenuEntry: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, Props, never>;
 export { MenuEntry, LinkLabel, SubMenuEntry };

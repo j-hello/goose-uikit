@@ -1916,8 +1916,8 @@ var links = [
 ];
 var MENU_ENTRY_HEIGHT = 50;
 
-var LinkLabel = styled.div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  margin-right: 8.5px;\n"], ["\n  margin-right: 8.5px;\n"])));
-var MenuEntry = styled.div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n  width: max-content;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n  width: max-content;\n"])), function (_a) {
+var LinkLabel = styled.div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  margin-right: 12.75px;\n"], ["\n  margin-right: 12.75px;\n"])));
+var MenuEntry = styled.div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n  position: relative;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  > * {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n  width: max-content;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n  position: relative;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  > * {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n  width: max-content;\n"])), function (_a) {
     var secondary = _a.secondary;
     return (secondary ? "8.5px 0 8.5px 17px" : "4.25px 0 4.25px 0");
 }, function (_a) {
@@ -1930,9 +1930,10 @@ var MenuEntry = styled.div(templateObject_2$a || (templateObject_2$a = __makeTem
 MenuEntry.defaultProps = {
     secondary: false,
     isActive: false,
+    featured: false,
     role: "button",
 };
-var SubMenuEntry = styled(MenuEntry)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  color: ", ";\n  font-size: var(--md-size);\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"], ["\n  color: ", ";\n  font-size: var(--md-size);\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n"])), function (_a) {
+var SubMenuEntry = styled(MenuEntry)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  color: ", ";\n  font-size: var(--md-size);\n  > * {\n    color: ", ";\n  }\n"], ["\n  color: ", ";\n  font-size: var(--md-size);\n  > * {\n    color: ", ";\n  }\n"])), function (_a) {
     var isActive = _a.isActive;
     return (isActive ? "var(--primary-color)" : "var(--text-subtle-color)");
 }, function (_a) {
@@ -2169,7 +2170,7 @@ var MenuLink = function (_a) {
     return React.createElement(Tag, __assign({}, props, otherProps));
 };
 
-var Button$1 = styled.button(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  font-size: 50px;\n  color: var(--primary-color);\n  font-weight: 300;\n  margin-right: -6px;\n  margin-top: -9px;\n\n  ", " {\n    font-size: 55px;\n  }\n"], ["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  font-size: 50px;\n  color: var(--primary-color);\n  font-weight: 300;\n  margin-right: -6px;\n  margin-top: -9px;\n\n  ", " {\n    font-size: 55px;\n  }\n"])), function (_a) {
+var Button$1 = styled.button(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  font-size: 50px;\n  color: var(--primary-color);\n  font-weight: 300;\n  margin-left: -4px;\n  margin-top: -9px;\n\n  ", " {\n    font-size: 55px;\n  }\n"], ["\n  border: 0;\n  background: none;\n  padding: 0;\n  cursor: pointer;\n\n  font-size: 50px;\n  color: var(--primary-color);\n  font-weight: 300;\n  margin-left: -4px;\n  margin-top: -9px;\n\n  ", " {\n    font-size: 55px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
@@ -2185,6 +2186,7 @@ var Container$3 = styled.div(templateObject_2$d || (templateObject_2$d = __makeT
     return theme.mediaQueries.nav;
 });
 var SubContainer = styled(Container$3)(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  padding-top: var(--site-pad);\n"], ["\n  padding-top: var(--site-pad);\n"])));
+var Ping = styled.span(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  right: -8.5px;\n  margin-left: 12.75px;\n  width: 11px;\n  height: 11px;\n  background: var(--primary-color);\n  border-radius: 100%;\n\n  @keyframes ping {\n    75%,\n    to {\n      transform: scale(2);\n      opacity: 0;\n    }\n  }\n\n  > span {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n    background-color: var(--primary-color);\n    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;\n  }\n"], ["\n  position: absolute;\n  top: 0;\n  right: -8.5px;\n  margin-left: 12.75px;\n  width: 11px;\n  height: 11px;\n  background: var(--primary-color);\n  border-radius: 100%;\n\n  @keyframes ping {\n    75%,\n    to {\n      transform: scale(2);\n      opacity: 0;\n    }\n  }\n\n  > span {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n    background-color: var(--primary-color);\n    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;\n  }\n"])));
 var PanelBody = function (_a) {
     var pushNav = _a.pushNav, isMobile = _a.isMobile, links = _a.links, account = _a.account, login = _a.login, logout = _a.logout;
     var location = useLocation();
@@ -2194,8 +2196,8 @@ var PanelBody = function (_a) {
     var subLinks = links.filter(function (entry) { return entry.sub; });
     return (React.createElement(React.Fragment, null,
         isMobile && (React.createElement(Actions, null,
-            React.createElement(UserBlock, { account: account, login: login, logout: logout }),
-            React.createElement(Close, { togglePush: function () { return pushNav(false); } }))),
+            React.createElement(Close, { togglePush: function () { return pushNav(false); } }),
+            React.createElement(UserBlock, { account: account, login: login, logout: logout }))),
         React.createElement(Container$3, null, mainLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             if (entry.items) {
@@ -2204,7 +2206,9 @@ var PanelBody = function (_a) {
             }
             return (React.createElement(MenuEntry, { key: entry.label, isActive: entry.href ? entry.href === location.pathname || location.pathname.includes(entry.href) : false, className: calloutClass },
                 React.createElement(MenuLink, { href: entry.href, onClick: handleClick },
-                    React.createElement(LinkLabel, null, entry.label))));
+                    React.createElement(LinkLabel, null, entry.label)),
+                entry.featured && (React.createElement(Ping, null,
+                    React.createElement("span", null)))));
         })),
         React.createElement(SubContainer, null, subLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
@@ -2217,7 +2221,7 @@ var PanelBody = function (_a) {
                     React.createElement(LinkLabel, null, entry.label))));
         }))));
 };
-var templateObject_1$D, templateObject_2$d, templateObject_3$7;
+var templateObject_1$D, templateObject_2$d, templateObject_3$7, templateObject_4$2;
 
 var Container$4 = styled.div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  flex: none;\n  padding: var(--site-pad) 0 calc(var(--site-pad) * 1.5);\n  ", " {\n    padding-bottom: 0;\n  }\n"], ["\n  flex: none;\n  padding: var(--site-pad) 0 calc(var(--site-pad) * 1.5);\n  ", " {\n    padding-bottom: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -2266,7 +2270,7 @@ var StyledNav = styled.nav(templateObject_2$f || (templateObject_2$f = __makeTem
     return theme.nav.background;
 });
 var BodyWrapper = styled.div(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
-var Inner = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  flex-grow: 1;\n  transform: translate3d(0, 0, 0);\n"], ["\n  flex-grow: 1;\n  transform: translate3d(0, 0, 0);\n"])));
+var Inner = styled.div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  flex-grow: 1;\n  transform: translate3d(0, 0, 0);\n"], ["\n  flex-grow: 1;\n  transform: translate3d(0, 0, 0);\n"])));
 var MobileOnlyOverlay = styled(Overlay)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"], ["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
@@ -2304,7 +2308,7 @@ var Menu = function (_a) {
             React.createElement(Inner, null, children),
             React.createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" }))));
 };
-var templateObject_1$H, templateObject_2$f, templateObject_3$8, templateObject_4$2, templateObject_5$1;
+var templateObject_1$H, templateObject_2$f, templateObject_3$8, templateObject_4$3, templateObject_5$1;
 
 var ToastAction = function (_a) {
     var action = _a.action;

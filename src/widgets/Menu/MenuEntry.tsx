@@ -1,13 +1,13 @@
-import styled, { DefaultTheme } from "styled-components";
+import styled from "styled-components";
 
 export interface Props {
   secondary?: boolean;
   isActive?: boolean;
-  theme: DefaultTheme;
+  featured?: boolean;
 }
 
 const LinkLabel = styled.div`
-  margin-right: 8.5px;
+  margin-right: 12.75px;
 `;
 
 const MenuEntry = styled.div<Props>`
@@ -16,6 +16,7 @@ const MenuEntry = styled.div<Props>`
   align-items: center;
   margin: ${({ secondary }) => (secondary ? "8.5px 0 8.5px 17px" : "4.25px 0 4.25px 0")};
   font-size: ${({ secondary }) => (secondary ? "var(--subnav-size)" : "var(--nav-size)")};
+  position: relative;
 
   a {
     display: flex;
@@ -23,9 +24,7 @@ const MenuEntry = styled.div<Props>`
     width: 100%;
     height: 100%;
   }
-  div,
-  a div,
-  div a {
+  > * {
     color: ${({ isActive }) => (isActive ? "var(--primary-color)" : "var(--text-color)")};
   }
 
@@ -37,15 +36,14 @@ const MenuEntry = styled.div<Props>`
 MenuEntry.defaultProps = {
   secondary: false,
   isActive: false,
+  featured: false,
   role: "button",
 };
 
 const SubMenuEntry = styled(MenuEntry)`
   color: ${({ isActive }) => (isActive ? "var(--primary-color)" : "var(--text-subtle-color)")};
   font-size: var(--md-size);
-  div,
-  a div,
-  div a {
+  > * {
     color: ${({ isActive }) => (isActive ? "var(--primary-color)" : "var(--text-subtle-color)")};
   }
 `;
