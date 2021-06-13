@@ -20,6 +20,7 @@ const Actions = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const Container = styled.div`
@@ -49,8 +50,8 @@ const PanelBody: React.FC<Props> = ({ pushNav, isMobile, links, account, login, 
     <>
       {isMobile && (
         <Actions>
-          <Close togglePush={() => pushNav(false)} />
           <UserBlock account={account} login={login} logout={logout} />
+          <Close togglePush={() => pushNav(false)} />
         </Actions>
       )}
       <Container>

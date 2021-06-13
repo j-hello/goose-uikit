@@ -2165,7 +2165,7 @@ var UserBlock = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout;
     var _b = useWalletModal(login, logout, account), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
-    return (React__default['default'].createElement(React__default['default'].Fragment, null, account ? (React__default['default'].createElement(Button, { size: "sm", variant: "secondary", onClick: function () {
+    return (React__default['default'].createElement("div", null, account ? (React__default['default'].createElement(Button, { size: "sm", variant: "secondary", onClick: function () {
             onPresentAccountModal();
         } }, accountEllipsis)) : (React__default['default'].createElement(Button, { size: "sm", onClick: function () {
             onPresentConnectModal();
@@ -2188,7 +2188,7 @@ var Close = function (_a) {
 };
 var templateObject_1$C;
 
-var Actions = styled__default['default'].div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n"], ["\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n"])));
+var Actions = styled__default['default'].div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n"], ["\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n"])));
 var Container$3 = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  padding-top: var(--site-pad);\n  ", " {\n    padding-top: 0;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  padding-top: var(--site-pad);\n  ", " {\n    padding-top: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
@@ -2203,8 +2203,8 @@ var PanelBody = function (_a) {
     var subLinks = links.filter(function (entry) { return entry.sub; });
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
         isMobile && (React__default['default'].createElement(Actions, null,
-            React__default['default'].createElement(Close, { togglePush: function () { return pushNav(false); } }),
-            React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }))),
+            React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }),
+            React__default['default'].createElement(Close, { togglePush: function () { return pushNav(false); } }))),
         React__default['default'].createElement(Container$3, null, mainLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             if (entry.items) {
@@ -2244,7 +2244,7 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$E, templateObject_2$e;
 
-var StyledPanel = styled__default['default'].div(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"])), function (_a) {
+var StyledPanel = styled__default['default'].div(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5) 0;\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5) 0;\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"])), function (_a) {
     var isPushed = _a.isPushed;
     return "translate3d(" + (isPushed ? "0" : "100%") + ", 0, 0)";
 }, function (_a) {

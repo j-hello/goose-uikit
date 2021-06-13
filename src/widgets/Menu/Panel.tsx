@@ -19,7 +19,7 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
   justify-content: space-between;
   flex-shrink: 0;
   z-index: 12;
-  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);
+  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5) 0;
   height: 100%;
   width: 75%;
   transform: ${({ isPushed }) => `translate3d(${isPushed ? "0" : "100%"}, 0, 0)`};
