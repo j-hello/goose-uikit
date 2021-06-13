@@ -39,7 +39,7 @@ const Accordion: React.FC<Props> = ({ label, initialOpenState = false, children,
       {sub ? (
         <SubMenuEntry onClick={handleClick} className={className}>
           <LinkLabel>{label}</LinkLabel>
-          {isOpen ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
+          {isOpen ? <ArrowDropUpIcon width="12px" /> : <ArrowDropDownIcon width="12px" />}
         </SubMenuEntry>
       ) : (
         <MenuEntry onClick={handleClick} className={className}>

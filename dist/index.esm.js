@@ -1959,7 +1959,7 @@ var Accordion = function (_a) {
     return (React.createElement(Container$2, null,
         sub ? (React.createElement(SubMenuEntry, { onClick: handleClick, className: className },
             React.createElement(LinkLabel, null, label),
-            isOpen ? React.createElement(Icon$8, null) : React.createElement(Icon$7, null))) : (React.createElement(MenuEntry, { onClick: handleClick, className: className },
+            isOpen ? React.createElement(Icon$8, { width: "12px" }) : React.createElement(Icon$7, { width: "12px" }))) : (React.createElement(MenuEntry, { onClick: handleClick, className: className },
             React.createElement(LinkLabel, null, label),
             isOpen ? React.createElement(Icon$8, null) : React.createElement(Icon$7, null))),
         React.createElement(AccordionContent, { isOpen: isOpen, maxHeight: React.Children.count(children) * MENU_ENTRY_HEIGHT, sub: sub ? true : false }, children)));
