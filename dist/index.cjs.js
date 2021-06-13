@@ -578,8 +578,8 @@ var Alert = function (_a) {
             React__default['default'].createElement(Text, { bold: true }, title),
             typeof children === "string" ? React__default['default'].createElement(Text, { as: "p" }, children) : children),
         onClick && (React__default['default'].createElement(CloseHandler, null,
-            React__default['default'].createElement(IconButton, { size: "sm", variant: "text", onClick: onClick },
-                React__default['default'].createElement(Icon$k, { width: "24px", color: "currentColor" }))))));
+            React__default['default'].createElement(IconButton, { variant: "text", onClick: onClick },
+                React__default['default'].createElement(Icon$k, { fill: "var(--secondary-color)", width: "18px" }))))));
 };
 var templateObject_1$5, templateObject_2$1, templateObject_3$1, templateObject_4;
 
@@ -1719,7 +1719,7 @@ var Modal = function (_a) {
                     React__default['default'].createElement(Icon$5, { color: "secondary", width: "18px" }))),
                 React__default['default'].createElement(Heading, { bold: true, color: "var(--secondary-color)" }, title)),
             !hideCloseButton && (React__default['default'].createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
-                React__default['default'].createElement(Icon$k, { color: "var(--secondary-color)", width: "18px" })))),
+                React__default['default'].createElement(Icon$k, { fill: "var(--secondary-color)", width: "18px" })))),
         React__default['default'].createElement(Flex, { flexDirection: "column", p: bodyPadding }, children)));
 };
 var templateObject_1$u, templateObject_2$9, templateObject_3$5;

@@ -566,8 +566,8 @@ var Alert = function (_a) {
             React.createElement(Text, { bold: true }, title),
             typeof children === "string" ? React.createElement(Text, { as: "p" }, children) : children),
         onClick && (React.createElement(CloseHandler, null,
-            React.createElement(IconButton, { size: "sm", variant: "text", onClick: onClick },
-                React.createElement(Icon$k, { width: "24px", color: "currentColor" }))))));
+            React.createElement(IconButton, { variant: "text", onClick: onClick },
+                React.createElement(Icon$k, { fill: "var(--secondary-color)", width: "18px" }))))));
 };
 var templateObject_1$5, templateObject_2$1, templateObject_3$1, templateObject_4;
 
@@ -1707,7 +1707,7 @@ var Modal = function (_a) {
                     React.createElement(Icon$5, { color: "secondary", width: "18px" }))),
                 React.createElement(Heading, { bold: true, color: "var(--secondary-color)" }, title)),
             !hideCloseButton && (React.createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
-                React.createElement(Icon$k, { color: "var(--secondary-color)", width: "18px" })))),
+                React.createElement(Icon$k, { fill: "var(--secondary-color)", width: "18px" })))),
         React.createElement(Flex, { flexDirection: "column", p: bodyPadding }, children)));
 };
 var templateObject_1$u, templateObject_2$9, templateObject_3$5;

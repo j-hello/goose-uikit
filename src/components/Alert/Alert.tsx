@@ -88,8 +88,8 @@ const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
       </Details>
       {onClick && (
         <CloseHandler>
-          <IconButton size="sm" variant="text" onClick={onClick}>
-            <CloseIcon width="24px" color="currentColor" />
+          <IconButton variant="text" onClick={onClick}>
+            <CloseIcon fill="var(--secondary-color)" width="18px" />
           </IconButton>
         </CloseHandler>
       )}
