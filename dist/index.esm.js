@@ -2102,9 +2102,9 @@ var templateObject_1$B, templateObject_2$c;
 var AccountModal = function (_a) {
     var account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     return (React.createElement(Modal, { title: "Your wallet", onDismiss: onDismiss },
-        React.createElement(Text, { fontSize: "var(--lg-size)", color: "var(--secondary-color", bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "12.75px" } }, account),
+        React.createElement(Text, { fontSize: "var(--lg-size)", color: "var(--secondary-color)", bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "12.75px" } }, account),
         React.createElement(Flex, { mb: "25.5px" },
-            React.createElement(LinkExternal, { color: "var(--secondary-color", href: "https://bscscan.com/address/" + account, mr: "17px", bold: true, style: { fill: "var(--secondary-color" } }, "BscScan"),
+            React.createElement(LinkExternal, { color: "var(--secondary-color)", href: "https://bscscan.com/address/" + account, mr: "17px", bold: true, style: { fill: "var(--secondary-color)" } }, "BscScan"),
             React.createElement(CopyToClipboard, { toCopy: account }, "Copy")),
         React.createElement(Flex, { justifyContent: "flex-start" },
             React.createElement(Button, { variant: "tertiary", onClick: function () {

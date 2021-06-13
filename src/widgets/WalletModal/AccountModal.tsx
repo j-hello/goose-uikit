@@ -17,7 +17,7 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
   <Modal title="Your wallet" onDismiss={onDismiss}>
     <Text
       fontSize="var(--lg-size)"
-      color={"var(--secondary-color"}
+      color="var(--secondary-color)"
       bold
       style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "12.75px" }}
     >
@@ -25,11 +25,11 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
     </Text>
     <Flex mb="25.5px">
       <LinkExternal
-        color={"var(--secondary-color"}
+        color="var(--secondary-color)"
         href={`https://bscscan.com/address/${account}`}
         mr="17px"
         bold
-        style={{ fill: "var(--secondary-color" }}
+        style={{ fill: "var(--secondary-color)" }}
       >
         BscScan
       </LinkExternal>
