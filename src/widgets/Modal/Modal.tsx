@@ -14,8 +14,8 @@ interface Props extends InjectedProps {
 }
 
 const StyledModal = styled.div`
-  background-color: var(--secondary-color);
-  box-shadow: var(--box-shadow);
+  background-color: var(--primary-color);
+  box-shadow: var(--glow);
   border-radius: 2em;
   width: 100%;
   z-index: 100;
@@ -31,12 +31,13 @@ const ModalHeader = styled.div`
   display: flex;
   align-items: center;
   align-items: center;
-  padding: 25.5px 25.5px 0;
+  padding: var(--card-pad) var(--card-pad) 0;
 `;
 
 const ModalTitle = styled(Flex)`
   align-items: center;
   flex: 1;
+  color: var(--secondary-color);
 `;
 
 const Modal: React.FC<Props> = ({
@@ -45,21 +46,23 @@ const Modal: React.FC<Props> = ({
   onBack,
   children,
   hideCloseButton = false,
-  bodyPadding = "25.5px",
+  bodyPadding = "var(--card-pad)",
 }) => (
   <StyledModal>
     <ModalHeader>
       <ModalTitle>
         {onBack && (
-          <IconButton variant="text" onClick={onBack} area-label="go back" mr="8px">
-            <ArrowBackIcon color="primary" width="18px" />
+          <IconButton variant="text" onClick={onBack} area-label="go back" mr="8.5px">
+            <ArrowBackIcon color="secondary" width="18px" />
           </IconButton>
         )}
-        <Heading bold>{title}</Heading>
+        <Heading bold color="var(--secondary-color)">
+          {title}
+        </Heading>
       </ModalTitle>
       {!hideCloseButton && (
         <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
-          <CloseIcon color="primary" width="18px" />
+          <CloseIcon color="var(--secondary-color)" width="18px" />
         </IconButton>
       )}
     </ModalHeader>

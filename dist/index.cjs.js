@@ -1704,22 +1704,22 @@ var useParticleBurst = function (options) {
     return { initialize: initialize, teardown: teardown };
 };
 
-var StyledModal = styled__default['default'].div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  background-color: var(--secondary-color);\n  box-shadow: var(--box-shadow);\n  border-radius: 2em;\n  width: 100%;\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 100%;\n  }\n"], ["\n  background-color: var(--secondary-color);\n  box-shadow: var(--box-shadow);\n  border-radius: 2em;\n  width: 100%;\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 100%;\n  }\n"])), function (_a) {
+var StyledModal = styled__default['default'].div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  background-color: var(--primary-color);\n  box-shadow: var(--glow);\n  border-radius: 2em;\n  width: 100%;\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 100%;\n  }\n"], ["\n  background-color: var(--primary-color);\n  box-shadow: var(--glow);\n  border-radius: 2em;\n  width: 100%;\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xs;
 });
-var ModalHeader = styled__default['default'].div(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  align-items: center;\n  padding: 25.5px 25.5px 0;\n"], ["\n  display: flex;\n  align-items: center;\n  align-items: center;\n  padding: 25.5px 25.5px 0;\n"])));
-var ModalTitle = styled__default['default'](Flex)(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n"], ["\n  align-items: center;\n  flex: 1;\n"])));
+var ModalHeader = styled__default['default'].div(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  align-items: center;\n  padding: var(--card-pad) var(--card-pad) 0;\n"], ["\n  display: flex;\n  align-items: center;\n  align-items: center;\n  padding: var(--card-pad) var(--card-pad) 0;\n"])));
+var ModalTitle = styled__default['default'](Flex)(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n  color: var(--secondary-color);\n"], ["\n  align-items: center;\n  flex: 1;\n  color: var(--secondary-color);\n"])));
 var Modal = function (_a) {
-    var title = _a.title, onDismiss = _a.onDismiss, onBack = _a.onBack, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, _c = _a.bodyPadding, bodyPadding = _c === void 0 ? "25.5px" : _c;
+    var title = _a.title, onDismiss = _a.onDismiss, onBack = _a.onBack, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, _c = _a.bodyPadding, bodyPadding = _c === void 0 ? "var(--card-pad)" : _c;
     return (React__default['default'].createElement(StyledModal, null,
         React__default['default'].createElement(ModalHeader, null,
             React__default['default'].createElement(ModalTitle, null,
-                onBack && (React__default['default'].createElement(IconButton, { variant: "text", onClick: onBack, "area-label": "go back", mr: "8px" },
-                    React__default['default'].createElement(Icon$5, { color: "primary", width: "18px" }))),
-                React__default['default'].createElement(Heading, { bold: true }, title)),
+                onBack && (React__default['default'].createElement(IconButton, { variant: "text", onClick: onBack, "area-label": "go back", mr: "8.5px" },
+                    React__default['default'].createElement(Icon$5, { color: "secondary", width: "18px" }))),
+                React__default['default'].createElement(Heading, { bold: true, color: "var(--secondary-color)" }, title)),
             !hideCloseButton && (React__default['default'].createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
-                React__default['default'].createElement(Icon$k, { color: "primary", width: "18px" })))),
+                React__default['default'].createElement(Icon$k, { color: "var(--secondary-color)", width: "18px" })))),
         React__default['default'].createElement(Flex, { flexDirection: "column", p: bodyPadding }, children)));
 };
 var templateObject_1$u, templateObject_2$9, templateObject_3$5;
@@ -2143,11 +2143,11 @@ var templateObject_1$B, templateObject_2$c;
 var AccountModal = function (_a) {
     var account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     return (React__default['default'].createElement(Modal, { title: "Your wallet", onDismiss: onDismiss },
-        React__default['default'].createElement(Text, { fontSize: "20px", bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" } }, account),
-        React__default['default'].createElement(Flex, { mb: "32px" },
-            React__default['default'].createElement(LinkExternal, { small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, "View on BscScan"),
+        React__default['default'].createElement(Text, { fontSize: "var(--lg-size)", bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "12.75px" } }, account),
+        React__default['default'].createElement(Flex, { mb: "25.5px" },
+            React__default['default'].createElement(LinkExternal, { href: "https://bscscan.com/address/" + account, mr: "17px", bold: true }, "View on BscScan"),
             React__default['default'].createElement(CopyToClipboard, { toCopy: account }, "Copy Address")),
-        React__default['default'].createElement(Flex, { justifyContent: "center" },
+        React__default['default'].createElement(Flex, { justifyContent: "flex-start" },
             React__default['default'].createElement(Button, { size: "sm", variant: "tertiary", onClick: function () {
                     logout();
                     window.localStorage.removeItem(localStorageKey);
