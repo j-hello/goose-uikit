@@ -17,6 +17,7 @@ const Sticky = styled.div<{ isPushed: boolean }>`
   z-index: 12;
   transform: ${({ isPushed }) => `translate3d(${isPushed ? "0" : "100%"}, 0, 0)`};
   transition: transform 0.25s ease-in-out;
+  background-color: var(--secondary-color);
 
   ${({ theme }) => theme.mediaQueries.nav} {
     position: sticky;
@@ -38,10 +39,9 @@ const StyledPanel = styled.div`
   justify-content: space-between;
   flex-shrink: 0;
   height: 100%;
-  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);
+  padding: calc(var(--site-pad) * 1.5);
+  padding-bottom: 0;
   opacity: 1;
-  background-color: var(--secondary-color);
-
   .mobile-menu-hide & {
     opacity: 0;
   }

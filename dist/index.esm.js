@@ -2018,7 +2018,7 @@ var PanelBody = function (_a) {
 };
 var templateObject_1$B, templateObject_2$c;
 
-var Container$4 = styled.div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  flex: none;\n  padding-top: var(--site-pad);\n"], ["\n  flex: none;\n  padding-top: var(--site-pad);\n"])));
+var Container$4 = styled.div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  flex: none;\n  padding: var(--site-pad) 0 calc(var(--site-pad) * 1.5);\n"], ["\n  flex: none;\n  padding: var(--site-pad) 0 calc(var(--site-pad) * 1.5);\n"])));
 var PriceEntry = styled.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right: 17px;\n    width: 50px;\n  }\n  a {\n    margin-left: auto;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right: 17px;\n    width: 50px;\n  }\n  a {\n    margin-left: auto;\n  }\n"])));
 var PanelFooter = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd, priceLink = _a.priceLink;
@@ -2031,14 +2031,14 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$C, templateObject_2$d;
 
-var Sticky = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  z-index: 12;\n  transform: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    height: 100%;\n    width: 375px;\n    z-index: 10;\n    transform: translate3d(0, 0, 0);\n    transition: none;\n  }\n"], ["\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  z-index: 12;\n  transform: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    height: 100%;\n    width: 375px;\n    z-index: 10;\n    transform: translate3d(0, 0, 0);\n    transition: none;\n  }\n"])), function (_a) {
+var Sticky = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  z-index: 12;\n  transform: ", ";\n  transition: transform 0.25s ease-in-out;\n  background-color: var(--secondary-color);\n\n  ", " {\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    height: 100%;\n    width: 375px;\n    z-index: 10;\n    transform: translate3d(0, 0, 0);\n    transition: none;\n  }\n"], ["\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  z-index: 12;\n  transform: ", ";\n  transition: transform 0.25s ease-in-out;\n  background-color: var(--secondary-color);\n\n  ", " {\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    height: 100%;\n    width: 375px;\n    z-index: 10;\n    transform: translate3d(0, 0, 0);\n    transition: none;\n  }\n"])), function (_a) {
     var isPushed = _a.isPushed;
     return "translate3d(" + (isPushed ? "0" : "100%") + ", 0, 0)";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
-var StyledPanel = styled.div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  height: 100%;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  opacity: 1;\n  background-color: var(--secondary-color);\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    padding: var(--site-pad);\n    opacity: 1 !important;\n    background: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  height: 100%;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  opacity: 1;\n  background-color: var(--secondary-color);\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    padding: var(--site-pad);\n    opacity: 1 !important;\n    background: none;\n  }\n"])), function (_a) {
+var StyledPanel = styled.div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  height: 100%;\n  padding: calc(var(--site-pad) * 1.5);\n  padding-bottom: 0;\n  opacity: 1;\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    padding: var(--site-pad);\n    opacity: 1 !important;\n    background: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  height: 100%;\n  padding: calc(var(--site-pad) * 1.5);\n  padding-bottom: 0;\n  opacity: 1;\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    padding: var(--site-pad);\n    opacity: 1 !important;\n    background: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });

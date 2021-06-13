@@ -9,7 +9,7 @@ interface Props extends PanelProps, PushedProps {}
 
 const Container = styled.div`
   flex: none;
-  padding-top: var(--site-pad);
+  padding: var(--site-pad) 0 calc(var(--site-pad) * 1.5);
 `;
 
 const PriceEntry = styled.div`
@@ -25,14 +25,15 @@ const PriceEntry = styled.div`
 `;
 
 const PanelFooter: React.FC<Props> = ({ cakePriceUsd, priceLink }) => {
-
   cakePriceUsd = cakePriceUsd ? cakePriceUsd : 0;
   return (
     <Container>
       <PriceEntry>
         <Logo className="egg-icon" mr="17px" />
         <Text color="text" fontSize="var(--nav-size)" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
-        <Button as="a" variant="primary" href={priceLink}>Buy Egg</Button>
+        <Button as="a" variant="primary" href={priceLink}>
+          Buy Egg
+        </Button>
       </PriceEntry>
     </Container>
   );
