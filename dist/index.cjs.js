@@ -2295,8 +2295,17 @@ var Menu = function (_a) {
                 document.body.setAttribute("style", "");
             }
         }
+        function handleResize() {
+            if (isPushed && !isMobile)
+                document.body.setAttribute("style", "");
+        }
         handleOverlay();
-        window.addEventListener("resize", handleOverlay);
+        window.addEventListener("resize", handleResize, {
+            passive: true,
+        });
+        return function () {
+            window.removeEventListener("resize", handleResize);
+        };
     }, [isPushed]);
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "Home"; });
