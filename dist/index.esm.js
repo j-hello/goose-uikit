@@ -2031,21 +2031,21 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$C, templateObject_2$d;
 
-var Sticky = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  z-index: 12;\n  overflow-y: auto;\n\n  ", " {\n    z-index: 10;\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n  }\n"], ["\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  z-index: 12;\n  overflow-y: auto;\n\n  ", " {\n    z-index: 10;\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.nav;
-});
-var StyledPanel = styled.div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  transform: ", ";\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  transform: ", ";\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    padding: var(--site-pad);\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"])), function (_a) {
+var Sticky = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  z-index: 12;\n  transform: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    width: 375px;\n    z-index: 10;\n    transform: translate3d(0, 0, 0);\n    transition: none;\n  }\n"], ["\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  z-index: 12;\n  transform: ", ";\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    width: 375px;\n    z-index: 10;\n    transform: translate3d(0, 0, 0);\n    transition: none;\n  }\n"])), function (_a) {
     var isPushed = _a.isPushed;
     return "translate3d(" + (isPushed ? "0" : "100%") + ", 0, 0)";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
+var StyledPanel = styled.div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  height: 100%;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  opacity: 1;\n  background-color: var(--secondary-color);\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    padding: var(--site-pad);\n    opacity: 1 !important;\n    background: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  height: 100%;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  opacity: 1;\n  background-color: var(--secondary-color);\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    padding: var(--site-pad);\n    opacity: 1 !important;\n    background: none;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.nav;
+});
 var Panel = function (props) {
     var isPushed = props.isPushed;
-    return (React.createElement(Sticky, null,
-        React.createElement(StyledPanel, { isPushed: isPushed },
+    return (React.createElement(Sticky, { isPushed: isPushed },
+        React.createElement(StyledPanel, null,
             React.createElement(PanelBody, __assign({}, props)),
             React.createElement(PanelFooter, __assign({}, props)))));
 };
