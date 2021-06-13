@@ -29,7 +29,7 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
   background-color: var(--secondary-color);
   transition: transform 0.25s ease-in-out;
 
-  .mobile-menu-hidden & {
+  .mobile-menu-hide & {
     opacity: 0;
   }
 
