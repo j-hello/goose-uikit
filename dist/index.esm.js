@@ -1915,7 +1915,6 @@ var links = [
     },
 ];
 var MENU_ENTRY_HEIGHT = 50;
-var SIDEBAR_WIDTH_FULL = 350;
 
 var LinkLabel = styled.div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  margin-right: 8.5px;\n"], ["\n  margin-right: 8.5px;\n"])));
 var MenuEntry = styled.div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n  width: max-content;\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: ", ";\n  font-size: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n  div,\n  a div,\n  div a {\n    color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n  width: max-content;\n"])), function (_a) {
@@ -2028,20 +2027,17 @@ var PanelFooter = function (_a) {
         React.createElement(PriceEntry, null,
             React.createElement(Icon$w, { className: "egg-icon", mr: "17px" }),
             React.createElement(Text, { color: "text", fontSize: "var(--nav-size)", bold: true }, "$" + cakePriceUsd.toFixed(3)),
-            React.createElement(Button, { as: "a", variant: "primary", href: priceLink }, "Buy"))));
+            React.createElement(Button, { as: "a", variant: "primary", href: priceLink }, "Buy Egg"))));
 };
 var templateObject_1$C, templateObject_2$d;
 
-var StyledPanel = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: ", ";\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1;\n    background: none;\n    transition: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: ", ";\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  ", " {\n    width: ", "px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1;\n    background: none;\n    transition: none;\n  }\n"])), function (_a) {
+var StyledPanel = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .menu-hidden & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1;\n    background: none;\n    transition: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-items: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5);\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .menu-hidden & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1;\n    background: none;\n    transition: none;\n  }\n"])), function (_a) {
     var isPushed = _a.isPushed;
     return "translate3d(" + (isPushed ? "0" : "100%") + ", 0, 0)";
 }, function (_a) {
-    var isPushed = _a.isPushed;
-    return (isPushed ? "1" : "0");
-}, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
-}, SIDEBAR_WIDTH_FULL);
+});
 var Panel = function (props) {
     var isPushed = props.isPushed;
     return (React.createElement(StyledPanel, { isPushed: isPushed },
@@ -2275,10 +2271,16 @@ var Menu = function (_a) {
     useEffect(function () {
         function handleOverlay() {
             if (isPushed && isMobile) {
+                document.body.classList.remove("menu-hidden");
                 document.body.setAttribute("style", "position: fixed; top: 0; left: 0; right: 0");
                 window.addEventListener("resize", handleOverlay);
+                var timer_1 = setTimeout(function () {
+                    document.body.classList.add("menu-hidden");
+                }, 500);
+                return function () { return clearTimeout(timer_1); };
             }
             else {
+                document.body.classList.remove("menu-hidden");
                 document.body.setAttribute("style", "");
                 window.removeEventListener("resize", handleOverlay);
             }

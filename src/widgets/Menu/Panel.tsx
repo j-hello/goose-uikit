@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import { useMatchBreakpoints } from "../../hooks";
 import PanelBody from "./PanelBody";
 import PanelFooter from "./PanelFooter";
-import { SIDEBAR_WIDTH_FULL } from "./config";
 import { PanelProps, PushedProps } from "./types";
 
 interface Props extends PanelProps, PushedProps {
@@ -25,12 +25,16 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
   bottom: 0;
   right: 0;
   overflow-y: auto;
-  opacity: ${({ isPushed }) => (isPushed ? "1" : "0")};
+  opacity: 1;
   background-color: var(--secondary-color);
   transition: transform 0.25s ease-in-out;
 
+  .menu-hidden & {
+    opacity: 0;
+  }
+
   ${({ theme }) => theme.mediaQueries.nav} {
-    width: ${SIDEBAR_WIDTH_FULL}px;
+    width: 375px;
     transform: translate3d(0, 0, 0);
     z-index: 10;
     padding: var(--site-pad);
@@ -46,6 +50,7 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
 
 const Panel: React.FC<Props> = (props) => {
   const { isPushed } = props;
+
   return (
     <StyledPanel isPushed={isPushed}>
       <PanelBody {...props} />
