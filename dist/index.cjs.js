@@ -1140,9 +1140,9 @@ var StyledToggle = styled__default['default'].div(templateObject_3$4 || (templat
 var templateObject_1$t, templateObject_2$8, templateObject_3$4;
 
 var Toggle = function (_a) {
-    var checked = _a.checked, props = __rest(_a, ["checked"]);
+    var color = _a.color, checked = _a.checked, props = __rest(_a, ["color", "checked"]);
     var isChecked = !!checked;
-    return (React__default['default'].createElement(StyledToggle, { checked: isChecked },
+    return (React__default['default'].createElement(StyledToggle, { checked: isChecked, color: color },
         React__default['default'].createElement(Input$1, __assign({ checked: checked }, props, { type: "checkbox" })),
         React__default['default'].createElement(Handle, null)));
 };
