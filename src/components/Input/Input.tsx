@@ -55,10 +55,6 @@ const Input = styled.input<InputProps>`
     color: var(--text-subtle-color);
     cursor: not-allowed;
   }
-
-  &:focus:not(:disabled) {
-    box-shadow: ${({ theme }) => theme.shadows.focus};
-  }
 `;
 
 Input.defaultProps = {
