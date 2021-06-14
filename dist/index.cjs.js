@@ -1128,8 +1128,8 @@ var templateObject_1$s, templateObject_2$7, templateObject_3$3, templateObject_4
 var Handle = styled__default['default'].div(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n  background-color: var(--secondary-color);\n  border-radius: 50%;\n  cursor: pointer;\n  height: 32px;\n  left: 4px;\n  position: absolute;\n  top: 4px;\n  transition: left 200ms ease-in;\n  width: 32px;\n  z-index: 1;\n"], ["\n  background-color: var(--secondary-color);\n  border-radius: 50%;\n  cursor: pointer;\n  height: 32px;\n  left: 4px;\n  position: absolute;\n  top: 4px;\n  transition: left 200ms ease-in;\n  width: 32px;\n  z-index: 1;\n"])));
 var Input$1 = styled__default['default'].input(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 36px);\n  }\n"], ["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 36px);\n  }\n"])), Handle);
 var StyledToggle = styled__default['default'].div(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  background-color: ", ";\n  border-radius: 2em;\n  box-shadow: var(--box-shadow);\n  cursor: pointer;\n  display: inline-flex;\n  height: 40px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 72px;\n"], ["\n  align-items: center;\n  background-color: ", ";\n  background-color: ", ";\n  border-radius: 2em;\n  box-shadow: var(--box-shadow);\n  cursor: pointer;\n  display: inline-flex;\n  height: 40px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 72px;\n"])), function (_a) {
-    var color = _a.color;
-    return (color ? color : "var(--text-subtle-color)");
+    var background = _a.background;
+    return (background ? background : "var(--text-subtle-color)");
 }, function (_a) {
     var checked = _a.checked;
     return (checked ? "var(--primary-color)" : "");
@@ -1137,9 +1137,9 @@ var StyledToggle = styled__default['default'].div(templateObject_3$4 || (templat
 var templateObject_1$t, templateObject_2$8, templateObject_3$4;
 
 var Toggle = function (_a) {
-    var color = _a.color, checked = _a.checked, props = __rest(_a, ["color", "checked"]);
+    var background = _a.background, checked = _a.checked, props = __rest(_a, ["background", "checked"]);
     var isChecked = !!checked;
-    return (React__default['default'].createElement(StyledToggle, { checked: isChecked, color: color },
+    return (React__default['default'].createElement(StyledToggle, { checked: isChecked, background: background },
         React__default['default'].createElement(Input$1, __assign({ checked: checked }, props, { type: "checkbox" })),
         React__default['default'].createElement(Handle, null)));
 };

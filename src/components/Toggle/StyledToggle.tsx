@@ -26,9 +26,9 @@ export const Input = styled.input`
   }
 `;
 
-const StyledToggle = styled.div<{ checked: boolean; color?: string }>`
+const StyledToggle = styled.div<{ checked: boolean; background?: string }>`
   align-items: center;
-  background-color: ${({ color }) => (color ? color : `var(--text-subtle-color)`)};
+  background-color: ${({ background }) => (background ? background : `var(--text-subtle-color)`)};
   background-color: ${({ checked }) => (checked ? `var(--primary-color)` : ``)};
   border-radius: 2em;
   box-shadow: var(--box-shadow);
