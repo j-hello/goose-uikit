@@ -210,12 +210,12 @@ var Icon$6 = function (props) {
 };
 
 var Icon$7 = function (props) {
-    return (React.createElement(Svg, { viewBox: "0 0 15 8", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
+    return (React.createElement(Svg, __assign({ viewBox: "0 0 15 8", fill: "none" }, props),
         React.createElement("path", { d: "M1.07144 1L8.03573 7L15 1", stroke: "currentColor", strokeWidth: "1.5" })));
 };
 
 var Icon$8 = function (props) {
-    return (React.createElement(Svg, { viewBox: "0 0 15 8", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
+    return (React.createElement(Svg, __assign({ viewBox: "0 0 15 8", fill: "none" }, props),
         React.createElement("path", { d: "M15 7L8.03572 0.999999L1.07143 7", stroke: "currentColor", strokeWidth: "1.5" })));
 };
 
