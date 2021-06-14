@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Handle = styled.div`
-  background-color: #fff;
+  background-color: var(--secondary-color);
   border-radius: 50%;
   cursor: pointer;
   height: 32px;
@@ -24,14 +24,14 @@ export const Input = styled.input`
   &:checked + ${Handle} {
     left: calc(100% - 36px);
   }
-
 `;
 
-const StyledToggle = styled.div<{ checked: boolean }>`
+const StyledToggle = styled.div<{ checked: boolean; color?: string }>`
   align-items: center;
-  background-color: ${({ theme, checked }) => theme.colors[checked ? "success" : "textSubtle"]};
-  border-radius: 24px;
-  box-shadow: ${({ theme }) => theme.shadows.inset};
+  background-color: ${({ color }) => (color ? color : `var(--text-subtle-color)`)};
+  background-color: ${({ checked }) => (checked ? `var(--primary-color)` : ``)};
+  border-radius: 2em;
+  box-shadow: var(--box-shadow);
   cursor: pointer;
   display: inline-flex;
   height: 40px;
