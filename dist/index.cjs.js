@@ -1033,7 +1033,7 @@ Tag.defaultProps = {
     outline: false,
 };
 
-var StyledLink = styled__default['default'](Text)(templateObject_1$o || (templateObject_1$o = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  font-weight: ", ";\n  &:hover {\n    text-decoration: underline;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  font-weight: ", ";\n  &:hover {\n    text-decoration: underline;\n  }\n"])), function (_a) {
+var StyledLink = styled__default['default'](Text)(templateObject_1$o || (templateObject_1$o = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  font-weight: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  font-weight: ", ";\n"])), function (_a) {
     var bold = _a.bold;
     return (bold ? "500" : "400");
 });
@@ -2083,33 +2083,13 @@ var ConnectModal = function (_a) {
 var templateObject_1$A;
 
 var StyleButton = styled__default['default'](Text).attrs({ role: "button" })(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: var(--secondary-color);\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: var(--secondary-color);\n"])));
-var Tooltip = styled__default['default'].div(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: 0;\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"], ["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: 0;\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"])), function (_a) {
-    var isTooltipDisplayed = _a.isTooltipDisplayed;
-    return (isTooltipDisplayed ? "block" : "none");
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.contrast;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.invertedContrast;
-});
 var CopyToClipboard = function (_a) {
-    var toCopy = _a.toCopy, children = _a.children, props = __rest(_a, ["toCopy", "children"]);
-    var _b = React.useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
-    return (React__default['default'].createElement(StyleButton, __assign({ bold: true, onClick: function () {
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(toCopy);
-                setIsTooltipDisplayed(true);
-                setTimeout(function () {
-                    setIsTooltipDisplayed(false);
-                }, 1000);
-            }
-        } }, props),
+    _a.toCopy; var children = _a.children, props = __rest(_a, ["toCopy", "children"]);
+    return (React__default['default'].createElement(StyleButton, __assign({ bold: true }, props),
         children,
-        React__default['default'].createElement(Icon$n, { fill: "var(--secondary-color)", width: "20px", color: "secondary", ml: "4.25px" }),
-        React__default['default'].createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, "Copied")));
+        React__default['default'].createElement(Icon$n, { fill: "var(--secondary-color)", width: "20px", color: "secondary", ml: "4.25px" })));
 };
-var templateObject_1$B, templateObject_2$c;
+var templateObject_1$B;
 
 var AccountModal = function (_a) {
     var account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
@@ -2164,7 +2144,7 @@ var Close = function (_a) {
 var templateObject_1$C;
 
 var Actions = styled__default['default'].div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n"], ["\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n"])));
-var Container$3 = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  padding-top: var(--site-pad);\n  ", " {\n    padding-top: 0;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  padding-top: var(--site-pad);\n  ", " {\n    padding-top: 0;\n  }\n"])), function (_a) {
+var Container$3 = styled__default['default'].div(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  padding-top: var(--site-pad);\n  ", " {\n    padding-top: 0;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  padding-top: var(--site-pad);\n  ", " {\n    padding-top: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
@@ -2204,13 +2184,13 @@ var PanelBody = function (_a) {
                     React__default['default'].createElement(LinkLabel, null, entry.label))));
         }))));
 };
-var templateObject_1$D, templateObject_2$d, templateObject_3$7, templateObject_4$2;
+var templateObject_1$D, templateObject_2$c, templateObject_3$7, templateObject_4$2;
 
 var Container$4 = styled__default['default'].div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  flex: none;\n  padding: var(--site-pad) 0 calc(var(--site-pad) * 1.5);\n  ", " {\n    padding-bottom: 0;\n  }\n"], ["\n  flex: none;\n  padding: var(--site-pad) 0 calc(var(--site-pad) * 1.5);\n  ", " {\n    padding-bottom: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
-var PriceEntry = styled__default['default'].div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right: 17px;\n    width: 50px;\n  }\n  a {\n    margin-left: auto;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right: 17px;\n    width: 50px;\n  }\n  a {\n    margin-left: auto;\n  }\n"])));
+var PriceEntry = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right: 17px;\n    width: 50px;\n  }\n  a {\n    margin-left: auto;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .egg-icon {\n    margin-right: 17px;\n    width: 50px;\n  }\n  a {\n    margin-left: auto;\n  }\n"])));
 var PanelFooter = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd, priceLink = _a.priceLink;
     cakePriceUsd = cakePriceUsd ? cakePriceUsd : 0;
@@ -2220,7 +2200,7 @@ var PanelFooter = function (_a) {
             React__default['default'].createElement(Text, { color: "text", fontSize: "var(--nav-size)", bold: true }, "$" + cakePriceUsd.toFixed(3)),
             React__default['default'].createElement(Button, { as: "a", variant: "primary", href: priceLink }, "Buy Egg"))));
 };
-var templateObject_1$E, templateObject_2$e;
+var templateObject_1$E, templateObject_2$d;
 
 var StyledPanel = styled__default['default'].div(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5) 0;\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-self: flex-start;\n  justify-content: space-between;\n  flex-shrink: 0;\n  z-index: 12;\n  padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5) 0;\n  height: 100%;\n  width: 75%;\n  transform: ", ";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  overflow-y: auto;\n  opacity: 1;\n  background-color: var(--secondary-color);\n  transition: transform 0.25s ease-in-out;\n\n  .mobile-menu-hide & {\n    opacity: 0;\n  }\n\n  ", " {\n    width: 375px;\n    transform: translate3d(0, 0, 0);\n    z-index: 10;\n    padding: var(--site-pad);\n    position: sticky;\n    left: 0;\n    bottom: auto;\n    right: auto;\n    opacity: 1 !important;\n    background: none;\n    transition: none;\n  }\n"])), function (_a) {
     var isPushed = _a.isPushed;
@@ -2248,7 +2228,7 @@ var Hamburger = function (_a) {
 var templateObject_1$G;
 
 var Wrapper$1 = styled__default['default'].div(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var StyledNav = styled__default['default'].nav(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: var(--site-pad) var(--site-pad) 0;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: var(--site-pad) var(--site-pad) 0;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
+var StyledNav = styled__default['default'].nav(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: var(--site-pad) var(--site-pad) 0;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: var(--site-pad) var(--site-pad) 0;\n  width: 100%;\n  background-color: ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
 });
@@ -2291,7 +2271,7 @@ var Menu = function (_a) {
             React__default['default'].createElement(Inner, null, children),
             React__default['default'].createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" }))));
 };
-var templateObject_1$H, templateObject_2$f, templateObject_3$8, templateObject_4$3, templateObject_5$1;
+var templateObject_1$H, templateObject_2$e, templateObject_3$8, templateObject_4$3, templateObject_5$1;
 
 var ToastAction = function (_a) {
     var action = _a.action;

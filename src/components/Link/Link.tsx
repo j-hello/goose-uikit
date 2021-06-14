@@ -9,9 +9,6 @@ const StyledLink = styled(Text)<LinkProps>`
   align-items: center;
   width: fit-content;
   font-weight: ${({ bold }) => (bold ? "500" : "400")};
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 
 const Link: React.FC<LinkProps> = ({ external, ...props }) => {

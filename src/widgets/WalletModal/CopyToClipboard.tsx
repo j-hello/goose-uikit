@@ -14,39 +14,11 @@ const StyleButton = styled(Text).attrs({ role: "button" })`
   color: var(--secondary-color);
 `;
 
-const Tooltip = styled.div<{ isTooltipDisplayed: boolean }>`
-  display: ${({ isTooltipDisplayed }) => (isTooltipDisplayed ? "block" : "none")};
-  position: absolute;
-  bottom: -22px;
-  right: 0;
-  left: 0;
-  text-align: center;
-  background-color: ${({ theme }) => theme.colors.contrast};
-  color: ${({ theme }) => theme.colors.invertedContrast};
-  border-radius: 16px;
-  opacity: 0.7;
-`;
-
 const CopyToClipboard: React.FC<Props> = ({ toCopy, children, ...props }) => {
-  const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
-
   return (
-    <StyleButton
-      bold
-      onClick={() => {
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(toCopy);
-          setIsTooltipDisplayed(true);
-          setTimeout(() => {
-            setIsTooltipDisplayed(false);
-          }, 1000);
-        }
-      }}
-      {...props}
-    >
+    <StyleButton bold {...props}>
       {children}
       <CopyIcon fill="var(--secondary-color)" width="20px" color="secondary" ml="4.25px" />
-      <Tooltip isTooltipDisplayed={isTooltipDisplayed}>Copied</Tooltip>
     </StyleButton>
   );
 };
