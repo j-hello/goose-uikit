@@ -40,8 +40,7 @@ const SubContainer = styled(Container)`
 const Ping = styled.span`
   position: absolute;
   top: 0;
-  right: -8.5px;
-  margin-left: 12.75px;
+  right: -4.25px;
   width: 11px;
   height: 11px;
   background: var(--primary-color);
