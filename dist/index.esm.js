@@ -979,25 +979,7 @@ Radio.defaultProps = {
 };
 var templateObject_1$m;
 
-var getColor$1 = function (color, theme) {
-    return getThemeValue("colors." + color, color)(theme);
-};
-
-var getThemeTextColor = function (_a) {
-    var outline = _a.outline, _b = _a.variant, variant = _b === void 0 ? "primary" : _b, theme = _a.theme;
-    return outline ? getColor$1(variant, theme) : "#ffffff";
-};
-var StyledTag = styled.div(templateObject_1$n || (templateObject_1$n = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 2em;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: 500;\n  height: 28px;\n  line-height: 28px;\n  padding: 0 8.5px;\n  white-space: nowrap;\n\n  box-shadow: ", ";\n  \n\n  svg {\n    fill: ", ";\n  }\n"], ["\n  align-items: center;\n  background-color: ",
-    ";\n  border: ", ";\n  border-radius: 2em;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: 500;\n  height: 28px;\n  line-height: 28px;\n  padding: 0 8.5px;\n  white-space: nowrap;\n\n  box-shadow: ", ";\n  \n\n  svg {\n    fill: ", ";\n  }\n"])), function (_a) {
-    var outline = _a.outline, theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? "primary" : _b;
-    return outline ? "transparent" : getColor$1(variant, theme);
-}, function (_a) {
-    var outline = _a.outline, _b = _a.variant, variant = _b === void 0 ? "primary" : _b, theme = _a.theme;
-    return outline ? "2px solid " + getColor$1(variant, theme) : "none";
-}, getThemeTextColor, function (_a) {
-    var outline = _a.outline;
-    return outline ? "none" : "0 0 5px 0 rgb(115 66 167 / 40%), 0 0 25px 0 rgb(115 66 167 / 30%), 0 0 50px 0 rgb(115 66 167 / 20%)";
-}, getThemeTextColor);
+var StyledTag = styled.div(templateObject_1$n || (templateObject_1$n = __makeTemplateObject(["\n  align-items: center;\n  background-color: var(--background-color);\n  border: none;\n  border-radius: 1em;\n  color: var(--primary-color);\n  display: inline-flex;\n  font-size: var(--sm-size);\n  font-weight: 500;\n  height: 28px;\n  line-height: 28px;\n  padding: 0 8.5px;\n  white-space: nowrap;\n\n  box-shadow: var(--box-shadow) svg {\n    fill: var(--primary-color);\n  }\n"], ["\n  align-items: center;\n  background-color: var(--background-color);\n  border: none;\n  border-radius: 1em;\n  color: var(--primary-color);\n  display: inline-flex;\n  font-size: var(--sm-size);\n  font-weight: 500;\n  height: 28px;\n  line-height: 28px;\n  padding: 0 8.5px;\n  white-space: nowrap;\n\n  box-shadow: var(--box-shadow) svg {\n    fill: var(--primary-color);\n  }\n"])));
 var templateObject_1$n;
 
 var Tag = function (_a) {
