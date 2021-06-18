@@ -17,11 +17,10 @@ const StyledModal = styled.div`
   background-color: var(--primary-color);
   box-shadow: var(--glow);
   border-radius: 2em;
-  width: 100%;
-  max-width: 90%;
+  width: calc(100% - var(--site-pad));
   z-index: 100;
   overflow-y: auto;
-  ${({ theme }) => theme.mediaQueries.xs} {
+  ${({ theme }) => theme.mediaQueries.md} {
     width: auto;
     min-width: 400px;
     max-width: 500px;

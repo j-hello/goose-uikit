@@ -1645,9 +1645,9 @@ var useParticleBurst = function (options) {
     return { initialize: initialize, teardown: teardown };
 };
 
-var StyledModal = styled.div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  background-color: var(--primary-color);\n  box-shadow: var(--glow);\n  border-radius: 2em;\n  width: 100%;\n  max-width: 90%;\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 500px;\n  }\n"], ["\n  background-color: var(--primary-color);\n  box-shadow: var(--glow);\n  border-radius: 2em;\n  width: 100%;\n  max-width: 90%;\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 500px;\n  }\n"])), function (_a) {
+var StyledModal = styled.div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  background-color: var(--primary-color);\n  box-shadow: var(--glow);\n  border-radius: 2em;\n  width: calc(100% - var(--site-pad));\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 500px;\n  }\n"], ["\n  background-color: var(--primary-color);\n  box-shadow: var(--glow);\n  border-radius: 2em;\n  width: calc(100% - var(--site-pad));\n  z-index: 100;\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 400px;\n    max-width: 500px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.mediaQueries.xs;
+    return theme.mediaQueries.md;
 });
 var ModalHeader = styled.div(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  align-items: center;\n  padding: var(--card-pad) var(--card-pad) 0;\n"], ["\n  display: flex;\n  align-items: center;\n  align-items: center;\n  padding: var(--card-pad) var(--card-pad) 0;\n"])));
 var ModalTitle = styled(Flex)(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n  color: var(--secondary-color);\n"], ["\n  align-items: center;\n  flex: 1;\n  color: var(--secondary-color);\n"])));
