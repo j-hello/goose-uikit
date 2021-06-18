@@ -78,7 +78,7 @@ const PanelBody: React.FC<Props> = ({ pushNav, isMobile, links, account, login, 
       {isMobile && (
         <Actions>
           <Close togglePush={() => pushNav(false)} />
-          <UserBlock account={account} login={login} logout={logout} />
+          <UserBlock account={account} login={login} logout={logout} isMobile />
         </Actions>
       )}
       <Container>

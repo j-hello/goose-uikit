@@ -2093,10 +2093,10 @@ var useWalletModal = function (login, logout, account) {
 };
 
 var UserBlock = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout;
+    var account = _a.account, login = _a.login, logout = _a.logout, isMobile = _a.isMobile;
     var _b = useWalletModal(login, logout, account), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
-    return (React__default['default'].createElement("div", null, account ? (React__default['default'].createElement(Button, { size: "sm", variant: "secondary", onClick: function () {
+    return (React__default['default'].createElement("div", null, account ? (React__default['default'].createElement(Button, { size: "sm", variant: isMobile ? "tertiary" : "secondary", onClick: function () {
             onPresentAccountModal();
         } }, accountEllipsis)) : (React__default['default'].createElement(Button, { size: "sm", onClick: function () {
             onPresentConnectModal();
@@ -2139,7 +2139,7 @@ var PanelBody = function (_a) {
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
         isMobile && (React__default['default'].createElement(Actions, null,
             React__default['default'].createElement(Close, { togglePush: function () { return pushNav(false); } }),
-            React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }))),
+            React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout, isMobile: true }))),
         React__default['default'].createElement(Container$3, null, mainLinks.map(function (entry) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             if (entry.items) {
