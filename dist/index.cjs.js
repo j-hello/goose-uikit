@@ -1454,6 +1454,7 @@ var breakpointMap = {
     md: 852,
     lg: 968,
     xl: 1080,
+    nav: 1350,
 };
 var breakpoints = Object.values(breakpointMap).map(function (breakpoint) { return breakpoint + "px"; });
 var mediaQueries = {
@@ -1462,7 +1463,7 @@ var mediaQueries = {
     md: "@media screen and (min-width: " + breakpointMap.md + "px)",
     lg: "@media screen and (min-width: " + breakpointMap.lg + "px)",
     xl: "@media screen and (min-width: " + breakpointMap.xl + "px)",
-    nav: "@media screen and (min-width: " + breakpointMap.lg + "px)",
+    nav: "@media screen and (min-width: " + breakpointMap.nav + "px)",
 };
 var shadows = {
     level1: "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
