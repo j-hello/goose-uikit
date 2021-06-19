@@ -2221,8 +2221,8 @@ var MobileOnlyOverlay = styled__default['default'](Overlay)(templateObject_5$1 |
 var Menu = function (_a) {
     var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, children = _a.children;
-    var isXl = useMatchBreakpoints().isXl;
-    var isMobile = isXl === false;
+    var isNav = useMatchBreakpoints().isNav;
+    var isMobile = !isNav;
     var _c = React.useState(false), isPushed = _c[0], setIsPushed = _c[1];
     React.useEffect(function () {
         function handleOverlay() {
