@@ -2224,6 +2224,7 @@ var Menu = function (_a) {
     var isNav = useMatchBreakpoints().isNav;
     var isMobile = !isNav;
     var _c = React.useState(false), isPushed = _c[0], setIsPushed = _c[1];
+    console.log(isMobile);
     React.useEffect(function () {
         function handleOverlay() {
             if (isPushed && isMobile) {

@@ -48,6 +48,8 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
   const isMobile = !isNav;
   const [isPushed, setIsPushed] = useState(false);
 
+  console.log(isMobile);
+
   useEffect(() => {
     function handleOverlay() {
       if (isPushed && isMobile) {
