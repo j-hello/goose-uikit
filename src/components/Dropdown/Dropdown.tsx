@@ -17,20 +17,25 @@ const getBottom = ({ position }: PositionProps) => {
 };
 
 const DropdownContent = styled.div<{ position: Position }>`
-  width: max-content;
+  width: 100%;
   display: none;
   flex-direction: column;
   position: absolute;
-  transform: translate(-50%, 0);
-  left: ${getLeft};
-  bottom: ${getBottom};
+  left: 0
   background-color: var(--secondary-color);
   box-shadow: var(--box-shadow);
-  padding: 16px;
+  padding: 8.5px 17px;
   max-height: 500px;
   overflow-y: auto;
   z-index: ${({ theme }) => theme.zIndices.dropdown};
   border-radius: 1em;
+
+  > a {
+    font-size: var(--md-size);
+    font-weight: 400;
+    margin: 4.25px 0 4.25px 0;
+    text-transform: uppercase;
+  }
 `;
 
 const Container = styled.div`

@@ -737,21 +737,7 @@ Checkbox.defaultProps = {
 };
 var templateObject_1$e;
 
-var getLeft = function (_a) {
-    var position = _a.position;
-    if (position === "top-right") {
-        return "100%";
-    }
-    return "50%";
-};
-var getBottom = function (_a) {
-    var position = _a.position;
-    if (position === "top" || position === "top-right") {
-        return "100%";
-    }
-    return "auto";
-};
-var DropdownContent = styled__default['default'].div(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: var(--secondary-color);\n  box-shadow: var(--box-shadow);\n  padding: 16px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: 1em;\n"], ["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: var(--secondary-color);\n  box-shadow: var(--box-shadow);\n  padding: 16px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: 1em;\n"])), getLeft, getBottom, function (_a) {
+var DropdownContent = styled__default['default'].div(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  width: 100%;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  left: 0\n  background-color: var(--secondary-color);\n  box-shadow: var(--box-shadow);\n  padding: 8.5px 17px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: 1em;\n\n  > a {\n    font-size: var(--md-size);\n    font-weight: 400;\n    margin: 4.25px 0 4.25px 0;\n    text-transform: uppercase;\n  }\n"], ["\n  width: 100%;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  left: 0\n  background-color: var(--secondary-color);\n  box-shadow: var(--box-shadow);\n  padding: 8.5px 17px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: 1em;\n\n  > a {\n    font-size: var(--md-size);\n    font-weight: 400;\n    margin: 4.25px 0 4.25px 0;\n    text-transform: uppercase;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.zIndices.dropdown;
 });
