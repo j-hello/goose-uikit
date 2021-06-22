@@ -31,6 +31,7 @@ const DropdownContent = styled.div<{ position: Position }>`
   border-radius: 1em;
 
   > a {
+    color: var(--text-color);
     font-size: var(--md-size);
     font-weight: 400;
     margin: 4.25px 0 4.25px 0;
