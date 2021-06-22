@@ -21,7 +21,7 @@ const DropdownContent = styled.div<{ position: Position }>`
   display: none;
   flex-direction: column;
   position: absolute;
-  left: 0
+  left: 0;
   background-color: var(--secondary-color);
   box-shadow: var(--box-shadow);
   padding: 8.5px 17px;
