@@ -615,16 +615,7 @@ var Breadcrumbs = function (_a) {
 };
 var templateObject_1$6, templateObject_2$2;
 
-var StyledButtonMenu = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n\n  & > a,\n  & > button {\n    margin: ", ";\n    width: ", ";\n\n    ", " {\n      width: auto;\n      margin: 0;\n    }\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 8.5px;\n  }\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n\n  & > a,\n  & > button {\n    margin: ", ";\n    width: ", ";\n\n    ", " {\n      width: auto;\n      margin: 0;\n    }\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 8.5px;\n  }\n"])), function (_a) {
-    var multi = _a.multi;
-    return (multi ? "8.5px" : "0");
-}, function (_a) {
-    var multi = _a.multi;
-    return (multi ? "calc(50% - 17px)" : "auto");
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.sm;
-});
+var StyledButtonMenu = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  display: flex;\n\n  & > button + button,\n  & > a + a {\n    margin-left: 8.5px;\n  }\n"], ["\n  display: flex;\n\n  & > button + button,\n  & > a + a {\n    margin-left: 8.5px;\n  }\n"])));
 var templateObject_1$7;
 
 var ButtonMenu = function (_a) {
