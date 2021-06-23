@@ -44,8 +44,8 @@ const MobileOnlyOverlay = styled(Overlay)`
 `;
 
 const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links, priceLink, children }) => {
-  const { isNav } = useMatchBreakpoints();
-  const isMobile = !isNav;
+  const { isDt } = useMatchBreakpoints();
+  const isMobile = !isDt;
   const [isPushed, setIsPushed] = useState(false);
 
   console.log("is Mobile init", isMobile);
