@@ -48,11 +48,8 @@ const Menu: React.FC<NavProps> = ({ account, login, logout, cakePriceUsd, links,
   const isMobile = !isDt;
   const [isPushed, setIsPushed] = useState(false);
 
-  console.log("is Mobile init", isMobile);
-
   useEffect(() => {
     function handleOverlay() {
-      console.log("is Mobile", isMobile);
       if (isPushed && isMobile) {
         document.body.setAttribute("style", "position: fixed; top: 0; left: 0; right: 0");
         document.body.classList.remove("mobile-menu-hide");
