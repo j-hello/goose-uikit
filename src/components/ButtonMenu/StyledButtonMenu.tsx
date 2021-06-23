@@ -1,23 +1,23 @@
 import styled, { DefaultTheme } from "styled-components";
-import { Variants, variants } from "../Button/types";
+import { Variants } from "../Button/types";
 
 type StyledButtonMenuProps = {
   variant: Variants;
   theme: DefaultTheme;
 };
 
-const getBackgroundColor = ({ theme, variant }: StyledButtonMenuProps) => {
-  return theme.colors[variant === variants.SUBTLE ? "input" : "tertiary"];
-};
-
 const StyledButtonMenu = styled.div<{ variant: Variants }>`
-  background-color: ${getBackgroundColor};
-  border-radius: 16px;
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
 
   & > button + button,
   & > a + a {
-    margin-left: 8.5px; // To avoid focus shadow overlap
+    margin: 8.5px;
+    width: calc(50% - 17px);
+
+    ${({ theme }) => theme.mediaQueries.sm} {
+      margin: 0 0 0 8.5px;
+    }
   }
 `;
 

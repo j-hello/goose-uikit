@@ -36,6 +36,10 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
     opacity: 0;
   }
 
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 90%;
+  }
+
   ${({ theme }) => theme.mediaQueries.nav} {
     width: 375px;
     transform: translate3d(0, 0, 0);
