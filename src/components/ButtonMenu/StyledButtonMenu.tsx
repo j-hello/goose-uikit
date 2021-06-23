@@ -3,17 +3,18 @@ import { Variants } from "../Button/types";
 
 type StyledButtonMenuProps = {
   variant: Variants;
+  multi?: boolean;
   theme: DefaultTheme;
 };
 
-const StyledButtonMenu = styled.div<{ variant: Variants }>`
+const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
   display: flex;
   flex-wrap: wrap;
 
   & > a,
   & > button {
-    margin: 8.5px;
-    width: calc(50% - 17px);
+    margin: ${({ multi }) => (multi ? "8.5px" : "0")};
+    width: ${({ multi }) => (multi ? "calc(50% - 17px)" : "auto")};
 
     ${({ theme }) => theme.mediaQueries.sm} {
       width: auto;
@@ -23,7 +24,7 @@ const StyledButtonMenu = styled.div<{ variant: Variants }>`
 
   & > button + button,
   & > a + a {
-    margin-right: 8.5px;
+    margin-left: 8.5px;
   }
 `;
 
