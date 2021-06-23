@@ -603,7 +603,7 @@ var Breadcrumbs = function (_a) {
 };
 var templateObject_1$6, templateObject_2$2;
 
-var StyledButtonMenu = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n\n  & > button + button,\n  & > a + a {\n    margin: 8.5px;\n    width: calc(50% - 17px);\n\n    ", " {\n      margin: 0 0 0 8.5px;\n    }\n  }\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n\n  & > button + button,\n  & > a + a {\n    margin: 8.5px;\n    width: calc(50% - 17px);\n\n    ", " {\n      margin: 0 0 0 8.5px;\n    }\n  }\n"])), function (_a) {
+var StyledButtonMenu = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n\n  & > a,\n  & > button {\n    margin: 8.5px;\n    width: calc(50% - 17px);\n\n    ", " {\n      width: auto;\n      margin: 0;\n    }\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-right: 8.5px;\n  }\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n\n  & > a,\n  & > button {\n    margin: 8.5px;\n    width: calc(50% - 17px);\n\n    ", " {\n      width: auto;\n      margin: 0;\n    }\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-right: 8.5px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });

@@ -10,14 +10,20 @@ const StyledButtonMenu = styled.div<{ variant: Variants }>`
   display: flex;
   flex-wrap: wrap;
 
-  & > button + button,
-  & > a + a {
+  & > a,
+  & > button {
     margin: 8.5px;
     width: calc(50% - 17px);
 
     ${({ theme }) => theme.mediaQueries.sm} {
-      margin: 0 0 0 8.5px;
+      width: auto;
+      margin: 0;
     }
+  }
+
+  & > button + button,
+  & > a + a {
+    margin-right: 8.5px;
   }
 `;
 
