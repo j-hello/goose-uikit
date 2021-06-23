@@ -2192,8 +2192,10 @@ var Menu = function (_a) {
     var isNav = useMatchBreakpoints().isNav;
     var isMobile = !isNav;
     var _c = useState(false), isPushed = _c[0], setIsPushed = _c[1];
+    console.log("is Mobile init", isMobile);
     useEffect(function () {
         function handleOverlay() {
+            console.log("is Mobile", isMobile);
             if (isPushed && isMobile) {
                 document.body.setAttribute("style", "position: fixed; top: 0; left: 0; right: 0");
                 document.body.classList.remove("mobile-menu-hide");
