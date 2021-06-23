@@ -1423,6 +1423,7 @@ var breakpointMap = {
     lg: 968,
     xl: 1080,
     nav: 1350,
+    dt: 1400,
 };
 var breakpoints = Object.values(breakpointMap).map(function (breakpoint) { return breakpoint + "px"; });
 var mediaQueries = {
@@ -1432,6 +1433,7 @@ var mediaQueries = {
     lg: "@media screen and (min-width: " + breakpointMap.lg + "px)",
     xl: "@media screen and (min-width: " + breakpointMap.xl + "px)",
     nav: "@media screen and (min-width: " + breakpointMap.nav + "px)",
+    dt: "@media screen and (min-width: " + breakpointMap.dt + "px)",
 };
 var shadows = {
     level1: "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
@@ -2190,7 +2192,7 @@ var Menu = function (_a) {
     var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, children = _a.children;
     var isNav = useMatchBreakpoints().isNav;
-    var isMobile = isNav;
+    var isMobile = !isNav;
     var _c = useState(false), isPushed = _c[0], setIsPushed = _c[1];
     console.log("is Mobile init", isMobile);
     useEffect(function () {

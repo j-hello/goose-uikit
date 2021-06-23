@@ -6,6 +6,7 @@ export declare type MediaQueries = {
     lg: string;
     xl: string;
     nav: string;
+    dt: string;
 };
 export declare type Spacing = number[];
 export declare type Radii = {
