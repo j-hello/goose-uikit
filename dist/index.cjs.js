@@ -2202,7 +2202,7 @@ var Menu = function (_a) {
     var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, children = _a.children;
     var isNav = useMatchBreakpoints().isNav;
-    var isMobile = isNav === false;
+    var isMobile = isNav;
     var _c = React.useState(false), isPushed = _c[0], setIsPushed = _c[1];
     console.log("is Mobile init", isMobile);
     React.useEffect(function () {
