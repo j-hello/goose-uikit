@@ -21,7 +21,7 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
   z-index: 12;
   padding: calc(var(--site-pad) * 1.5) calc(var(--site-pad) * 1.5) 0;
   height: 100%;
-  width: 75%;
+  width: 90%;
   transform: ${({ isPushed }) => `translate3d(${isPushed ? "0" : "100%"}, 0, 0)`};
   position: fixed;
   top: 0;
@@ -32,12 +32,12 @@ const StyledPanel = styled.div<{ isPushed: boolean }>`
   background-color: var(--secondary-color);
   transition: transform 0.25s ease-in-out;
 
-  .mobile-menu-hide & {
-    opacity: 0;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 75%;
   }
 
-  ${({ theme }) => theme.mediaQueries.sm} {
-    width: 90%;
+  .mobile-menu-hide & {
+    opacity: 0;
   }
 
   ${({ theme }) => theme.mediaQueries.nav} {
